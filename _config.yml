@@ -16,7 +16,7 @@ author:
       url: "https://www.linkedin.com/company/pulsar-ventures-llc"
     - label: "Calendly"
       icon: "fas fa-calendar"
-      url: "https://calendly.com/pulsarventures"
+      url: "https://calendly.com/spradhip"
 
 # Build settings
 markdown: kramdown
@@ -82,8 +82,8 @@ include:
 social:
   name: "Pulsar Ventures"
   links:
-    - "https://www.linkedin.com/company/pulsarventures"
-    - "https://calendly.com/pulsarventures"
+    - "https://www.linkedin.com/company/pulsar-ventures-llc"
+    - "https://calendly.com/spradhip"
 
 # Analytics (add your tracking codes here)
 analytics:
