@@ -114,4 +114,4 @@ Explore how AI is reshaping the workplace and what it means for the future of wo
 
 Have a topic you'd like us to cover? Want to contribute a guest post? We'd love to hear from you!
 
-[Contact Us](/contact) | [Follow us on LinkedIn](https://www.linkedin.com/company/pulsarventures)
+[Contact Us](/contact) | [Follow us on LinkedIn]({{ site.contact.linkedin }})

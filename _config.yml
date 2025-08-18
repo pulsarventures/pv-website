@@ -4,6 +4,16 @@ description: "We Bootstrap your Business - Venture studio blending consulting an
 url: "https://pulsarventures.co"
 baseurl: ""
 
+# Contact and Social Information
+contact:
+  email: "spradhip@pulsarventures.io"
+  calendly: "https://calendly.com/spradhip"
+  linkedin: "https://www.linkedin.com/company/pulsar-ventures-llc"
+  office_hours:
+    weekdays: "9:00 AM - 6:00 PM (EST)"
+    weekends: "By appointment"
+    virtual: "Available worldwide"
+
 # Author information
 author:
   name: "Pulsar Ventures"

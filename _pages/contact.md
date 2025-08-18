@@ -13,15 +13,15 @@ Ready to bootstrap your business? We're here to help you accelerate your growth 
 
 ### Contact Information
 
-- **Email**: [contact@pulsarventures.co](mailto:contact@pulsarventures.co)
-- **LinkedIn**: [Pulsar Ventures](https://www.linkedin.com/company/pulsarventures)
-- **Calendly**: [Schedule a Call](https://calendly.com/pulsarventures)
+- **Email**: [{{ site.contact.email }}](mailto:{{ site.contact.email }})
+- **LinkedIn**: [Pulsar Ventures]({{ site.contact.linkedin }})
+- **Calendly**: [Schedule a Call]({{ site.contact.calendly }})
 
 ### Office Hours
 
-- **Monday - Friday**: 9:00 AM - 6:00 PM (EST)
-- **Weekends**: By appointment
-- **Virtual Meetings**: Available worldwide
+- **Monday - Friday**: {{ site.contact.office_hours.weekdays }}
+- **Weekends**: {{ site.contact.office_hours.weekends }}
+- **Virtual Meetings**: {{ site.contact.office_hours.virtual }}
 
 ## Contact Form
 
@@ -145,8 +145,8 @@ We've worked with clients across North America, Europe, Asia, and Australia, bri
 Ready to accelerate your business growth? Whether you have a specific project in mind or just want to explore possibilities, we're here to help.
 
 **Quick Start Options:**
-- [Schedule a Free Consultation](https://calendly.com/pulsarventures)
-- [Send us an Email](mailto:contact@pulsarventures.co)
-- [Connect on LinkedIn](https://www.linkedin.com/company/pulsarventures)
+- [Schedule a Free Consultation]({{ site.contact.calendly }})
+- [Send us an Email](mailto:{{ site.contact.email }})
+- [Connect on LinkedIn]({{ site.contact.linkedin }})
 
 We look forward to helping you bootstrap your business with AI-powered solutions!

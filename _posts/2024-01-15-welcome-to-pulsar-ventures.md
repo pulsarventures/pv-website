@@ -105,9 +105,9 @@ Ready to bootstrap your business? Here's how you can get started:
 
 We're excited to connect with entrepreneurs, business leaders, and innovators who share our vision for the future. Whether you're looking to implement AI in your business, seeking strategic guidance, or just want to learn more about our approach, we'd love to hear from you.
 
-- **Email**: [contact@pulsarventures.co](mailto:contact@pulsarventures.co)
-- **LinkedIn**: [Pulsar Ventures](https://www.linkedin.com/company/pulsarventures)
-- **Calendly**: [Schedule a Call](https://calendly.com/pulsarventures)
+- **Email**: [{{ site.contact.email }}](mailto:{{ site.contact.email }})
+- **LinkedIn**: [Pulsar Ventures]({{ site.contact.linkedin }})
+- **Calendly**: [Schedule a Call]({{ site.contact.calendly }})
 
 Thank you for joining us on this exciting journey. Together, we'll build the future of business in the Intelligent Age.
 

@@ -68,4 +68,4 @@ We've helped numerous startups and established companies navigate the complexiti
 
 Ready to bootstrap your business? Let's discuss how we can help accelerate your growth with our AI-powered approach.
 
-[Contact Us](/contact) | [Schedule a Call](https://calendly.com/pulsarventures)
+[Contact Us](/contact) | [Schedule a Call]({{ site.contact.calendly }})
