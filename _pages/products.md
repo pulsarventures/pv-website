@@ -81,7 +81,7 @@ ChatPilot is an advanced conversational AI platform that enables natural languag
 - Research and information gathering
 - Process optimization and monitoring
 
-[Learn More About ChatPilot](https://chatpilot.ai)
+[Learn More About ChatPilot](https://chatpilot.dev)
 
 ## Our Development Philosophy
 
