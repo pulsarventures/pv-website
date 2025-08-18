@@ -9,7 +9,7 @@ description: "Discover our innovative products that empower businesses with AI-p
 
 We build cutting-edge products that leverage AI to solve real business challenges. Each product is designed with our core principles in mind: innovation, reliability, and user-centric design.
 
-## Finciples
+## Finciples [https://finciples.ai](https://finciples.ai)
 
 **Empowering investors with principles-based analysis, combining AI-powered insights with proven investment philosophies.**
 
@@ -32,7 +32,7 @@ Finciples is our flagship investment analysis platform that combines the wisdom 
 
 [Learn More About Finciples](#finciples)
 
-## Link Library
+## Link Library [https://linklibrary.ai](https://linklibrary.ai)
 
 **Link Library helps you to save, organize, and share links across media platforms and devices.**
 
@@ -57,7 +57,7 @@ Link Library is a comprehensive bookmarking and organization platform that goes 
 
 [Learn More About Link Library](#link-library)
 
-## ChatPilot
+## ChatPilot [https://chatpilot.ai](https://chatpilot.ai)
 
 **ChatPilot provides a powerful framework for talking to your data and take contextual actions.**
 

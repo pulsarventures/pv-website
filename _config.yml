@@ -7,13 +7,13 @@ baseurl: ""
 # Author information
 author:
   name: "Pulsar Ventures"
-  email: "contact@pulsarventures.co"
+  email: "spradhip@pulsarventures.io"
   bio: "Venture studio blending consulting and product development to accelerate business growth"
   location: "Global"
   links:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/company/pulsarventures"
+      url: "https://www.linkedin.com/company/pulsar-ventures-llc"
     - label: "Calendly"
       icon: "fas fa-calendar"
       url: "https://calendly.com/pulsarventures"

@@ -178,6 +178,21 @@ footer {
             }
         }
     }
+
+    // Footer links styling
+    a {
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $primary-color !important;
+            text-decoration: none;
+        }
+    }
+
+    // Footer list items
+    ul li {
+        margin-bottom: 0.5rem;
+    }
 }
 
 // Content styles
