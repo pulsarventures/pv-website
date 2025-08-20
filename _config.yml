@@ -7,12 +7,8 @@ baseurl: ""
 # Contact and Social Information
 contact:
   email: "spradhip@pulsarventures.io"
-  calendly: "https://calendly.com/spradhip"
+  cal_com: "https://cal.com/sree.pradhip"
   linkedin: "https://www.linkedin.com/company/pulsar-ventures-llc"
-  office_hours:
-    weekdays: "9:00 AM - 6:00 PM (EST)"
-    weekends: "By appointment"
-    virtual: "Available worldwide"
 
 # Author information
 author:
@@ -24,9 +20,7 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/company/pulsar-ventures-llc"
-    - label: "Calendly"
-      icon: "fas fa-calendar"
-      url: "https://calendly.com/spradhip"
+    
 
 # Build settings
 markdown: kramdown
@@ -44,12 +38,7 @@ collections:
 
 # Defaults
 defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Pulsar Ventures"
+  
   - scope:
       path: ""
       type: "pages"
@@ -62,11 +51,8 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
 
-# Pagination
-paginate: 5
-paginate_path: "/blog/page:num/"
+
 
 # Exclude from processing
 exclude:
@@ -84,7 +70,6 @@ exclude:
 # Include files
 include:
   - _pages
-  - _posts
   - assets
   - _sass
 
@@ -93,7 +78,7 @@ social:
   name: "Pulsar Ventures"
   links:
     - "https://www.linkedin.com/company/pulsar-ventures-llc"
-    - "https://calendly.com/spradhip"
+    - "https://cal.com/sree.pradhip"
 
 # Analytics (add your tracking codes here)
 analytics:
