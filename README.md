@@ -57,6 +57,20 @@ pv-website/
 
 ## 🎨 Content Management
 
+### Adding New Pages
+
+1. Create a new file in `_pages/` with the format: `page-name.md`
+2. Add front matter:
+   ```yaml
+   ---
+   layout: page
+   title: "Page Title"
+   permalink: /page-name/
+   ---
+   ```
+3. Write your content in Markdown
+4. Commit and push to deploy
+
 ### Adding New Blog Posts
 
 1. Create a new file in `_posts/` with the format: `YYYY-MM-DD-title.md`
@@ -68,20 +82,6 @@ pv-website/
    date: 2024-01-15
    categories: [blog]
    tags: [ai, business, technology]
-   ---
-   ```
-3. Write your content in Markdown
-4. Commit and push to deploy
-
-### Adding New Pages
-
-1. Create a new file in `_pages/` with the format: `page-name.md`
-2. Add front matter:
-   ```yaml
-   ---
-   layout: page
-   title: "Page Title"
-   permalink: /page-name/
    ---
    ```
 3. Write your content in Markdown
