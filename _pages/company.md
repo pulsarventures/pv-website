@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "About Pulsar Ventures"
-permalink: /about/
+title: "Company"
+permalink: /company/
 description: "Learn about our mission, team, and principles that drive innovation and business transformation"
 ---
 
@@ -73,13 +73,6 @@ description: "Learn about our mission, team, and principles that drive innovatio
             </div>
         </div>
     </div>
-</div>
-
-<hr class="my-5">
-
-<div class="service-details">
-  <h3>Our Team</h3>
-  <p>We follow a <strong>Human + AI</strong> approach, where every person is supported by AI Agents. Instead of a traditional hierarchy with only people, our structure includes human-led roles enhanced by AI. This hybrid model—blending human expertise, AI automation, and fractional talent—allows teams to work faster, be more creative, and focus on big-picture decisions rather than routine tasks. With AI as a seamless part of our workflow, our teams can be more productive, agile, and innovative, achieving more together than either could alone.</p>
 </div>
 
 <hr class="my-5">
@@ -166,84 +159,127 @@ description: "Learn about our mission, team, and principles that drive innovatio
     </div>
 </div>
 
+<hr class="my-5">
 
-
-
+<div class="service-details">
+  <h3>Our Team</h3>
+  <p>We follow a <strong>Human + AI</strong> approach, where every person is supported by AI Agents. Instead of a traditional hierarchy with only people, our structure includes human-led roles enhanced by AI. This hybrid model—blending human expertise, AI automation, and fractional talent—allows teams to work faster, be more creative, and focus on big-picture decisions rather than routine tasks. With AI as a seamless part of our workflow, our teams can be more productive, agile, and innovative, achieving more together than either could alone.</p>
+</div>
 
 <hr class="my-5">
 
 ### Clients
 <p class="text-center">We are proud to have worked with a diverse range of clients, from innovative startups to established industry leaders. Here are some of the organizations we've had the privilege to partner with.</p>
-<div class="row g-4 justify-content-center">
-    <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">EZ Innovation</h5>
+<div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/clients-ez.png" alt="EZ Innovation Logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/clients-exitous.png" alt="Exitous" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/clients-mw.png" alt="Mindwave Solutions" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">Exitous</h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">Mindwave Solutions</h5>
-            </div>
-        </div>
-    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
 
 <hr class="my-5">
 
-### Affiliations
+### Partnerships
 <p class="text-center">We are active members of and contributors to the following organizations and communities.</p>
-<div class="row g-4 justify-content-center">
-    <div class="col-md-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">Tech Alpharetta</h5>
+<div id="partnershipsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/partnerships-ta.png" alt="AI Collective" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/partnerships-aic.png" alt="Atlanta Tech Village" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/partnerships-aitinkerers.png" alt="AI Tinkerers" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/partnerships-aic.png" alt="AI Collective" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/partnerships-tie.png" alt="TiE Atlanta" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">Atlanta Tech Village</h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">AI Tinkerers</h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">AI Collective</h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-            <div class="card-body p-4">
-                <h5 class="card-title">TiE Atlanta</h5>
-            </div>
-        </div>
-    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#partnershipsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#partnershipsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
 
 <hr class="my-5">
 
 <div class="text-center">
   <h3>Get in Touch</h3>
-  <p>Ready to bootstrap your business? Let's discuss how we can help accelerate your growth with our AI-powered approach.</p>
+  <p>Ready to bootstrap your business? Let's discuss how we can help accelerate your growth.</p>
   <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">Let's Connect</a>
 </div>
