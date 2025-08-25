@@ -130,6 +130,7 @@ We offer a comprehensive suite of services designed to accelerate your business 
     <li>Problem-solving for specific challenges</li>
     <li>Strategic planning and roadmapping</li>
   </ul>
+  <a href="https://aimusings.site" class="btn btn-primary" target="_blank">Learn more about AI Musings</a>
 </div>
 
 <hr class="my-5">
