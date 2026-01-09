@@ -161,9 +161,91 @@ description: "Learn about our mission, team, and principles that drive innovatio
 
 <hr class="my-5">
 
-<div class="service-details">
+<div class="service-details" id="our-team">
   <h3>Our Team</h3>
   <p>We follow a <strong>Human + AI</strong> approach, where every person is supported by AI Agents. Instead of a traditional hierarchy with only people, our structure includes human-led roles enhanced by AI. This hybrid model—blending human expertise, AI automation, and fractional talent—allows teams to work faster, be more creative, and focus on big-picture decisions rather than routine tasks. With AI as a seamless part of our workflow, our teams can be more productive, agile, and innovative, achieving more together than either could alone.</p>
+</div>
+
+<div class="row g-4 mt-4">
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <img src="/assets/img/team-sree.jpeg" alt="Sree Pradhip" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <h5 class="card-title">Sree Pradhip</h5>
+                <p class="text-muted mb-2">Founder and CEO</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> Atlanta, GA, USA</p>
+                <a href="https://www.linkedin.com/in/sree-pradhip/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <img src="/assets/img/team-balaji.jpeg" alt="Balaji Nagisetty" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <h5 class="card-title">Balaji Nagisetty</h5>
+                <p class="text-muted mb-2">Principal Architect</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> Munich, Germany</p>
+                <a href="https://www.linkedin.com/in/balajinagisetty/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <img src="/assets/img/team-prathik.jpeg" alt="Prathik Anand" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <h5 class="card-title">Prathik Anand</h5>
+                <p class="text-muted mb-2">Principal Engineer</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                <a href="https://www.linkedin.com/in/prathik-a-2a8791147/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <img src="/assets/img/team-bhoomika.jpeg" alt="Bhoomika Shah" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <h5 class="card-title">Bhoomika Shah</h5>
+                <p class="text-muted mb-2">Biz Dev and Biz Ops</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> Atlanta, GA, USA</p>
+                <a href="https://www.linkedin.com/in/bhoomika-shah-7a54131b7/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-4 justify-content-center">
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <i class="fas fa-robot fa-4x text-primary"></i>
+                </div>
+                <h5 class="card-title">AI Agents</h5>
+                <p class="text-muted mb-2">Various</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> On Prem / Cloud</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <i class="fas fa-users fa-4x text-primary"></i>
+                </div>
+                <h5 class="card-title">Consultants</h5>
+                <p class="text-muted mb-2">As Required</p>
+                <p class="card-text small"><i class="fas fa-map-marker-alt"></i> USA, Turkey, India</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <hr class="my-5">
@@ -200,6 +282,17 @@ description: "Learn about our mission, team, and principles that drive innovatio
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
                             <img src="/assets/img/clients-mw.png" alt="Mindwave Solutions" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <img src="/assets/img/clients-tacilent.png" alt="Tacilent" class="img-fluid">
                         </div>
                     </div>
                 </div>

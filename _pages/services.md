@@ -101,27 +101,14 @@ We offer a comprehensive suite of services designed to accelerate your business 
   <h4>AI Fundamentals Workshop</h4>
   <p><strong>Duration</strong>: 1-2 days<br>
   <strong>Format</strong>: In-person or virtual<br>
-  <strong>Audience</strong>: Business professionals, managers, and decision-makers</p>
+  <strong>Audience</strong>: Business professionals, managers, consultants, project managers and decision-makers</p>
   <p><strong>What You'll Learn</strong>:</p>
-  <ul>
-    <li>Understanding AI capabilities and limitations</li>
-    <li>Identifying AI opportunities in your business</li>
-    <li>Basic AI tools and platforms</li>
-    <li>Ethical considerations in AI implementation</li>
-    <li>Building AI-ready organizational culture</li>
-  </ul>
-  <h4>AI Implementation Workshop</h4>
-  <p><strong>Duration</strong>: 2-3 days<br>
-  <strong>Format</strong>: In-person or virtual<br>
-  <strong>Audience</strong>: Technical teams, product managers, and implementation leads</p>
-  <p><strong>What You'll Learn</strong>:</p>
-  <ul>
-    <li>AI project planning and execution</li>
-    <li>Data preparation and management</li>
-    <li>Model selection and evaluation</li>
-    <li>Integration strategies and best practices</li>
-    <li>Monitoring and maintenance approaches</li>
-  </ul>
+  <ol>
+    <li><strong>AI Fundamentals & Mechanics</strong>: Discover how large language models work and the key principles behind effective AI prompting. Build a solid foundation for everything that follows.</li>
+    <li><strong>AI Tools Deep Dive</strong>: Get hands-on with today's most powerful AI tools. Learn the unique strengths of each platform and when to use them for different tasks.</li>
+    <li><strong>Build Your First Prototype</strong>: Apply your new knowledge to create a working prototype that solves a real problem in your business or career. Receive personalized guidance from our instructors.</li>
+    <li><strong>Build Your First AI Agent</strong>: Take your skills to the next level by creating an automated AI agent that can handle complex tasks with minimal supervision.</li>
+  </ol>
   <h4>Custom Workshops</h4>
   <p>We also design custom workshops tailored to your specific needs, industry, and organizational goals. Our workshops can focus on:</p>
   <ul>
@@ -130,7 +117,7 @@ We offer a comprehensive suite of services designed to accelerate your business 
     <li>Problem-solving for specific challenges</li>
     <li>Strategic planning and roadmapping</li>
   </ul>
-  <a href="https://aimusings.site" class="btn btn-primary" target="_blank">Learn more about AI Musings</a>
+  <a href="https://aimusings.site" class="btn btn-primary" target="_blank">Visit Site</a>
 </div>
 
 <hr class="my-5">
@@ -139,34 +126,15 @@ We offer a comprehensive suite of services designed to accelerate your business 
   <h3>Coaching</h3>
   <p><strong>1-1 coaching for leaders, executives and business professionals</strong></p>
   <p>Our personalized coaching programs help leaders and professionals develop the skills, mindset, and strategies needed to thrive in the AI-powered business landscape.</p>
-  <h4>Executive Coaching</h4>
-  <p><strong>For</strong>: C-suite executives, founders, and senior leaders</p>
-  <p><strong>Focus Areas</strong>:</p>
+  <h4>Focus Areas</h4>
   <ul>
     <li>AI strategy development and execution</li>
-    <li>Digital transformation leadership</li>
-    <li>Innovation and change management</li>
-    <li>Strategic decision-making in uncertain environments</li>
-    <li>Building AI-ready organizational culture</li>
-  </ul>
-  <h4>Leadership Development</h4>
-  <p><strong>For</strong>: Mid-level managers and emerging leaders</p>
-  <p><strong>Focus Areas</strong>:</p>
-  <ul>
-    <li>Leading AI initiatives and teams</li>
-    <li>Managing change and resistance</li>
-    <li>Strategic thinking and planning</li>
-    <li>Communication and stakeholder management</li>
-    <li>Performance optimization and team development</li>
-  </ul>
-  <h4>Professional Development</h4>
-  <p><strong>For</strong>: Individual contributors and specialists</p>
-  <p><strong>Focus Areas</strong>:</p>
-  <ul>
+    <li>Digital transformation and change management</li>
+    <li>Strategic thinking and decision-making</li>
     <li>AI skill development and upskilling</li>
     <li>Career advancement in AI-driven industries</li>
-    <li>Technical and soft skill enhancement</li>
-    <li>Work-life balance and productivity</li>
+    <li>Performance optimization and productivity</li>
+    <li>Communication and stakeholder management</li>
     <li>Personal branding and networking</li>
   </ul>
   <h4>Coaching Approach</h4>
@@ -186,40 +154,23 @@ We offer a comprehensive suite of services designed to accelerate your business 
   <h3>Speaking</h3>
   <p><strong>Seminars and workshops in a story-telling and thought leadership format</strong></p>
   <p>Our speaking engagements combine compelling storytelling with actionable insights, inspiring audiences to embrace AI and drive innovation in their organizations.</p>
-  <h4>Keynote Speaking</h4>
-  <p><strong>Topics Include</strong>:</p>
+  <h4>Topics</h4>
   <ul>
     <li>The Future of Business in the AI Era</li>
     <li>Building AI-Ready Organizations</li>
     <li>Innovation and Disruption Strategies</li>
     <li>Digital Transformation Journeys</li>
     <li>Human + AI Collaboration</li>
+    <li>AI fundamentals and applications</li>
+    <li>Entrepreneurship in the AI era</li>
+    <li>Technology trends and implications</li>
   </ul>
-  <p><strong>Formats</strong>:</p>
+  <h4>Formats</h4>
   <ul>
     <li>Conference keynotes (30-60 minutes)</li>
     <li>Executive briefings (15-30 minutes)</li>
     <li>Panel discussions and fireside chats</li>
     <li>Interactive Q&A sessions</li>
-  </ul>
-  <h4>Industry-Specific Talks</h4>
-  <p>We deliver tailored presentations for specific industries:</p>
-  <ul>
-    <li><strong>Financial Services</strong>: AI in investment and risk management</li>
-    <li><strong>Healthcare</strong>: AI-powered patient care and diagnostics</li>
-    <li><strong>Manufacturing</strong>: Smart manufacturing and Industry 4.0</li>
-    <li><strong>Retail</strong>: AI-driven customer experience and operations</li>
-    <li><strong>Technology</strong>: AI development and implementation strategies</li>
-  </ul>
-  <h4>Educational Seminars</h4>
-  <p><strong>For</strong>: Universities, professional associations, and learning institutions</p>
-  <p><strong>Topics</strong>:</p>
-  <ul>
-    <li>AI fundamentals and applications</li>
-    <li>Entrepreneurship in the AI era</li>
-    <li>Technology trends and implications</li>
-    <li>Career development in AI-driven industries</li>
-    <li>Innovation and creativity in business</li>
   </ul>
   <h4>Speaking Style</h4>
   <p>Our presentations are:</p>
