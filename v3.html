@@ -1,0 +1,863 @@
+---
+layout: landing-v3
+title: "We Build Expert Systems That Drive Business Results"
+description: "Pulsar Ventures is a builder studio helping companies move from idea to execution through expert systems, AI-native platforms, and hands-on delivery."
+permalink: /v3/
+---
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav id="landing-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="{{ '/v3/' | relative_url }}" class="flex items-center">
+                <img src="{{ '/assets/img/pulsarventures.png' | relative_url }}" alt="Pulsar Ventures" class="h-10">
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#approach" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Approach</a>
+                <a href="#ecosystem" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Ecosystem</a>
+                <a href="#products" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Products</a>
+                <a href="#clients" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Clients</a>
+                <a href="#team" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Team</a>
+                <a href="{{ site.contact.cal_com }}" target="_blank" class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-700 rounded-lg hover:bg-brand-800 transition-colors">
+                    Schedule a Call
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/10 bg-[#0a0118]/95 rounded-b-xl shadow-lg -mx-4 px-4 nav-blur">
+            <div class="flex flex-col space-y-3 pt-4">
+                <a href="#approach" class="text-sm font-medium text-white/80 hover:text-white py-2">Approach</a>
+                <a href="#ecosystem" class="text-sm font-medium text-white/80 hover:text-white py-2">Ecosystem</a>
+                <a href="#products" class="text-sm font-medium text-white/80 hover:text-white py-2">Products</a>
+                <a href="#clients" class="text-sm font-medium text-white/80 hover:text-white py-2">Clients</a>
+                <a href="#team" class="text-sm font-medium text-white/80 hover:text-white py-2">Team</a>
+                <a href="{{ site.contact.cal_com }}" target="_blank" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-700 rounded-lg hover:bg-brand-800 transition-colors">
+                    Schedule a Call
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ===================== HERO (DARK) — D3: Neural Network ===================== -->
+<section class="relative min-h-screen flex items-center dark-section overflow-hidden" style="background: #0a0118;">
+    <!-- D3 Network Background -->
+    <div id="hero-network" class="absolute inset-0" style="height: 100%;"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 pt-32">
+        <div class="max-w-4xl">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-purple-500/30 mb-8 animate-fade-in" style="background: rgba(109, 40, 217, 0.15);">
+                <span class="w-2 h-2 rounded-full bg-purple-400 mr-2 animate-pulse"></span>
+                <span class="text-sm font-medium text-purple-300">Builder Studio &middot; AI-Native</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
+                We Build Expert Systems<br>
+                <span class="gradient-text-v3">That Drive Business Results</span>
+            </h1>
+
+            <!-- Subtext -->
+            <p class="text-lg sm:text-xl text-white/60 max-w-2xl mb-10 leading-relaxed">
+                We capture institutional knowledge, codify expertise, and embed it into systems that operate inside real products and workflows &mdash; moving companies from idea to execution.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-16">
+                <a href="#offerings" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-700 rounded-xl hover:bg-brand-800 transition-all hover:shadow-lg hover:shadow-brand-700/25">
+                    Explore Our Work
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+                <a href="{{ site.contact.cal_com }}" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 rounded-xl hover:border-purple-400/50 hover:bg-white/5 transition-all">
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                    Schedule a Call
+                </a>
+            </div>
+
+            <!-- Stats with animated counters -->
+            <div class="flex flex-wrap gap-8 lg:gap-16">
+                <div>
+                    <div class="text-3xl font-bold text-white"><span class="counter" data-target="5" data-suffix="+">0</span></div>
+                    <div class="text-sm text-white/40 mt-1">Products Built</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white"><span class="counter" data-target="7" data-suffix="+">0</span></div>
+                    <div class="text-sm text-white/40 mt-1">Workshops Delivered</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white"><span class="counter" data-target="60" data-suffix="+">0</span></div>
+                    <div class="text-sm text-white/40 mt-1">Meetup Attendees</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white"><span class="counter" data-target="3" data-suffix="">0</span></div>
+                    <div class="text-sm text-white/40 mt-1">Active Clients</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: dark → light ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-top" style="transform: translateY(-1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,0 L0,40 Q360,60 720,40 Q1080,20 1440,40 L1440,0 Z" fill="#0a0118"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== HOW WE'RE DIFFERENT (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-white" id="approach">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">What Sets Us Apart</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">How We're Different</h2>
+            <p class="text-lg text-slate-600">We're not consultants who hand off slide decks. We're builders who ship real systems.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover reveal reveal-delay-1">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                    <i data-lucide="hammer" class="w-6 h-6 text-brand-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">We Build What We Advise</h3>
+                <p class="text-slate-600 leading-relaxed">Senior operators and full-stack engineers who design, build, and ship &mdash; not slide-driven consultants. Every recommendation is backed by hands-on delivery.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover reveal reveal-delay-2">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                    <i data-lucide="brain" class="w-6 h-6 text-brand-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI-Native, Not AI-Themed</h3>
+                <p class="text-slate-600 leading-relaxed">AI is our starting point, not an add-on. Every workflow, decision, and process is designed with intelligence, automation, and augmentation from day one.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover reveal reveal-delay-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                    <i data-lucide="route" class="w-6 h-6 text-brand-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">From Intent to Working Systems</h3>
+                <p class="text-slate-600 leading-relaxed">We translate go-to-market intent into product choices, and product choices into concrete system design &mdash; POC, MVP, and production-grade delivery.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: light → dark ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#0f0a28"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== AI MATURITY MODEL (DARK) — D3: Radial Arc ===================== -->
+<section class="py-24 lg:py-32 dark-section" style="background: #0f0a28;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">Our Methodology</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white">AI Maturity Model</h2>
+            <p class="text-lg text-white/60">Four modes that guide how expert systems mature &mdash; from surfacing context to operating independently within clearly defined guardrails.</p>
+        </div>
+
+        <!-- D3 Radial Visualization -->
+        <div class="flex justify-center mb-16 reveal">
+            <div id="maturity-viz" class="relative" style="width: 100%; max-width: 500px; height: 500px;"></div>
+        </div>
+
+        <!-- Text Fallback Cards -->
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass-card rounded-2xl p-6 text-center reveal reveal-delay-1">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #6d28d9;">
+                    <i data-lucide="search" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Phase 1</span>
+                <h3 class="text-lg font-bold mt-2 mb-2 text-white">Assist</h3>
+                <p class="text-sm text-white/50">Systems surface context, insights, and recommendations to support decision-making.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 text-center reveal reveal-delay-2">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #8b5cf6;">
+                    <i data-lucide="cog" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Phase 2</span>
+                <h3 class="text-lg font-bold mt-2 mb-2 text-white">Automate</h3>
+                <p class="text-sm text-white/50">Repeatable tasks and workflows are handled consistently by systems.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 text-center reveal reveal-delay-3">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #06b6d4;">
+                    <i data-lucide="users" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Phase 3</span>
+                <h3 class="text-lg font-bold mt-2 mb-2 text-white">Augment</h3>
+                <p class="text-sm text-white/50">Expert judgment is enhanced through AI-supported reasoning and collaboration.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 text-center reveal reveal-delay-4">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4" style="background: #14b8a6;">
+                    <i data-lucide="bot" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Phase 4</span>
+                <h3 class="text-lg font-bold mt-2 mb-2 text-white">Autonomy</h3>
+                <p class="text-sm text-white/50">Systems operate independently within clearly defined guardrails and boundaries.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: dark → light ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-top" style="transform: translateY(-1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,0 L0,40 Q360,60 720,40 Q1080,20 1440,40 L1440,0 Z" fill="#0f0a28"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== PRODUCT ECOSYSTEM (LIGHT) — D3: Force Graph ===================== -->
+<section class="py-24 lg:py-32 bg-slate-50" id="ecosystem">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-6 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Our Ecosystem</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Product Ecosystem</h2>
+            <p class="text-lg text-slate-600">Applied expert systems we actively build, deploy, and evolve. Each reflects a vertical expression of our shared system foundation.</p>
+        </div>
+
+        <!-- Unified Framework Badge -->
+        <div class="flex justify-center mb-12 reveal">
+            <div class="inline-flex items-center px-6 py-3 rounded-full bg-brand-50 border border-brand-200">
+                <i data-lucide="layers" class="w-5 h-5 text-brand-600 mr-3"></i>
+                <span class="text-sm font-medium text-brand-700">Drag nodes &middot; Hover to highlight &middot; Click to visit</span>
+            </div>
+        </div>
+
+        <!-- D3 Force-Directed Graph -->
+        <div class="reveal">
+            <div id="ecosystem-viz" class="rounded-2xl p-4" style="height: 500px; background: linear-gradient(135deg, #0f0a28, #1a1040); border-radius: 1rem;"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: light → dark ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#1a1040"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== EXECUTION FLYWHEEL (DARK) — D3: Circular Flow ===================== -->
+<section class="py-24 lg:py-32 dark-section" style="background: #1a1040;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">Our Process</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white">Execution Flywheel</h2>
+            <p class="text-lg text-white/60">A self-reinforcing cycle where community events feed into workshops, workshops generate project opportunities, and projects evolve into products.</p>
+        </div>
+
+        <!-- D3 Flywheel Visualization -->
+        <div class="flex justify-center reveal">
+            <div id="flywheel-viz" style="width: 100%; max-width: 550px; height: 450px;"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: dark → light ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-top" style="transform: translateY(-1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,0 L0,40 Q360,60 720,40 Q1080,20 1440,40 L1440,0 Z" fill="#1a1040"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== TECHNOLOGY STACK (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Tech Stack</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Technology We Use</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center card-hover reveal reveal-delay-1">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="layout" class="w-5 h-5 text-blue-700"></i>
+                </div>
+                <h4 class="font-semibold text-sm mb-2">Frontend</h4>
+                <p class="text-xs text-slate-500">React, Next.js, Tailwind, TypeScript</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center card-hover reveal reveal-delay-2">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="server" class="w-5 h-5 text-emerald-700"></i>
+                </div>
+                <h4 class="font-semibold text-sm mb-2">Backend</h4>
+                <p class="text-xs text-slate-500">Python, FastAPI, Node.js, Go</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center card-hover reveal reveal-delay-3">
+                <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="database" class="w-5 h-5 text-violet-700"></i>
+                </div>
+                <h4 class="font-semibold text-sm mb-2">Data</h4>
+                <p class="text-xs text-slate-500">PostgreSQL, Redis, Pinecone, Qdrant</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center card-hover reveal reveal-delay-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="workflow" class="w-5 h-5 text-amber-700"></i>
+                </div>
+                <h4 class="font-semibold text-sm mb-2">Orchestration</h4>
+                <p class="text-xs text-slate-500">LangChain, CrewAI, OpenAI, Anthropic</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center card-hover reveal reveal-delay-1">
+                <div class="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="cloud" class="w-5 h-5 text-cyan-700"></i>
+                </div>
+                <h4 class="font-semibold text-sm mb-2">Cloud</h4>
+                <p class="text-xs text-slate-500">AWS, GCP, Vercel, Docker</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== OFFERINGS (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-slate-50" id="offerings">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">What We Offer</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Offerings</h2>
+            <p class="text-lg text-slate-600">Flexible engagement models aligned to your stage, scope, and long-term fit.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Advisory -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-1">
+                <div class="h-2 bg-gradient-to-r from-brand-700 to-brand-500"></div>
+                <div class="p-8">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                        <i data-lucide="compass" class="w-6 h-6 text-brand-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Advisory & Fractional Leadership</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Senior product and technical leadership to shape direction, clarify system boundaries, translate vision into executable plans, and guide teams through critical build decisions.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">Product strategy & roadmapping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">Technology assessment & architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">AI use case identification</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Build & Delivery -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-2">
+                <div class="h-2 bg-gradient-to-r from-brand-600 to-brand-400"></div>
+                <div class="p-8">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                        <i data-lucide="code-2" class="w-6 h-6 text-brand-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hands-On Build & Delivery</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Direct ownership of designing, building, and shipping products &mdash; from MVPs and POCs to production-grade platforms tied to real business outcomes.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">Expert systems & AI platforms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">Full-stack development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">POC &rarr; MVP &rarr; Production</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Workshops -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-3">
+                <div class="h-2 bg-gradient-to-r from-brand-500 to-brand-300"></div>
+                <div class="p-8">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                        <i data-lucide="presentation" class="w-6 h-6 text-brand-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Workshops & Training</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Practitioner-led sessions that help teams adopt an AI-first mindset, align on real use cases, and leverage AI tools to drive business outcomes.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">AI Builder Workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">AI Builder Meetups</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-slate-600">Custom team enablement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engagement Models -->
+        <div class="mt-16 bg-white rounded-2xl p-8 lg:p-12 border border-slate-200 reveal">
+            <h3 class="text-xl font-bold text-center mb-8">Flexible Engagement Models</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="file-text" class="w-5 h-5 text-brand-700"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">Fee-Based</h4>
+                    <p class="text-sm text-slate-600">Retainers and scoped build engagements with clearly defined deliverables.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-brand-700"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">Growth-Linked</h4>
+                    <p class="text-sm text-slate-600">Compensation tied to measurable business outcomes like revenue growth.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="handshake" class="w-5 h-5 text-brand-700"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">Equity-Based</h4>
+                    <p class="text-sm text-slate-600">Selective partnerships where we contribute senior execution for equity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== PRODUCTS (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-white" id="products">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Track Record</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Products We've Built</h2>
+            <p class="text-lg text-slate-600">Applied expert systems we actively build, deploy, and evolve.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="https://linklibrary.ai" target="_blank" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                        <i data-lucide="bookmark" class="w-5 h-5 text-blue-700"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">LinkLibrary</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Save, search, and share knowledge seamlessly across platforms and devices.</p>
+                <span class="text-xs text-slate-400 mt-3 block">linklibrary.ai</span>
+            </a>
+
+            <a href="https://finciples.ai" target="_blank" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
+                        <i data-lucide="trending-up" class="w-5 h-5 text-emerald-700"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Finciples</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">AI-driven financial reasoning and decision support powered by proven investment philosophies.</p>
+                <span class="text-xs text-slate-400 mt-3 block">finciples.ai</span>
+            </a>
+
+            <a href="https://chatpilot.dev" target="_blank" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-3">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                        <i data-lucide="message-square" class="w-5 h-5 text-violet-700"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">ChatPilot</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Conversational expert systems that answer questions and take contextual actions on your data.</p>
+                <span class="text-xs text-slate-400 mt-3 block">chatpilot.dev</span>
+            </a>
+
+            <a href="https://exitous.co" target="_blank" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                        <i data-lucide="compass" class="w-5 h-5 text-amber-700"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">ExitBetter</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Structured guidance systems for career transitions &mdash; helping professionals navigate change with clarity.</p>
+                <span class="text-xs text-slate-400 mt-3 block">exitous.co</span>
+            </a>
+
+            <a href="https://tacilent.ai" target="_blank" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-red-700"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Risk AI Quotient (RAIQ)</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Risk assessment, compliance intelligence, and AI-powered governance for organizations.</p>
+                <span class="text-xs text-slate-400 mt-3 block">tacilent.ai</span>
+            </a>
+
+            <div class="bg-gradient-to-br from-brand-50 to-white rounded-2xl p-6 border border-brand-200 reveal reveal-delay-3">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center">
+                        <i data-lucide="flask-conical" class="w-5 h-5 text-brand-700"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-brand-600 bg-brand-100 px-2 py-1 rounded-full">Labs</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Coming Soon</h3>
+                <p class="text-sm text-slate-600 leading-relaxed"><strong>Voice IO</strong> &mdash; voice-first interfaces for expert systems. <strong>SayHello</strong> &mdash; intelligent event and relationship matching.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== CLIENTS (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-slate-50" id="clients">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Our Clients</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Who We Work With</h2>
+            <p class="text-lg text-slate-600">We partner with organizations to operationalize AI &mdash; turning intent into working systems.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-1">
+                <div class="p-8">
+                    <img src="{{ '/assets/img/clients-exitous.png' | relative_url }}" alt="Exitous" class="h-12 object-contain mb-6">
+                    <h3 class="text-lg font-bold mb-2">Exitous</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">An early-stage platform focused on structured guidance for individuals navigating layoffs and career transitions.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Former Google Leaders</span>
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Techstars</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-2">
+                <div class="p-8">
+                    <img src="{{ '/assets/img/clients-tacilent.png' | relative_url }}" alt="Tacilent" class="h-12 object-contain mb-6">
+                    <h3 class="text-lg font-bold mb-2">Tacilent</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Building AI-powered risk, assessment, and compliance intelligence across product definition and execution.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">FBI</span>
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Amazon</span>
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">EY</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover reveal reveal-delay-3">
+                <div class="p-8">
+                    <img src="{{ '/assets/img/clients-mw.png' | relative_url }}" alt="Mindwave Solutions" class="h-12 object-contain mb-6">
+                    <h3 class="text-lg font-bold mb-2">Mindwave Solutions</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">A scaling organization in transportation and trucking, replacing legacy ERP systems for enterprise customers.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Enterprise</span>
+                        <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">$100M+ ARR Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== COMMUNITY & TRAINING (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Community</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Training & Enablement</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 card-hover reveal reveal-delay-1">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                    <i data-lucide="presentation" class="w-6 h-6 text-brand-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI Builder Workshops</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Hands-on, practitioner-led sessions covering AI concepts, tools, application development, and agent building.</p>
+                <div class="flex gap-6">
+                    <div class="bg-white rounded-xl px-4 py-3 text-center border border-slate-200">
+                        <div class="text-2xl font-bold text-brand-700">7+</div>
+                        <div class="text-xs text-slate-500 mt-1">Workshops</div>
+                    </div>
+                    <div class="bg-white rounded-xl px-4 py-3 text-center border border-slate-200">
+                        <div class="text-2xl font-bold text-brand-700">~12</div>
+                        <div class="text-xs text-slate-500 mt-1">Avg Cohort</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 card-hover reveal reveal-delay-2">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                    <i data-lucide="users" class="w-6 h-6 text-brand-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI Builder Meetups</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Community-driven sessions where builders share real-world learnings, tools, and system patterns.</p>
+                <div class="flex gap-6">
+                    <div class="bg-white rounded-xl px-4 py-3 text-center border border-slate-200">
+                        <div class="text-2xl font-bold text-brand-700">60-70</div>
+                        <div class="text-xs text-slate-500 mt-1">Attendees/Session</div>
+                    </div>
+                    <div class="bg-white rounded-xl px-4 py-3 text-center border border-slate-200">
+                        <div class="text-2xl font-bold text-brand-700">Dec '25</div>
+                        <div class="text-xs text-slate-500 mt-1">Launched</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== TEAM (LIGHT) ===================== -->
+<section class="py-24 lg:py-32 bg-slate-50" id="team">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-6 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Our Team</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Human + AI</h2>
+            <p class="text-lg text-slate-600 mb-16">Every team member is supported by AI agents. Our hybrid model blends human expertise with AI automation &mdash; achieving more together than either could alone.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div class="text-center reveal reveal-delay-1">
+                <div class="relative mb-6 inline-block">
+                    <img src="{{ '/assets/img/team-sree.jpeg' | relative_url }}" alt="Sree Pradhip" class="w-28 h-28 rounded-2xl object-cover mx-auto ring-4 ring-brand-100">
+                </div>
+                <h3 class="text-lg font-bold">Sree Pradhip</h3>
+                <p class="text-sm text-slate-500 mb-3">Founder & CEO</p>
+                <p class="text-xs text-slate-400 mb-3">Atlanta, GA, USA</p>
+                <a href="https://www.linkedin.com/in/sree-pradhip/" target="_blank" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-1"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="text-center reveal reveal-delay-2">
+                <div class="relative mb-6 inline-block">
+                    <img src="{{ '/assets/img/team-balaji.jpeg' | relative_url }}" alt="Balaji Nagisetty" class="w-28 h-28 rounded-2xl object-cover mx-auto ring-4 ring-brand-100">
+                </div>
+                <h3 class="text-lg font-bold">Balaji Nagisetty</h3>
+                <p class="text-sm text-slate-500 mb-3">Principal Architect</p>
+                <p class="text-xs text-slate-400 mb-3">Munich, Germany</p>
+                <a href="https://www.linkedin.com/in/balajinagisetty/" target="_blank" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-1"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="text-center reveal reveal-delay-3">
+                <div class="relative mb-6 inline-block">
+                    <img src="{{ '/assets/img/team-prathik.jpeg' | relative_url }}" alt="Prathik Anand" class="w-28 h-28 rounded-2xl object-cover mx-auto ring-4 ring-brand-100">
+                </div>
+                <h3 class="text-lg font-bold">Prathik Anand</h3>
+                <p class="text-sm text-slate-500 mb-3">Principal Engineer</p>
+                <p class="text-xs text-slate-400 mb-3">Bengaluru, India</p>
+                <a href="https://www.linkedin.com/in/prathik-a-2a8791147/" target="_blank" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-1"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="text-center reveal reveal-delay-4">
+                <div class="relative mb-6 inline-block">
+                    <img src="{{ '/assets/img/team-bhoomika.jpeg' | relative_url }}" alt="Bhoomika Shah" class="w-28 h-28 rounded-2xl object-cover mx-auto ring-4 ring-brand-100">
+                </div>
+                <h3 class="text-lg font-bold">Bhoomika Shah</h3>
+                <p class="text-sm text-slate-500 mb-3">Biz Dev & Operations</p>
+                <p class="text-xs text-slate-400 mb-3">Atlanta, GA, USA</p>
+                <a href="https://www.linkedin.com/in/bhoomika-shah-7a54131b7/" target="_blank" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-1"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Team -->
+        <div class="flex flex-wrap justify-center gap-6 reveal">
+            <div class="flex items-center bg-white rounded-xl px-6 py-4 border border-slate-200">
+                <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mr-4">
+                    <i data-lucide="bot" class="w-5 h-5 text-brand-700"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-sm">AI Agents</div>
+                    <div class="text-xs text-slate-500">On Prem / Cloud</div>
+                </div>
+            </div>
+            <div class="flex items-center bg-white rounded-xl px-6 py-4 border border-slate-200">
+                <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mr-4">
+                    <i data-lucide="users" class="w-5 h-5 text-brand-700"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-sm">Consultants</div>
+                    <div class="text-xs text-slate-500">USA, Turkey, India</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== PARTNERSHIPS (LIGHT) ===================== -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-4">Partnerships & Community</p>
+            <p class="text-lg text-slate-600">Active members and contributors to these organizations.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-16 reveal">
+            <img src="{{ '/assets/img/partnerships-ta.png' | relative_url }}" alt="Tech Alpharetta" class="h-14 object-contain partner-logo">
+            <img src="{{ '/assets/img/partnerships-aic.png' | relative_url }}" alt="AI Collective" class="h-14 object-contain partner-logo">
+            <img src="{{ '/assets/img/partnerships-aitinkerers.png' | relative_url }}" alt="AI Tinkerers" class="h-14 object-contain partner-logo">
+            <img src="{{ '/assets/img/partnerships-atv.png' | relative_url }}" alt="Atlanta Tech Village" class="h-14 object-contain partner-logo">
+            <img src="{{ '/assets/img/partnerships-tie.png' | relative_url }}" alt="TiE Atlanta" class="h-14 object-contain partner-logo">
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WAVE: light → dark ===== -->
+<div class="relative">
+    <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#0a0118"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- ===================== CTA (DARK) ===================== -->
+<section class="py-24 lg:py-32 relative dark-section overflow-hidden" style="background: #0a0118;">
+    <!-- D3 Particle Background -->
+    <div id="cta-network" class="absolute inset-0" style="height: 100%;"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">Ready to Build?</h2>
+            <p class="text-lg text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Let's discuss how we can help translate your intent and expertise into clearly defined systems that can be built, shipped, and tied to real business outcomes.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="{{ site.contact.cal_com }}" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0a0118] bg-white rounded-xl hover:bg-brand-50 transition-all hover:shadow-lg">
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                    Schedule a Call
+                </a>
+                <a href="mailto:{{ site.contact.email }}" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 rounded-xl hover:bg-white/10 transition-all">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                    Send an Email
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <a href="mailto:{{ site.contact.email }}" class="flex items-center text-white/40 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                    <span class="text-sm">{{ site.contact.email }}</span>
+                </a>
+                <a href="{{ site.contact.linkedin }}" target="_blank" class="flex items-center text-white/40 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-2"></i>
+                    <span class="text-sm">LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== FOOTER (DARK) ===================== -->
+<footer style="background: #070012;" class="text-white/40 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            <!-- Brand -->
+            <div class="lg:col-span-2">
+                <img src="{{ '/assets/img/pulsarventures.png' | relative_url }}" alt="Pulsar Ventures" class="h-10 mb-4">
+                <p class="text-sm leading-relaxed max-w-sm">
+                    A builder studio focused on helping companies move from idea to execution through expert systems, AI-native platforms, and hands-on delivery.
+                </p>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4">Products</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="https://linklibrary.ai" target="_blank" class="text-sm hover:text-white transition-colors">LinkLibrary</a></li>
+                    <li><a href="https://finciples.ai" target="_blank" class="text-sm hover:text-white transition-colors">Finciples</a></li>
+                    <li><a href="https://chatpilot.dev" target="_blank" class="text-sm hover:text-white transition-colors">ChatPilot</a></li>
+                    <li><a href="https://exitous.co" target="_blank" class="text-sm hover:text-white transition-colors">ExitBetter</a></li>
+                    <li><a href="https://tacilent.ai" target="_blank" class="text-sm hover:text-white transition-colors">RAIQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4">Company</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#approach" class="text-sm hover:text-white transition-colors">Approach</a></li>
+                    <li><a href="#offerings" class="text-sm hover:text-white transition-colors">Offerings</a></li>
+                    <li><a href="#clients" class="text-sm hover:text-white transition-colors">Clients</a></li>
+                    <li><a href="#team" class="text-sm hover:text-white transition-colors">Team</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4">Connect</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="mailto:{{ site.contact.email }}" class="text-sm hover:text-white transition-colors">Email</a></li>
+                    <li><a href="{{ site.contact.cal_com }}" target="_blank" class="text-sm hover:text-white transition-colors">Schedule a Call</a></li>
+                    <li><a href="{{ site.contact.linkedin }}" target="_blank" class="text-sm hover:text-white transition-colors">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-sm">&copy; {{ 'now' | date: "%Y" }} Pulsar Ventures. All rights reserved.</p>
+            <p class="text-xs text-white/20 mt-2 sm:mt-0">Atlanta, GA &middot; Global Operations</p>
+        </div>
+    </div>
+</footer>
