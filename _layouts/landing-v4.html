@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+    tailwindcss.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                },
+                colors: {
+                    brand: {
+                        50:  '#f5f3ff',
+                        100: '#ede9fe',
+                        200: '#ddd6fe',
+                        300: '#c4b5fd',
+                        400: '#a78bfa',
+                        500: '#8b5cf6',
+                        600: '#7c3aed',
+                        700: '#6d28d9',
+                        800: '#5b21b6',
+                        900: '#4c1d95',
+                        950: '#2e1065',
+                    }
+                },
+                animation: {
+                    'fade-up': 'fadeUp 0.6s ease-out forwards',
+                    'fade-in': 'fadeIn 0.6s ease-out forwards',
+                    'slide-right': 'slideRight 0.6s ease-out forwards',
+                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                },
+                keyframes: {
+                    fadeUp: {
+                        '0%': { opacity: '0', transform: 'translateY(30px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    },
+                    fadeIn: {
+                        '0%': { opacity: '0' },
+                        '100%': { opacity: '1' },
+                    },
+                    slideRight: {
+                        '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0)' },
+                    },
+                }
+            }
+        }
+    }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* ===== REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== HERO BACKGROUND PATTERN ===== */
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* ===== GRADIENT TEXT (purple) ===== */
+        .gradient-text {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== GRADIENT TEXT V3 (purple to cyan) ===== */
+        .gradient-text-v3 {
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== SUBTLE GLOW ===== */
+        .glow-brand {
+            box-shadow: 0 0 60px rgba(124, 58, 237, 0.15);
+        }
+
+        /* ===== CARD HOVER LIFT ===== */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== NAV BLUR ===== */
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* ===== PROGRESS LINE ===== */
+        .progress-line {
+            position: relative;
+        }
+        .progress-line::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            right: 24px;
+            height: 2px;
+            background: linear-gradient(90deg, #7c3aed, #a78bfa, #c4b5fd, #ddd6fe);
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .progress-line::before {
+                display: none;
+            }
+        }
+
+        /* ===== DARK SECTION WITH NOISE OVERLAY ===== */
+        .dark-section {
+            position: relative;
+        }
+        .dark-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+        .dark-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== GLASSMORPHISM CARDS ===== */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== GRADIENT BORDER CARDS ===== */
+        .gradient-border {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(6, 182, 212, 0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* ===== SVG WAVE DIVIDERS ===== */
+        .wave-divider {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
+        .wave-divider-top {
+            top: -1px;
+        }
+        .wave-divider-bottom {
+            bottom: -1px;
+        }
+
+        /* ===== PARTNER LOGO GRAYSCALE HOVER ===== */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* ===== STAT CARD ===== */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(139, 92, 246, 0.02) 100%);
+        }
+    </style>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.image %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+    {% elsif site.og_image %}
+    <meta property="og:image" content="{{ site.og_image | absolute_url }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    {% seo %}
+</head>
+<body class="font-sans antialiased text-slate-900 bg-white overflow-x-hidden">
+
+    {{ content }}
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ===== SCROLL REVEAL =====
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== NAVBAR SCROLL EFFECT =====
+    // If nav has data-nav-fixed="white", keep it white always.
+    // Otherwise toggle dark/transparent at top vs light on scroll.
+    const nav = document.getElementById('landing-nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    if (nav && nav.dataset.navFixed !== 'white') {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-white/95', 'shadow-sm', 'nav-blur');
+                nav.classList.remove('bg-transparent');
+                navLinks.forEach(l => {
+                    l.classList.remove('text-white/80', 'hover:text-white');
+                    l.classList.add('text-slate-600', 'hover:text-brand-700');
+                });
+            } else {
+                nav.classList.remove('bg-white/95', 'shadow-sm', 'nav-blur');
+                nav.classList.add('bg-transparent');
+                navLinks.forEach(l => {
+                    l.classList.remove('text-slate-600', 'hover:text-brand-700');
+                    l.classList.add('text-white/80', 'hover:text-white');
+                });
+            }
+        });
+    }
+
+    // ===== MOBILE MENU TOGGLE =====
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    }
+
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    </script>
+</body>
+</html>
