@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-v4
 title: "Company"
 permalink: /company/
 description: "Learn about our mission, team, and principles that drive innovation and business transformation"

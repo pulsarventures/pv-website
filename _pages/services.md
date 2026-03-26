@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-v4
 title: "Services"
 permalink: /services/
 description: "Comprehensive consulting, workshops, coaching, and speaking services to accelerate your business growth"

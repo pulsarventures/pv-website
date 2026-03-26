@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-v4
 title: "Contact Us"
 permalink: /contact/
 description: "Get in touch with Pulsar Ventures to discuss how we can help bootstrap your business"
