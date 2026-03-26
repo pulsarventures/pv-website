@@ -1,1 +1,7 @@
 _site/
+.claude/
+package-lock.json
+node_modules/
+.jekyll-cache/
+.sass-cache/
+.DS_Store
