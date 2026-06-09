@@ -1,0 +1,97 @@
+<!-- How We Do It — process (sticky flow header + timeline) -->
+<div class="how-we-work-process relative">
+<div id="hww-sentinel" class="absolute top-0 left-0 h-px w-full" aria-hidden="true"></div>
+
+<!-- Process flow (sticky until end of timeline) -->
+<div class="how-we-work-flow mb-8 max-w-4xl mx-auto" role="img" aria-label="Define, Design, Enable, Validate">
+    <svg class="how-we-work-flow-svg w-full h-auto" viewBox="0 0 920 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+            <linearGradient id="flowGradSoft" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ddd6fe"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+        </defs>
+        <path d="M 110 70 C 230 70, 230 70, 310 70 C 390 70, 390 70, 460 70 C 530 70, 530 70, 610 70 C 690 70, 690 70, 810 70" stroke="url(#flowGradSoft)" stroke-width="3" stroke-linecap="round"/>
+        <g class="flow-node is-active" data-step="0"><circle cx="110" cy="70" r="28" class="flow-node-circle"/><text x="110" y="75" text-anchor="middle" class="flow-node-label">Define</text></g>
+        <g class="flow-node" data-step="1"><circle cx="310" cy="70" r="28" class="flow-node-circle"/><text x="310" y="75" text-anchor="middle" class="flow-node-label">Design</text></g>
+        <g class="flow-node" data-step="2"><circle cx="530" cy="70" r="28" class="flow-node-circle"/><text x="530" y="75" text-anchor="middle" class="flow-node-label">Enable</text></g>
+        <g class="flow-node" data-step="3"><circle cx="810" cy="70" r="28" class="flow-node-circle"/><text x="810" y="75" text-anchor="middle" class="flow-node-label">Validate</text></g>
+    </svg>
+</div>
+
+<!-- Engagement paths -->
+<div class="grid sm:grid-cols-2 gap-3 mb-8 max-w-3xl mx-auto">
+    <div class="how-we-work-path-card rounded-xl p-4">
+        <div class="flex items-center gap-2 mb-1"><div class="how-we-work-path-icon"><i data-lucide="sparkles" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-sm font-bold text-slate-900">Build from Scratch</h3></div>
+        <p class="text-xs text-slate-600 leading-relaxed">For non-technical founders with an app idea — we define, design, and ship your first working system.</p>
+    </div>
+    <div class="how-we-work-path-card rounded-xl p-4">
+        <div class="flex items-center gap-2 mb-1"><div class="how-we-work-path-icon"><i data-lucide="wrench" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-sm font-bold text-slate-900">Existing Apps & Infrastructure</h3></div>
+        <p class="text-xs text-slate-600 leading-relaxed">For teams with something live — we assess what you have, fix gaps, and recommend the right next move.</p>
+    </div>
+</div>
+
+<!-- Timeline -->
+<div class="relative max-w-3xl mx-auto" id="how-we-work-timeline">
+    <div class="how-we-work-line md:hidden absolute left-4 top-0 bottom-0 w-0.5" aria-hidden="true"><div class="how-we-work-line-fill"></div></div>
+    <div class="how-we-work-line hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2" aria-hidden="true"><div class="how-we-work-line-fill"></div></div>
+
+    <!-- 01 Define — right -->
+    <div class="how-we-work-step mb-6 grid grid-cols-[2rem_1fr] md:grid-cols-[1fr_2rem_1fr] md:gap-x-3 items-start">
+        <div class="hidden md:block"></div>
+        <div class="how-we-work-marker col-start-1 md:col-start-2 row-start-1 z-10 mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white ring-4 ring-white">01</div>
+        <div class="how-we-work-card col-start-2 md:col-start-3 row-start-1">
+            <div class="how-we-work-card-inner rounded-xl border border-slate-200 bg-white p-4">
+                <div class="flex items-center gap-2 mb-2"><div class="how-we-work-icon"><i data-lucide="clipboard-list" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-base font-bold text-slate-900">Define</h3></div>
+                <p class="text-sm text-slate-600 leading-snug mb-2">Understand the business problem, existing infrastructure, budget, team constraints, and target metrics — before any technical decisions.</p>
+                <div class="flex flex-wrap gap-1"><span class="how-we-work-tag">Analysis Session</span><span class="how-we-work-tag">Discovery Session</span><span class="how-we-work-tag">Requirements Map</span><span class="how-we-work-tag how-we-work-tag-muted">~2 sessions</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 Design — left -->
+    <div class="how-we-work-step mb-6 grid grid-cols-[2rem_1fr] md:grid-cols-[1fr_2rem_1fr] md:gap-x-3 items-start">
+        <div class="how-we-work-card col-start-2 md:col-start-1 md:row-start-1 row-start-1">
+            <div class="how-we-work-card-inner rounded-xl border border-slate-200 bg-white p-4">
+                <div class="flex items-center gap-2 mb-2"><div class="how-we-work-icon"><i data-lucide="layers" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-base font-bold text-slate-900">Design</h3></div>
+                <p class="text-sm text-slate-600 leading-snug mb-2">Platform decisions, database and backend complexity, AI vs non-AI scope, and cloud architecture — delivered as a professional written proposal with two options.</p>
+                <div class="flex flex-wrap gap-1"><span class="how-we-work-tag">Architecture Doc</span><span class="how-we-work-tag">Two Options</span><span class="how-we-work-tag">Cost Model</span><span class="how-we-work-tag how-we-work-tag-muted">2–3 days offline</span></div>
+            </div>
+        </div>
+        <div class="how-we-work-marker col-start-1 md:col-start-2 row-start-1 z-10 mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white ring-4 ring-white">02</div>
+        <div class="hidden md:block"></div>
+    </div>
+
+    <!-- 03 Enable — right -->
+    <div class="how-we-work-step mb-6 grid grid-cols-[2rem_1fr] md:grid-cols-[1fr_2rem_1fr] md:gap-x-3 items-start">
+        <div class="hidden md:block"></div>
+        <div class="how-we-work-marker col-start-1 md:col-start-2 row-start-1 z-10 mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white ring-4 ring-white">03</div>
+        <div class="how-we-work-card col-start-2 md:col-start-3 row-start-1">
+            <div class="how-we-work-card-inner rounded-xl border border-slate-200 bg-white p-4">
+                <div class="flex items-center gap-2 mb-2"><div class="how-we-work-icon"><i data-lucide="code-2" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-base font-bold text-slate-900">Enable</h3></div>
+                <p class="text-sm text-slate-600 leading-snug mb-2">Build the system or strengthen what exists — web, mobile, or desktop. We factor in team size, cloud credits, and hardware-level access where needed.</p>
+                <div class="flex flex-wrap gap-1"><span class="how-we-work-tag">Working System</span><span class="how-we-work-tag">Cloud Setup</span><span class="how-we-work-tag">Team Handoff</span><span class="how-we-work-tag how-we-work-tag-muted">Scoped to project</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 Validate — left -->
+    <div class="how-we-work-step grid grid-cols-[2rem_1fr] md:grid-cols-[1fr_2rem_1fr] md:gap-x-3 items-start">
+        <div class="how-we-work-card col-start-2 md:col-start-1 md:row-start-1 row-start-1">
+            <div class="how-we-work-card-inner rounded-xl border border-slate-200 bg-white p-4">
+                <div class="flex items-center gap-2 mb-2"><div class="how-we-work-icon"><i data-lucide="shield-check" class="w-4 h-4 text-brand-700"></i></div><h3 class="text-base font-bold text-slate-900">Validate</h3></div>
+                <p class="text-sm text-slate-600 leading-snug mb-2">Test coverage, security review, and success metrics against your original goals. Nothing ships until it meets the bar you defined upfront.</p>
+                <div class="flex flex-wrap gap-1"><span class="how-we-work-tag">Test Coverage</span><span class="how-we-work-tag">Security Review</span><span class="how-we-work-tag">Success Metrics</span><span class="how-we-work-tag how-we-work-tag-muted">Before launch</span></div>
+            </div>
+        </div>
+        <div class="how-we-work-marker col-start-1 md:col-start-2 row-start-1 z-10 mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white ring-4 ring-white">04</div>
+        <div class="hidden md:block"></div>
+    </div>
+</div>
+</div><!-- /how-we-work-process -->
+
+<div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center max-w-3xl mx-auto">
+    <p class="text-sm text-slate-600 mb-2">Not sure where you fit? Start with the intake form — we will respond with a scoped recommendation.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-2">
+        <a href="#intake" class="inline-flex items-center justify-center px-4 py-2 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors">Start Intake</a>
+        <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 bg-white text-slate-700 text-sm font-semibold rounded-lg border border-slate-200 hover:border-brand-300 hover:text-brand-700 transition-colors">Schedule a Call</a>
+    </div>
+</div>

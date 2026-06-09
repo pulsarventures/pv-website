@@ -1,0 +1,41 @@
+{% comment %}
+  Usage: {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
+{% endcomment %}
+{% assign logo_list = include.logos | split: "," %}
+<div class="flex w-full items-center justify-between mt-auto pt-3 border-t border-slate-100">
+  {% for logo in logo_list %}
+    {% assign logo = logo | strip %}
+    {% assign logo_name = logo %}
+    {% if logo == "nextjs" %}
+      {% assign logo_name = "Next.js" %}
+    {% elsif logo == "nodejs" %}
+      {% assign logo_name = "Node.js" %}
+    {% elsif logo == "python" %}
+      {% assign logo_name = "Python" %}
+    {% elsif logo == "supabase" %}
+      {% assign logo_name = "Supabase" %}
+    {% elsif logo == "postgres" %}
+      {% assign logo_name = "PostgreSQL" %}
+    {% elsif logo == "aws" %}
+      {% assign logo_name = "AWS" %}
+    {% elsif logo == "azure" %}
+      {% assign logo_name = "Azure" %}
+    {% elsif logo == "go" %}
+      {% assign logo_name = "Go" %}
+    {% elsif logo == "ios" %}
+      {% assign logo_name = "iOS" %}
+    {% elsif logo == "swiftui" %}
+      {% assign logo_name = "SwiftUI" %}
+    {% elsif logo == "railway" %}
+      {% assign logo_name = "Railway" %}
+    {% endif %}
+    <span class="inline-flex h-4 w-4 shrink-0 items-center justify-center" title="{{ logo_name }}">
+      <img
+        src="{{ '/assets/img/tech-logos/icons/' | append: logo | append: '.svg' | relative_url }}"
+        alt="{{ logo_name }}"
+        class="h-4 w-4 object-contain"
+        loading="lazy"
+      >
+    </span>
+  {% endfor %}
+</div>

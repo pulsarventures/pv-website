@@ -1,0 +1,143 @@
+<div id="intake" class="mt-12 pt-8 border-t border-slate-200">
+    <div class="text-center mb-8 max-w-2xl mx-auto">
+        <span class="text-sm font-semibold uppercase tracking-wider text-brand-600 reveal">Get Started</span>
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mt-2 reveal">Project Intake</h2>
+        <p class="text-base text-slate-600 mt-2 reveal">Tell us about your idea. We'll use this to scope your assessment and come prepared to your first session.</p>
+    </div>
+
+    <form id="intake-form" data-access-key="w3f_51c91002cc1f66a0249225d4ff80027680c379cd1662d317" class="max-w-2xl mx-auto bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 reveal" novalidate>
+        <!-- About you -->
+        <fieldset class="mb-8">
+            <legend class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs text-brand-700">1</span>
+                About You
+            </legend>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="intake-name" class="intake-label">Name</label>
+                    <input type="text" id="intake-name" name="name" required class="intake-input" placeholder="Your name">
+                </div>
+                <div>
+                    <label for="intake-email" class="intake-label">Email</label>
+                    <input type="email" id="intake-email" name="email" required class="intake-input" placeholder="you@company.com">
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="intake-company" class="intake-label">Company / Project Name <span class="text-slate-400 font-normal">(optional)</span></label>
+                    <input type="text" id="intake-company" name="company" class="intake-input" placeholder="Pulsar Ventures">
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Your idea -->
+        <fieldset class="mb-8">
+            <legend class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs text-brand-700">2</span>
+                Your Idea
+            </legend>
+            <div class="mb-4">
+                <span class="intake-label">Where are you today?</span>
+                <div class="grid sm:grid-cols-3 gap-2 mt-2">
+                    <label class="intake-radio-card"><input type="radio" name="stage" value="Idea only — nothing built yet" required><span>Idea only</span></label>
+                    <label class="intake-radio-card"><input type="radio" name="stage" value="MVP or prototype exists"><span>MVP / prototype</span></label>
+                    <label class="intake-radio-card"><input type="radio" name="stage" value="Existing product in production"><span>Live product</span></label>
+                </div>
+            </div>
+            <div>
+                <label for="intake-description" class="intake-label">Describe your product or problem</label>
+                <textarea id="intake-description" name="description" required rows="4" class="intake-input resize-none" placeholder="What problem does it solve? Who is it for? What does success look like?"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Technical scope -->
+        <fieldset class="mb-8">
+            <legend class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs text-brand-700">3</span>
+                Technical Scope
+            </legend>
+            <div class="mb-4">
+                <span class="intake-label">Platform requirements</span>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <label class="intake-check-tag"><input type="checkbox" name="platform" value="Web"><span>Web</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="platform" value="Mobile (iOS/Android)"><span>Mobile</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="platform" value="Desktop (Mac/Windows/Linux)"><span>Desktop</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="platform" value="Not sure yet"><span>Not sure</span></label>
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="intake-label">Is AI core to the product?</span>
+                <div class="flex gap-2 mt-2">
+                    <label class="intake-radio-card flex-1"><input type="radio" name="ai" value="Yes — AI is central" required><span>Yes</span></label>
+                    <label class="intake-radio-card flex-1"><input type="radio" name="ai" value="No — traditional app"><span>No</span></label>
+                    <label class="intake-radio-card flex-1"><input type="radio" name="ai" value="Maybe — exploring"><span>Maybe</span></label>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="intake-team" class="intake-label">Team size</label>
+                <select id="intake-team" name="team" required class="intake-input">
+                    <option value="">Select…</option>
+                    <option value="Solo founder">Solo founder</option>
+                    <option value="2–5 people">2–5 people</option>
+                    <option value="6–20 people">6–20 people</option>
+                    <option value="20+ people">20+ people</option>
+                </select>
+            </div>
+            <div>
+                <span class="intake-label">Cloud preference</span>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <label class="intake-check-tag"><input type="checkbox" name="cloud" value="AWS"><span>AWS</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="cloud" value="Azure"><span>Azure</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="cloud" value="GCP"><span>GCP</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="cloud" value="Have cloud credits"><span>Have credits</span></label>
+                    <label class="intake-check-tag"><input type="checkbox" name="cloud" value="No preference"><span>No preference</span></label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Constraints -->
+        <fieldset class="mb-8">
+            <legend class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs text-brand-700">4</span>
+                Constraints
+            </legend>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="intake-budget" class="intake-label">Budget range</label>
+                    <select id="intake-budget" name="budget" required class="intake-input">
+                        <option value="">Select…</option>
+                        <option value="Under $25k">Under $25k</option>
+                        <option value="$25k – $75k">$25k – $75k</option>
+                        <option value="$75k – $150k">$75k – $150k</option>
+                        <option value="$150k+">$150k+</option>
+                        <option value="Not defined yet">Not defined yet</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="intake-timeline" class="intake-label">Target timeline</label>
+                    <select id="intake-timeline" name="timeline" required class="intake-input">
+                        <option value="">Select…</option>
+                        <option value="ASAP (< 3 months)">ASAP (&lt; 3 months)</option>
+                        <option value="3–6 months">3–6 months</option>
+                        <option value="6–12 months">6–12 months</option>
+                        <option value="Exploring — no deadline">Exploring</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="intake-metrics" class="intake-label">Target users or success metrics <span class="text-slate-400 font-normal">(optional)</span></label>
+                    <input type="text" id="intake-metrics" name="metrics" class="intake-input" placeholder="e.g. 1,000 beta users, $50k MRR, internal tool for 20 reps">
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Honeypot: hidden from humans, catches bots -->
+        <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" class="hidden" style="display:none">
+
+        <div id="intake-status" class="hidden mb-4 rounded-lg px-4 py-3 text-sm" role="status" aria-live="polite"></div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
+            <p class="text-xs text-slate-500 text-center sm:text-left">Submits a structured brief to our team. We'll follow up within 2 business days.</p>
+            <button type="submit" id="intake-submit" class="inline-flex items-center justify-center px-6 py-2.5 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors shrink-0 disabled:opacity-60 disabled:cursor-not-allowed">
+                Submit Intake
+            </button>
+        </div>
+    </form>
+</div>
