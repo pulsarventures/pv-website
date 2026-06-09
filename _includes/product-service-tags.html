@@ -1,6 +1,6 @@
 {% comment %}
   Usage: {% include product-service-tags.html tags="b2c,web,aws,ai" %}
-  Tags: b2b, b2c, web, mobile, ios, desktop, aws, azure, gcp, ai
+  Tags: b2b, b2c, b2p, web, mobile, ios, desktop, aws, azure, gcp, ai
 {% endcomment %}
 {% assign tag_list = include.tags | split: "," %}
 <div class="flex flex-wrap gap-1.5 mb-2">
@@ -11,6 +11,8 @@
       {% assign label = "B2B" %}
     {% elsif tag == "b2c" %}
       {% assign label = "B2C" %}
+    {% elsif tag == "b2p" %}
+      {% assign label = "B2P" %}
     {% elsif tag == "web" %}
       {% assign label = "Web" %}
     {% elsif tag == "mobile" %}

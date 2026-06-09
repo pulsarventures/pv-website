@@ -258,138 +258,68 @@ permalink: /
             <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto reveal">Every product is built on a unified expert system framework — domain knowledge captured, codified, and deployed as intelligent software.</p>
         </div>
 
+        <!-- Vertical Legend -->
+        <div class="flex items-center justify-center gap-5 mb-8 reveal">
+            <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-violet-500"></span>
+                <span class="text-xs font-medium text-slate-500">Technology</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <span class="text-xs font-medium text-slate-500">Finance</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                <span class="text-xs font-medium text-slate-500">Media</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                <span class="text-xs font-medium text-slate-500">Productivity</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                <span class="text-xs font-medium text-slate-500">Social</span>
+            </div>
+        </div>
+
         <!-- Products Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Finciples -->
-            <a href="https://finciples.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <!-- BuildPilot — Technology -->
+            <div class="flex flex-col h-full rounded-2xl p-6 border border-violet-200 bg-gradient-to-br from-violet-50 to-white card-hover reveal">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                            <i data-lucide="hammer" class="w-5 h-5 text-violet-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">BuildPilot</h3>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-violet-500 bg-violet-100 px-2 py-0.5 rounded-full">Tech</span>
+                </div>
+                {% include product-service-tags.html tags="b2p,web,ai" %}
+                <p class="text-sm text-slate-600 leading-relaxed">An SDLC system for serious builders. A glass-box team of AI specialists — PM, developer, code reviewer, QA — that carries one ticket from your tracker all the way to a human-reviewed pull request. It automates the process around the coder, not the coder.</p>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
+            </div>
+
+            <!-- Finciples — Finance -->
+            <a href="https://finciples.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full rounded-2xl p-6 border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white card-hover reveal reveal-delay-1">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
-                        <i data-lucide="trending-up" class="w-5 h-5 text-emerald-700"></i>
-                    </div>
+                            <i data-lucide="trending-up" class="w-5 h-5 text-emerald-700"></i>
+                        </div>
                         <h3 class="text-lg font-bold text-slate-900">Finciples</h3>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-500 bg-emerald-100 px-2 py-0.5 rounded-full">Finance</span>
                 </div>
-                {% include product-service-tags.html tags="b2c,web,aws,ai" %}
+                {% include product-service-tags.html tags="b2p,web,ai" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Investment analysis powered by AI and grounded in proven philosophies from Buffett, Dalio, and Lynch. Principles-based reasoning for smarter financial decisions.</p>
                 <span class="text-xs text-slate-400 mt-3 block">finciples.ai</span>
                 {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
-            <!-- ChatPilot -->
-            <a href="https://chatpilot.dev" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
-                        <i data-lucide="message-square" class="w-5 h-5 text-violet-700"></i>
-                    </div>
-                        <h3 class="text-lg font-bold text-slate-900">ChatPilot</h3>
-                    </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
-                </div>
-                {% include product-service-tags.html tags="b2b,web,aws,ai" %}
-                <p class="text-sm text-slate-600 leading-relaxed">A conversational framework for talking to your data and taking contextual actions. Connect databases, APIs, and files — then ask questions in plain English.</p>
-                <span class="text-xs text-slate-400 mt-3 block">chatpilot.dev</span>
-                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
-            </a>
-
-            <!-- LinkLibrary -->
-            <a href="https://linklibrary.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
-                            <img src="https://linklibrary.ai/icon48.png" alt="LinkLibrary logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900">LinkLibrary</h3>
-                    </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
-                </div>
-                {% include product-service-tags.html tags="b2c,web,aws" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Save, organize, and share links across platforms and devices. AI-powered search and tagging so you actually find what you saved.</p>
-                <span class="text-xs text-slate-400 mt-3 block">linklibrary.ai</span>
-                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
-            </a>
-
-            <!-- Say Hello -->
-            <div class="flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center">
-                        <i data-lucide="users" class="w-5 h-5 text-pink-700"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900">Say Hello</h3>
-                </div>
-                {% include product-service-tags.html tags="b2c,mobile,aws" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Walk into a room of 50 or 100 people and know exactly who to talk to. Takes the awkwardness out of networking events and makes introductions intentional.</p>
-                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
-            </div>
-
-            <!-- Key Bloom -->
-            <div class="flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                        <i data-lucide="smartphone" class="w-5 h-5 text-green-700"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900">Key Bloom</h3>
-                </div>
-                {% include product-service-tags.html tags="b2c,mobile,aws" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Parental controls reimagined for toddlers and elementary kids. Children unlock phone access by completing activities — chores, learning tasks, creative challenges. Earn access by doing, not asking.</p>
-                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
-            </div>
-
-            <!-- Exit Better -->
-            <a href="https://exitous.co" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
-                            <img src="https://images.squarespace-cdn.com/content/v1/640f656bd540994fe5e3f8d0/d973c07f-4307-4395-8412-5de339066f90/favicon.ico?format=100w" alt="Exit Better logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900">Exit Better</h3>
-                    </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
-                </div>
-                {% include product-service-tags.html tags="b2c,web,aws,ai" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Structured guidance for professionals navigating layoffs and career transitions. Expert systems that help people move through change with clarity and confidence.</p>
-                <span class="text-xs text-slate-400 mt-3 block">exitous.co</span>
-                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
-            </a>
-
-            <!-- RAIQ -->
-            <a href="https://tacilent.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
-                            <img src="https://framerusercontent.com/images/tvZ4HMQSKHxb73UDYaAiwRz7nTk.png" alt="RAIQ logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900">RAIQ</h3>
-                    </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
-                </div>
-                {% include product-service-tags.html tags="b2b,web,aws,ai" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Risk AI Quotient — AI-powered risk assessment, compliance intelligence, and governance scoring for organizations navigating complex regulatory environments.</p>
-                <span class="text-xs text-slate-400 mt-3 block">tacilent.ai</span>
-                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
-            </a>
-
-            <!-- GetItSigned -->
-            <a href="https://getitsigned.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
-                            <img src="https://getitsigned.app/logo-mark.svg?v=3" alt="GetItSigned logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900">GetItSigned</h3>
-                    </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
-                </div>
-                {% include product-service-tags.html tags="b2b,web,aws" %}
-                <p class="text-sm text-slate-600 leading-relaxed">Effortless e-signatures and document workflows. Send, sign, and track agreements securely — no friction, no paperwork.</p>
-                <span class="text-xs text-slate-400 mt-3 block">getitsigned.app</span>
-                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
-            </a>
-
-            <!-- DualTake -->
-            <a href="https://getdualtake.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
+            <!-- DualTake — Media -->
+            <a href="https://getdualtake.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full rounded-2xl p-6 border border-rose-200 bg-gradient-to-br from-rose-50 to-white card-hover reveal reveal-delay-2">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
@@ -397,13 +327,80 @@ permalink: /
                         </div>
                         <h3 class="text-lg font-bold text-slate-900">DualTake</h3>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-rose-500 bg-rose-100 px-2 py-0.5 rounded-full">Media</span>
                 </div>
-                {% include product-service-tags.html tags="b2c,ios,mobile" %}
+                {% include product-service-tags.html tags="b2p,ios,mobile" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Capture both sides of the moment at once — simultaneous dual-camera recording for authentic, react-and-record storytelling.</p>
                 <span class="text-xs text-slate-400 mt-3 block">getdualtake.app</span>
                 {% include product-tech-logos.html logos="nextjs,ios,swiftui" %}
             </a>
+
+            <!-- Afterglow — Media -->
+            <a href="https://afterglow.film" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full rounded-2xl p-6 border border-rose-200 bg-gradient-to-br from-rose-50 to-white card-hover reveal">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center">
+                            <i data-lucide="camera" class="w-5 h-5 text-rose-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">AfterGlow</h3>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-rose-500 bg-rose-100 px-2 py-0.5 rounded-full">Media</span>
+                </div>
+                {% include product-service-tags.html tags="b2p,ios,mobile" %}
+                <p class="text-sm text-slate-600 leading-relaxed">A film for the room you were in. Private event photography where guests contribute to a shared, invite-only album in real time — then the host locks it as a permanent record. No public feed, no algorithms.</p>
+                <span class="text-xs text-slate-400 mt-3 block">afterglow.film</span>
+                {% include product-tech-logos.html logos="nextjs,ios,swiftui" %}
+            </a>
+
+            <!-- LinkLibrary — Productivity -->
+            <a href="https://linklibrary.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full rounded-2xl p-6 border border-sky-200 bg-gradient-to-br from-sky-50 to-white card-hover reveal reveal-delay-1">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://linklibrary.ai/icon48.png" alt="LinkLibrary logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">LinkLibrary</h3>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-sky-500 bg-sky-100 px-2 py-0.5 rounded-full">Productivity</span>
+                </div>
+                {% include product-service-tags.html tags="b2p,web,ai" %}
+                <p class="text-sm text-slate-600 leading-relaxed">Save, organize, and share links across platforms and devices. AI-powered search and tagging so you actually find what you saved.</p>
+                <span class="text-xs text-slate-400 mt-3 block">linklibrary.ai</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
+            </a>
+
+            <!-- GetItSigned — Productivity -->
+            <a href="https://getitsigned.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full rounded-2xl p-6 border border-sky-200 bg-gradient-to-br from-sky-50 to-white card-hover reveal reveal-delay-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://getitsigned.app/logo-mark.svg?v=3" alt="GetItSigned logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">GetItSigned</h3>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-sky-500 bg-sky-100 px-2 py-0.5 rounded-full">Productivity</span>
+                </div>
+                {% include product-service-tags.html tags="b2p,web" %}
+                <p class="text-sm text-slate-600 leading-relaxed">Effortless e-signatures and document workflows. Send, sign, and track agreements securely — no friction, no paperwork.</p>
+                <span class="text-xs text-slate-400 mt-3 block">getitsigned.app</span>
+                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
+            </a>
+
+            <!-- Say Hello — Social -->
+            <div class="flex flex-col h-full rounded-2xl p-6 border border-pink-200 bg-gradient-to-br from-pink-50 to-white card-hover reveal">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-pink-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Say Hello</h3>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-pink-500 bg-pink-100 px-2 py-0.5 rounded-full">Social</span>
+                </div>
+                {% include product-service-tags.html tags="b2p,mobile" %}
+                <p class="text-sm text-slate-600 leading-relaxed">Walk into a room of 50 or 100 people and know exactly who to talk to. Takes the awkwardness out of networking events and makes introductions intentional.</p>
+                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
+            </div>
         </div>
 
         <!-- Technology Stack -->
