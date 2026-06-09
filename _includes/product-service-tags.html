@@ -1,0 +1,33 @@
+{% comment %}
+  Usage: {% include product-service-tags.html tags="b2c,web,aws,ai" %}
+  Tags: b2b, b2c, web, mobile, ios, desktop, aws, azure, gcp, ai
+{% endcomment %}
+{% assign tag_list = include.tags | split: "," %}
+<div class="flex flex-wrap gap-1.5 mb-2">
+  {% for tag in tag_list %}
+    {% assign tag = tag | strip %}
+    {% assign label = tag | upcase %}
+    {% if tag == "b2b" %}
+      {% assign label = "B2B" %}
+    {% elsif tag == "b2c" %}
+      {% assign label = "B2C" %}
+    {% elsif tag == "web" %}
+      {% assign label = "Web" %}
+    {% elsif tag == "mobile" %}
+      {% assign label = "Mobile" %}
+    {% elsif tag == "ios" %}
+      {% assign label = "iOS" %}
+    {% elsif tag == "desktop" %}
+      {% assign label = "Desktop" %}
+    {% elsif tag == "aws" %}
+      {% assign label = "AWS" %}
+    {% elsif tag == "azure" %}
+      {% assign label = "Azure" %}
+    {% elsif tag == "gcp" %}
+      {% assign label = "GCP" %}
+    {% elsif tag == "ai" %}
+      {% assign label = "AI" %}
+    {% endif %}
+    <span class="product-service-tag product-service-tag-{{ tag }}">{{ label }}</span>
+  {% endfor %}
+</div>

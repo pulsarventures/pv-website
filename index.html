@@ -254,123 +254,155 @@ permalink: /
         <!-- Header -->
         <div class="text-center mb-16">
             <span class="text-sm font-semibold uppercase tracking-wider text-brand-600 reveal">Portfolio</span>
-            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mt-3 reveal">Products & Brands</h2>
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mt-3 reveal">Products</h2>
             <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto reveal">Every product is built on a unified expert system framework — domain knowledge captured, codified, and deployed as intelligent software.</p>
         </div>
 
         <!-- Products Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Finciples -->
-            <a href="https://finciples.ai" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
+            <a href="https://finciples.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
                         <i data-lucide="trending-up" class="w-5 h-5 text-emerald-700"></i>
+                    </div>
+                        <h3 class="text-lg font-bold text-slate-900">Finciples</h3>
                     </div>
                     <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Finciples</h3>
+                {% include product-service-tags.html tags="b2c,web,aws,ai" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Investment analysis powered by AI and grounded in proven philosophies from Buffett, Dalio, and Lynch. Principles-based reasoning for smarter financial decisions.</p>
                 <span class="text-xs text-slate-400 mt-3 block">finciples.ai</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
             <!-- ChatPilot -->
-            <a href="https://chatpilot.dev" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
+            <a href="https://chatpilot.dev" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
                         <i data-lucide="message-square" class="w-5 h-5 text-violet-700"></i>
+                    </div>
+                        <h3 class="text-lg font-bold text-slate-900">ChatPilot</h3>
                     </div>
                     <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">ChatPilot</h3>
+                {% include product-service-tags.html tags="b2b,web,aws,ai" %}
                 <p class="text-sm text-slate-600 leading-relaxed">A conversational framework for talking to your data and taking contextual actions. Connect databases, APIs, and files — then ask questions in plain English.</p>
                 <span class="text-xs text-slate-400 mt-3 block">chatpilot.dev</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
             <!-- LinkLibrary -->
-            <a href="https://linklibrary.ai" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
+            <a href="https://linklibrary.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                        <i data-lucide="bookmark" class="w-5 h-5 text-blue-700"></i>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://linklibrary.ai/icon48.png" alt="LinkLibrary logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">LinkLibrary</h3>
                     </div>
                     <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">LinkLibrary</h3>
+                {% include product-service-tags.html tags="b2c,web,aws" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Save, organize, and share links across platforms and devices. AI-powered search and tagging so you actually find what you saved.</p>
                 <span class="text-xs text-slate-400 mt-3 block">linklibrary.ai</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
             <!-- Say Hello -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
-                <div class="mb-4">
+            <div class="flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
+                <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center">
                         <i data-lucide="users" class="w-5 h-5 text-pink-700"></i>
                     </div>
+                    <h3 class="text-lg font-bold text-slate-900">Say Hello</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Say Hello</h3>
+                {% include product-service-tags.html tags="b2c,mobile,aws" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Walk into a room of 50 or 100 people and know exactly who to talk to. Takes the awkwardness out of networking events and makes introductions intentional.</p>
+                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
             </div>
 
             <!-- Key Bloom -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
-                <div class="mb-4">
+            <div class="flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-1">
+                <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
                         <i data-lucide="smartphone" class="w-5 h-5 text-green-700"></i>
                     </div>
+                    <h3 class="text-lg font-bold text-slate-900">Key Bloom</h3>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Key Bloom</h3>
+                {% include product-service-tags.html tags="b2c,mobile,aws" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Parental controls reimagined for toddlers and elementary kids. Children unlock phone access by completing activities — chores, learning tasks, creative challenges. Earn access by doing, not asking.</p>
+                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
             </div>
 
             <!-- Exit Better -->
-            <a href="https://exitous.co" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
+            <a href="https://exitous.co" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal reveal-delay-2">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
-                        <i data-lucide="compass" class="w-5 h-5 text-amber-700"></i>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.squarespace-cdn.com/content/v1/640f656bd540994fe5e3f8d0/d973c07f-4307-4395-8412-5de339066f90/favicon.ico?format=100w" alt="Exit Better logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Exit Better</h3>
                     </div>
                     <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Exit Better</h3>
+                {% include product-service-tags.html tags="b2c,web,aws,ai" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Structured guidance for professionals navigating layoffs and career transitions. Expert systems that help people move through change with clarity and confidence.</p>
                 <span class="text-xs text-slate-400 mt-3 block">exitous.co</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
             <!-- RAIQ -->
-            <a href="https://tacilent.ai" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
+            <a href="https://tacilent.ai" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-red-700"></i>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://framerusercontent.com/images/tvZ4HMQSKHxb73UDYaAiwRz7nTk.png" alt="RAIQ logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">RAIQ</h3>
                     </div>
                     <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2">RAIQ</h3>
+                {% include product-service-tags.html tags="b2b,web,aws,ai" %}
                 <p class="text-sm text-slate-600 leading-relaxed">Risk AI Quotient — AI-powered risk assessment, compliance intelligence, and governance scoring for organizations navigating complex regulatory environments.</p>
                 <span class="text-xs text-slate-400 mt-3 block">tacilent.ai</span>
+                {% include product-tech-logos.html logos="nextjs,python,supabase,aws" %}
             </a>
 
-            <!-- AI Musings Meetups -->
-            <a href="https://aimusings.site" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-brand-50 to-white rounded-2xl p-6 border border-brand-200 card-hover reveal reveal-delay-1">
+            <!-- GetItSigned -->
+            <a href="https://getitsigned.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center">
-                        <i data-lucide="users" class="w-5 h-5 text-brand-700"></i>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://getitsigned.app/logo-mark.svg?v=3" alt="GetItSigned logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">GetItSigned</h3>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold mb-2"><span class="text-brand-700">AI Musings</span> <span class="text-slate-900">Meetups</span></h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Community-driven sessions where builders share real-world learnings, tools, and system patterns. 4+ meetups with 60 to 70 attendees per session.</p>
-                <span class="text-xs text-slate-400 mt-3 block">aimusings.site</span>
+                {% include product-service-tags.html tags="b2b,web,aws" %}
+                <p class="text-sm text-slate-600 leading-relaxed">Effortless e-signatures and document workflows. Send, sign, and track agreements securely — no friction, no paperwork.</p>
+                <span class="text-xs text-slate-400 mt-3 block">getitsigned.app</span>
+                {% include product-tech-logos.html logos="nextjs,go,postgres,aws" %}
             </a>
 
-            <!-- AI Musings Workshops -->
-            <a href="https://aimusings.site" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-brand-50 to-white rounded-2xl p-6 border border-brand-200 card-hover reveal reveal-delay-2">
+            <!-- DualTake -->
+            <a href="https://getdualtake.app" target="_blank" rel="noopener noreferrer" class="group flex flex-col h-full bg-white rounded-2xl p-6 border border-slate-200 card-hover reveal">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center">
-                        <i data-lucide="presentation" class="w-5 h-5 text-brand-700"></i>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+                            <img src="https://getdualtake.app/favicon.png" alt="DualTake logo" referrerpolicy="no-referrer" loading="lazy" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">DualTake</h3>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 transition-colors"></i>
+                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
                 </div>
-                <h3 class="text-lg font-bold mb-2"><span class="text-brand-700">AI Musings</span> <span class="text-slate-900">Workshops</span></h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Hands-on, practitioner-led sessions covering AI concepts, tools, application development, and agent building. 8+ workshops delivered with an average cohort of 12 to 15.</p>
-                <span class="text-xs text-slate-400 mt-3 block">aimusings.site</span>
+                {% include product-service-tags.html tags="b2c,ios,mobile" %}
+                <p class="text-sm text-slate-600 leading-relaxed">Capture both sides of the moment at once — simultaneous dual-camera recording for authentic, react-and-record storytelling.</p>
+                <span class="text-xs text-slate-400 mt-3 block">getdualtake.app</span>
+                {% include product-tech-logos.html logos="nextjs,ios,swiftui" %}
             </a>
         </div>
 
@@ -409,6 +441,17 @@ permalink: /
                     <p class="text-xs text-slate-500">AWS, GCP, Azure</p>
                 </div>
             </div>
+        </div>
+
+        <!-- How We Do It -->
+        <div id="how-we-do-it" class="mt-12 pt-6 border-t border-slate-200">
+            <div class="text-center mb-8 max-w-2xl mx-auto">
+                <span class="text-sm font-semibold uppercase tracking-wider text-brand-600 reveal">For Non-Technical Founders</span>
+                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mt-2 reveal">How We Do It</h2>
+                <p class="text-base text-slate-600 mt-2 reveal">A structured consulting approach for app ideas — whether you are starting from scratch or improving what already exists.</p>
+            </div>
+            {% include how-we-work-timeline.html %}
+            {% include intake-questionnaire.html %}
         </div>
     </div>
 
