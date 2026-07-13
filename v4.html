@@ -111,24 +111,29 @@
     position: absolute; left: 307px; top: 237px; transform: translate(-50%, -50%);
     width: 210px; height: 210px; border-radius: 50%;
     background: var(--white);
-    box-shadow: 0 24px 50px rgba(0,0,0,.13), 0 4px 12px rgba(0,0,0,.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,.10), 0 8px 20px rgba(0,0,0,.04);
     display: flex; align-items: center; justify-content: center;
   }
   .core-mark {
-    font-weight: 800; font-size: 72px; line-height: .92; letter-spacing: .01em;
+    font-weight: 800; letter-spacing: .01em;
     display: flex; flex-direction: column; align-items: flex-start;
   }
-  .core-mark span:last-child { margin-left: 12px; }
+  .core-mark span:first-child { font-size: 53px; line-height: .78; }
+  .core-mark span:last-child { font-size: 64px; line-height: .82; margin-left: 13px; margin-top: 7px; }
   .sat {
-    position: absolute; width: 72px; height: 72px; border-radius: 50%;
+    position: absolute; width: 78px; height: 78px; border-radius: 50%;
     background: var(--white);
-    box-shadow: 0 10px 26px rgba(0,0,0,.10), 0 0 0 8px rgba(255,255,255,.55);
+    box-shadow: 0 12px 28px rgba(0,0,0,.09), 0 0 0 8px rgba(255,255,255,.6);
     display: flex; align-items: center; justify-content: center;
+  }
+  .sat::after {
+    content: ''; position: absolute; inset: -12px;
+    border: 1px solid rgba(17,17,17,.06); border-radius: 50%;
   }
   .sat svg { width: 30px; height: 30px; }
   .sat-label { position: absolute; width: 104px; }
-  .sat-label b { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-  .sat-label span { font-size: 14px; line-height: 1.45; color: var(--gray-head); }
+  .sat-label b { display: block; font-size: 15.5px; font-weight: 700; margin-bottom: 5px; }
+  .sat-label span { font-size: 14.5px; line-height: 1.5; color: #5f5f5f; }
 
   /* ===================== STATS ===================== */
   .stats { padding-top: 8px; }
@@ -260,10 +265,13 @@
           <line x1="307" y1="342" x2="307" y2="410" stroke="#cfcfca" stroke-width="1.2" stroke-dasharray="3 5"/>
           <circle cx="307" cy="410" r="4.5" fill="#111"/>
           <!-- base concentric ellipses -->
-          <ellipse cx="307" cy="412" rx="96" ry="26" stroke="#d9d9d4" stroke-width="1.1"/>
-          <ellipse cx="307" cy="412" rx="64" ry="17" stroke="#d9d9d4" stroke-width="1.1"/>
-          <ellipse cx="307" cy="412" rx="34" ry="9" stroke="#d9d9d4" stroke-width="1.1"/>
-          <ellipse cx="307" cy="414" rx="140" ry="38" stroke="#e3e3de" stroke-width="1"/>
+          <ellipse cx="307" cy="412" rx="130" ry="35" stroke="#dedeD9" stroke-width="1.1"/>
+          <ellipse cx="307" cy="412" rx="92" ry="25" stroke="#d9d9d4" stroke-width="1.1"/>
+          <ellipse cx="307" cy="412" rx="58" ry="16" stroke="#d9d9d4" stroke-width="1.1"/>
+          <ellipse cx="307" cy="412" rx="28" ry="8" stroke="#d9d9d4" stroke-width="1.1"/>
+          <ellipse cx="307" cy="414" rx="168" ry="46" stroke="#e6e6e1" stroke-width="1"/>
+          <!-- connector from Train down to inner orbit -->
+          <line x1="303" y1="82" x2="303" y2="148" stroke="#cfcfca" stroke-width="1.2" stroke-dasharray="3 5"/>
           <!-- scattered orbit dots -->
           <circle cx="167" cy="52" r="3.5" fill="#111"/>
           <circle cx="500" cy="111" r="3" fill="#111"/>
@@ -280,35 +288,35 @@
         </div>
 
         <!-- satellites -->
-        <div class="sat" style="left: 265px; top: 2px;">
+        <div class="sat" style="left: 262px; top: -1px;">
           <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="sat-label" style="left: 368px; top: 8px;">
           <b>Train</b><span>Workshops &amp; Community</span>
         </div>
 
-        <div class="sat" style="left: -2px; top: 103px;">
+        <div class="sat" style="left: -5px; top: 100px;">
           <svg class="icon" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
         </div>
         <div class="sat-label" style="left: 98px; top: 112px;">
           <b>Build</b><span>AI Products &amp; Systems</span>
         </div>
 
-        <div class="sat" style="left: 490px; top: 110px;">
+        <div class="sat" style="left: 487px; top: 107px;">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m9.5 8.5 6 3.5-6 3.5Z"/></svg>
         </div>
         <div class="sat-label" style="left: 586px; top: 118px;">
           <b>Share</b><span>Stories that Inspire</span>
         </div>
 
-        <div class="sat" style="left: 74px; top: 316px;">
+        <div class="sat" style="left: 71px; top: 313px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
         </div>
         <div class="sat-label" style="left: 62px; top: 406px;">
           <b>Collaborate</b><span>Partners in Progress</span>
         </div>
 
-        <div class="sat" style="left: 454px; top: 310px;">
+        <div class="sat" style="left: 451px; top: 307px;">
           <svg viewBox="0 0 24 24" fill="#111"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <div class="sat-label" style="left: 552px; top: 320px;">
