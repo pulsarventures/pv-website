@@ -3,9 +3,21 @@
 <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
-<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+{% comment %}
+  Favicons. The ?v= query is a cache-buster: browsers cache favicons far more
+  aggressively than pages, so a bare swap leaves the old icon in the tab.
+  Bump the number whenever the icon art changes.
+
+  Raster fallbacks matter here because the SVG icon draws the PV monogram as
+  <text>, and the favicon renderer has no webfonts — it falls back to a system
+  face. The PNG/ICO versions are rasterised at build time so they are exact.
+{% endcomment %}
+{% assign icon_v = '2' %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}?v={{ icon_v }}" sizes="any">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}?v={{ icon_v }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}?v={{ icon_v }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16.png' | relative_url }}?v={{ icon_v }}">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}?v={{ icon_v }}">
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
