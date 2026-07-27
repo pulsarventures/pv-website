@@ -1,5 +1,5 @@
 ---
-layout: landing-v4
+layout: landing-v6
 title: "Founder. Builder. Evangelist."
 description: "Pulsar Ventures is a venture studio that builds AI-native products and helps companies turn ideas into working systems."
 permalink: /
@@ -8,12 +8,12 @@ permalink: /
 <!-- ============================================ -->
 <!-- NAVIGATION                                    -->
 <!-- ============================================ -->
-<nav id="landing-nav" data-nav-fixed="white" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm nav-blur transition-all duration-300">
+<nav id="landing-nav" data-nav-fixed="white" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
             <!-- Logo -->
             <a href="{{ '/' | relative_url }}" class="flex-shrink-0">
-                <img src="{{ '/assets/img/pulsarventures.png' | relative_url }}" alt="Pulsar Ventures" class="h-10">
+                {% include brand-logo.html size="1.05rem" %}
             </a>
 
             <!-- Desktop Links -->
@@ -22,7 +22,7 @@ permalink: /
                 <a href="#products" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Portfolio</a>
                 <a href="#approach" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Approach</a>
                 <a href="#company" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Company</a>
-                <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors">
+                <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     Schedule a Call
                 </a>
             </div>
@@ -40,7 +40,7 @@ permalink: /
                 <a href="#products" class="text-sm font-medium text-slate-600 hover:text-brand-700 py-2">Portfolio</a>
                 <a href="#approach" class="text-sm font-medium text-slate-600 hover:text-brand-700 py-2">Approach</a>
                 <a href="#company" class="text-sm font-medium text-slate-600 hover:text-brand-700 py-2">Company</a>
-                <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors">
+                <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary justify-center">
                     Schedule a Call
                 </a>
             </div>
@@ -49,95 +49,26 @@ permalink: /
 </nav>
 
 <!-- ============================================ -->
-<!-- HERO (DARK)                                   -->
+<!-- HERO (LIGHT — offerings carousel)             -->
 <!-- ============================================ -->
-<section class="relative min-h-screen flex items-center justify-center dark-section overflow-hidden pt-20" style="background-color: #0a0118;">
+<section class="relative min-h-screen flex items-center justify-center atmosphere grain overflow-hidden pt-20">
     <!-- Animated Network Background (Canvas) -->
     <canvas id="hero-network" class="absolute inset-0 w-full h-full"></canvas>
-    <!-- Decorative Purple Blur Blobs -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-700/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-brand-500/15 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-800/10 rounded-full blur-3xl"></div>
+    <!-- Decorative brand/accent wash -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-700/5 rounded-full blur-3xl"></div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <!-- Two-Tile Hero -->
-        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-12">
-            <!-- Builders -->
-            <div class="glass-card rounded-2xl p-8 lg:p-10 reveal">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">Builders</h1>
-                <p class="text-lg text-white/60 leading-relaxed">We design, build, and ship AI-native products and systems — from early-stage ideas to production-grade platforms.</p>
-            </div>
-            <!-- Evangelists -->
-            <div class="glass-card rounded-2xl p-8 lg:p-10 reveal reveal-delay-1">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">Evangelists</h1>
-                <p class="text-lg text-white/60 leading-relaxed">We train, teach, and bring the AI builder community together through workshops, meetups, and hands-on content.</p>
-            </div>
-        </div>
+    <div class="relative z-[2] w-full px-6 md:px-10 lg:px-16">
+        {% include offerings-carousel.html %}
 
-        <!-- Ecosystem -->
-        <div class="reveal">
-            <div class="relative mx-auto" style="width: 280px; height: 320px;">
-                <!-- Circular ring -->
-                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 280 280">
-                    <circle cx="140" cy="140" r="110" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-                    <!-- Ecosystem label at center -->
-                    <text x="140" y="145" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-weight="600" letter-spacing="2" font-family="inherit" style="text-transform: uppercase;">ECOSYSTEM</text>
-                    <!-- Directional arc arrows -->
-                    <path d="M 140 30 A 110 110 0 0 1 244 100" fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                    <path d="M 244 180 A 110 110 0 0 1 190 240" fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                    <path d="M 90 240 A 110 110 0 0 1 36 180" fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                    <path d="M 36 100 A 110 110 0 0 1 140 30" fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                    <defs>
-                        <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
-                            <polygon points="0 0, 6 2, 0 4" fill="rgba(139,92,246,0.6)"/>
-                        </marker>
-                    </defs>
-                </svg>
-                <!-- Nodes positioned around the circle -->
-                <!-- Posts (top) -->
-                <div class="absolute text-center" style="top: 0; left: 50%; transform: translateX(-50%) translateY(-8px);">
-                    <div class="w-10 h-10 rounded-full bg-brand-600/40 border border-brand-400/40 flex items-center justify-center mx-auto mb-1">
-                        <i data-lucide="pen-tool" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <p class="text-xs font-semibold text-white">Posts</p>
-                </div>
-                <!-- Events (top-right) -->
-                <div class="absolute text-center" style="top: 52px; right: -10px;">
-                    <div class="w-10 h-10 rounded-full bg-brand-600/40 border border-brand-400/40 flex items-center justify-center mx-auto mb-1">
-                        <i data-lucide="calendar" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <p class="text-xs font-semibold text-white">Events</p>
-                </div>
-                <!-- Workshops (bottom-right) -->
-                <div class="absolute text-center" style="bottom: 30px; right: -20px;">
-                    <div class="w-10 h-10 rounded-full bg-brand-600/40 border border-brand-400/40 flex items-center justify-center mx-auto mb-1">
-                        <i data-lucide="presentation" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <p class="text-xs font-semibold text-white">Workshops</p>
-                </div>
-                <!-- Projects (bottom-left) -->
-                <div class="absolute text-center" style="bottom: 30px; left: -14px;">
-                    <div class="w-10 h-10 rounded-full bg-brand-600/40 border border-brand-400/40 flex items-center justify-center mx-auto mb-1">
-                        <i data-lucide="folder" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <p class="text-xs font-semibold text-white">Projects</p>
-                </div>
-                <!-- Products (top-left) -->
-                <div class="absolute text-center" style="top: 52px; left: -14px;">
-                    <div class="w-10 h-10 rounded-full bg-brand-600/40 border border-brand-400/40 flex items-center justify-center mx-auto mb-1">
-                        <i data-lucide="package" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <p class="text-xs font-semibold text-white">Products</p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Wave Divider: dark to light -->
     <div class="absolute bottom-0 left-0 right-0">
         <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
             <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#f8fafc"/>
+                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#f2f5f3"/>
             </svg>
         </div>
     </div>
@@ -148,77 +79,9 @@ permalink: /
 <!-- ============================================ -->
 <section id="offerings" class="py-24 lg:py-32 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 reveal">What We Do</h2>
-        </div>
-
-        <!-- Offering Cards 2x2: Build (left) + Evangelize (right) -->
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- TOP LEFT: Advisory & Consulting -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8 card-hover reveal overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-brand-700 to-brand-500 -mx-8 -mt-8 mb-6 rounded-t-2xl"></div>
-                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
-                    <i data-lucide="compass" class="w-6 h-6 text-brand-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Advisory & Consulting</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Product strategy, system design, and AI use-case identification. We help you figure out what to build and why.</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Product strategy & roadmapping</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Technology assessment & architecture</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">AI use case identification</span></li>
-                </ul>
-            </div>
-
-            <!-- TOP RIGHT: AI Builder Meetups -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8 card-hover reveal reveal-delay-1 overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-brand-700 to-brand-500 -mx-8 -mt-8 mb-6 rounded-t-2xl"></div>
-                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
-                    <i data-lucide="users" class="w-6 h-6 text-brand-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">AI Builder Meetups</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Community-driven events where builders share real-world learnings, tools, and system patterns. Focused on the what and how of building with AI.</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Monthly community events</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Real-world demos & talks</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Builder networking</span></li>
-                </ul>
-            </div>
-
-            <!-- BOTTOM LEFT: Product Development -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8 card-hover reveal reveal-delay-2 overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-brand-700 to-brand-500 -mx-8 -mt-8 mb-6 rounded-t-2xl"></div>
-                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
-                    <i data-lucide="code-2" class="w-6 h-6 text-brand-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Product Development</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Hands-on build and delivery for early-stage and growth-stage companies. We build expert systems using a unified framework — from first idea through POC, MVP, and production.</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Expert systems & AI platforms</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Full-stack development</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">POC &rarr; MVP &rarr; Production</span></li>
-                </ul>
-            </div>
-
-            <!-- BOTTOM RIGHT: AI Builder Workshops -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8 card-hover reveal reveal-delay-3 overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-brand-700 to-brand-500 -mx-8 -mt-8 mb-6 rounded-t-2xl"></div>
-                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
-                    <i data-lucide="presentation" class="w-6 h-6 text-brand-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">AI Builder Workshops</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Practitioner-led, hands-on sessions covering AI concepts, tools, application development, and agent building. In-person and virtual.</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">AI Builder Workshops</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">Custom team enablement</span></li>
-                    <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-600 mr-2 mt-0.5 flex-shrink-0"></i><span class="text-sm text-slate-600">In-person & virtual sessions</span></li>
-                </ul>
-            </div>
-        </div>
-
         <!-- Engagement Models -->
-        <div class="mt-12 bg-slate-50 rounded-2xl p-8 lg:p-10 reveal">
-            <h3 class="text-lg font-bold text-slate-900 text-center mb-8">Flexible Engagement Models</h3>
+        <div class="card-surface p-8 lg:p-12 reveal">
+            <h2 class="heading-2 text-center mb-10 reveal">Flexible Engagement Models</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
                     <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center mx-auto mb-3">
@@ -476,23 +339,13 @@ permalink: /
             </div>
         </div>
 
-        <!-- How We Do It -->
-        <div id="how-we-do-it" class="mt-12 pt-6 border-t border-slate-200">
-            <div class="text-center mb-8 max-w-2xl mx-auto">
-                <span class="text-sm font-semibold uppercase tracking-wider text-brand-600 reveal">For Non-Technical Founders</span>
-                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mt-2 reveal">How We Do It</h2>
-                <p class="text-base text-slate-600 mt-2 reveal">A structured consulting approach for app ideas — whether you are starting from scratch or improving what already exists.</p>
-            </div>
-            {% include how-we-work-timeline.html %}
-            {% include intake-questionnaire.html %}
-        </div>
     </div>
 
     <!-- Wave Divider: light to dark -->
     <div class="relative mt-24">
         <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
             <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#0a0118"/>
+                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#043726"/>
             </svg>
         </div>
     </div>
@@ -502,7 +355,7 @@ permalink: /
 <!-- APPROACH (ALL DARK)                           -->
 <!-- How We're Different + Landscape + 4A          -->
 <!-- ============================================ -->
-<section id="approach" class="py-24 lg:py-32 dark-section" style="background-color: #0a0118;">
+<section id="approach" class="py-24 lg:py-32 dark-section band-brand">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- ===== BUSINESS LANDSCAPE ===== -->
@@ -568,7 +421,7 @@ permalink: /
         <div class="grid md:grid-cols-4 gap-8 progress-line relative">
             <!-- Assist -->
             <div class="text-center reveal">
-                <div class="w-12 h-12 rounded-full bg-brand-700 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#0a0118] relative z-10">
+                <div class="w-12 h-12 rounded-full bg-brand-700 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#064e35] relative z-10">
                     <i data-lucide="search" class="w-5 h-5 text-white"></i>
                 </div>
                 <div class="glass-card rounded-2xl p-6">
@@ -579,7 +432,7 @@ permalink: /
 
             <!-- Automate -->
             <div class="text-center reveal reveal-delay-1">
-                <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#0a0118] relative z-10">
+                <div class="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#064e35] relative z-10">
                     <i data-lucide="cog" class="w-5 h-5 text-white"></i>
                 </div>
                 <div class="glass-card rounded-2xl p-6">
@@ -590,7 +443,7 @@ permalink: /
 
             <!-- Augment -->
             <div class="text-center reveal reveal-delay-2">
-                <div class="w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#0a0118] relative z-10">
+                <div class="w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#064e35] relative z-10">
                     <i data-lucide="users" class="w-5 h-5 text-white"></i>
                 </div>
                 <div class="glass-card rounded-2xl p-6">
@@ -601,7 +454,7 @@ permalink: /
 
             <!-- Autonomy -->
             <div class="text-center reveal reveal-delay-3">
-                <div class="w-12 h-12 rounded-full bg-brand-400 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#0a0118] relative z-10">
+                <div class="w-12 h-12 rounded-full bg-brand-400 flex items-center justify-center mx-auto mb-6 ring-4 ring-[#064e35] relative z-10">
                     <i data-lucide="bot" class="w-5 h-5 text-white"></i>
                 </div>
                 <div class="glass-card rounded-2xl p-6">
@@ -652,7 +505,7 @@ permalink: /
     <div class="relative mt-24">
         <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
             <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#f8fafc"/>
+                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#f2f5f3"/>
             </svg>
         </div>
     </div>
@@ -749,7 +602,7 @@ permalink: /
         </div>
 
         <!-- Team Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
             <!-- Sree Pradhip -->
             <div class="text-center reveal">
                 <img src="{{ '/assets/img/team-sree.jpeg' | relative_url }}" alt="Sree Pradhip" class="w-28 h-28 rounded-2xl object-cover ring-4 ring-brand-100 mx-auto mb-4">
@@ -783,16 +636,6 @@ permalink: /
                 </a>
             </div>
 
-            <!-- Brandi Von Tabor -->
-            <div class="text-center reveal reveal-delay-3">
-                <img src="{{ '/assets/img/team-brandi.jpeg' | relative_url }}" alt="Brandi Von Tabor" class="w-28 h-28 rounded-2xl object-cover ring-4 ring-brand-100 mx-auto mb-4">
-                <h3 class="text-lg font-bold text-slate-900">Brandi Von Tabor</h3>
-                <p class="text-sm text-slate-500">Growth</p>
-                <p class="text-xs text-slate-400 mt-1">Atlanta, GA</p>
-                <a href="https://www.linkedin.com/in/brandivontabor/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-600 hover:text-brand-700 mt-2">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-            </div>
         </div>
 
         <!-- Additional Team -->
@@ -921,7 +764,7 @@ permalink: /
     <div class="relative mt-16">
         <div class="wave-divider wave-divider-bottom" style="transform: translateY(1px);">
             <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#0a0118"/>
+                <path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="#043726"/>
             </svg>
         </div>
     </div>
@@ -930,7 +773,7 @@ permalink: /
 <!-- ============================================ -->
 <!-- CONNECT / CTA (DARK)                          -->
 <!-- ============================================ -->
-<section class="py-24 lg:py-32 dark-section" style="background-color: #0a0118;">
+<section class="py-24 lg:py-32 dark-section band-brand">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <!-- Header -->
         <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6 reveal">Let's Connect</h2>
@@ -938,15 +781,15 @@ permalink: /
 
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
-            <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 bg-white text-[#0a0118] font-semibold rounded-full hover:bg-slate-100 transition-colors text-sm">
+            <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="btn btn-accent rounded-full">
                 <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
                 Schedule a Call
             </a>
-            <a href="mailto:sree@pulsarventures.co" class="inline-flex items-center px-8 py-3.5 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors text-sm">
+            <a href="mailto:sree@pulsarventures.co" class="btn rounded-full border border-white/30 text-white hover:bg-white/10">
                 <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
                 Send an Email
             </a>
-            <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors text-sm">
+            <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" class="btn rounded-full border border-white/30 text-white hover:bg-white/10">
                 <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                 LinkedIn
             </a>
@@ -957,12 +800,12 @@ permalink: /
 <!-- ============================================ -->
 <!-- FOOTER (DARK)                                 -->
 <!-- ============================================ -->
-<footer style="background-color: #070012;" class="py-16">
+<footer class="py-16 band-brand-deep dark-section">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 mb-12">
             <!-- Column 1: Logo + Description -->
             <div>
-                <img src="{{ '/assets/img/pulsarventures.png' | relative_url }}" alt="Pulsar Ventures" class="h-10 mb-4">
+                <div class="mb-4">{% include brand-logo.html variant="inverse" size="1.05rem" %}</div>
                 <p class="text-white/40 text-sm leading-relaxed">A builder studio that designs, builds, and ships AI-native products — turning ideas into working systems.</p>
             </div>
 
@@ -1001,7 +844,7 @@ permalink: /
     const canvas = document.getElementById('hero-network');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const colors = ['#8b5cf6', '#a78bfa', '#06b6d4', '#c4b5fd', '#14b8a6'];
+    const colors = ['#064e35', '#16704c', '#f5823f', '#9cb4a6', '#dea62b'];
     const nodeCount = 70;
     const linkDistance = 150;
     let nodes = [];
@@ -1036,11 +879,11 @@ permalink: /
                 const dy = nodes[i].y - nodes[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < linkDistance) {
-                    const alpha = (1 - dist / linkDistance) * 0.12;
+                    const alpha = (1 - dist / linkDistance) * 0.14;
                     ctx.beginPath();
                     ctx.moveTo(nodes[i].x, nodes[i].y);
                     ctx.lineTo(nodes[j].x, nodes[j].y);
-                    ctx.strokeStyle = 'rgba(139, 92, 246, ' + alpha + ')';
+                    ctx.strokeStyle = 'rgba(6, 78, 53, ' + alpha + ')';
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -1052,7 +895,7 @@ permalink: /
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
             ctx.fillStyle = n.color;
-            ctx.globalAlpha = 0.6;
+            ctx.globalAlpha = 0.45;
             ctx.fill();
             ctx.globalAlpha = 1;
         }

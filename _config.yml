@@ -45,7 +45,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: "page"
+      layout: "page-v6"
       author: "Pulsar Ventures"
 
 # Plugins

@@ -1,0 +1,295 @@
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== HOW-WE-WORK TIMELINE — SCROLL-DRIVEN PROGRESS =====
+const hwwTimeline = document.getElementById('how-we-work-timeline');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (hwwTimeline && !prefersReducedMotion) {
+    const fills = hwwTimeline.querySelectorAll('.how-we-work-line-fill');
+    const markers = hwwTimeline.querySelectorAll('.how-we-work-marker');
+    const flowNodes = document.querySelectorAll('.how-we-work-flow .flow-node');
+    let ticking = false;
+
+    const updateTimeline = () => {
+        ticking = false;
+        const rect = hwwTimeline.getBoundingClientRect();
+        const total = rect.height || 1;
+        // The "playhead" sits 55% down the viewport; progress = how far it has
+        // travelled through the timeline, clamped to [0,1].
+        const triggerY = window.innerHeight * 0.55;
+        let progress = (triggerY - rect.top) / total;
+        progress = Math.max(0, Math.min(1, progress));
+
+        fills.forEach(f => { f.style.transform = 'scaleY(' + progress + ')'; });
+        markers.forEach(m => {
+            const mRect = m.getBoundingClientRect();
+            const mPos = (mRect.top + mRect.height / 2 - rect.top) / total;
+            m.classList.toggle('is-reached', progress >= mPos - 0.02);
+        });
+        // Advance the sticky flow header: light up each node as it is reached.
+        if (flowNodes.length) {
+            const activeIndex = Math.min(
+                flowNodes.length - 1,
+                Math.floor(progress * flowNodes.length)
+            );
+            flowNodes.forEach((node, i) => node.classList.toggle('is-active', i <= activeIndex));
+        }
+    };
+
+    // Add a subtle shadow to the flow header once it becomes stuck.
+    const sentinel = document.getElementById('hww-sentinel');
+    const flowHeader = document.querySelector('.how-we-work-flow');
+    if (sentinel && flowHeader) {
+        new IntersectionObserver(([e]) => {
+            flowHeader.classList.toggle('is-stuck', !e.isIntersecting);
+        }, { rootMargin: '-77px 0px 0px 0px', threshold: 0 }).observe(sentinel);
+    }
+
+    const requestTimelineTick = () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(updateTimeline); }
+    };
+
+    window.addEventListener('scroll', requestTimelineTick, { passive: true });
+    window.addEventListener('resize', requestTimelineTick);
+    updateTimeline();
+}
+
+// ===== NAVBAR SCROLL EFFECT =====
+// If nav has data-nav-fixed="white", keep it on the paper surface always.
+// Otherwise toggle transparent at top vs surface on scroll.
+const nav = document.getElementById('landing-nav');
+const navLinks = document.querySelectorAll('.nav-link');
+if (nav && nav.dataset.navFixed !== 'white') {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            nav.classList.add('bg-white/95', 'shadow-sm', 'nav-blur');
+            nav.classList.remove('bg-transparent');
+            navLinks.forEach(l => {
+                l.classList.remove('text-white/80', 'hover:text-white');
+                l.classList.add('text-slate-600', 'hover:text-brand-700');
+            });
+        } else {
+            nav.classList.remove('bg-white/95', 'shadow-sm', 'nav-blur');
+            nav.classList.add('bg-transparent');
+            navLinks.forEach(l => {
+                l.classList.remove('text-slate-600', 'hover:text-brand-700');
+                l.classList.add('text-white/80', 'hover:text-white');
+            });
+        }
+    });
+}
+
+// ===== NAV SHADOW ON SCROLL (fixed-white navs) =====
+if (nav && nav.dataset.navFixed === 'white') {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('is-scrolled', window.scrollY > 10);
+    }, { passive: true });
+}
+
+// ===== INTAKE FORM (W3Forms) =====
+const intakeForm = document.getElementById('intake-form');
+if (intakeForm) {
+    const intakeSubmit = document.getElementById('intake-submit');
+    const intakeStatus = document.getElementById('intake-status');
+
+    const showIntakeStatus = (type, message) => {
+        if (!intakeStatus) return;
+        intakeStatus.className = type === 'success' ? 'intake-status-success' : 'intake-status-error';
+        intakeStatus.textContent = message;
+        intakeStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    intakeForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!intakeForm.checkValidity()) {
+            intakeForm.reportValidity();
+            return;
+        }
+
+        const accessKey = intakeForm.dataset.accessKey;
+        if (!accessKey) {
+            showIntakeStatus('error', 'Form is not configured. Please email us directly.');
+            return;
+        }
+
+        const fd = new FormData(intakeForm);
+        const platforms = fd.getAll('platform').join(', ') || 'Not specified';
+        const clouds = fd.getAll('cloud').join(', ') || 'Not specified';
+        const company = fd.get('company') || '';
+        const name = fd.get('name') || '';
+        const message = [
+            'PROJECT INTAKE',
+            '============',
+            '',
+            'ABOUT',
+            'Name: ' + name,
+            'Email: ' + (fd.get('email') || ''),
+            'Company: ' + (company || 'N/A'),
+            '',
+            'IDEA',
+            'Stage: ' + (fd.get('stage') || ''),
+            'Description: ' + (fd.get('description') || ''),
+            '',
+            'TECHNICAL SCOPE',
+            'Platforms: ' + platforms,
+            'AI Product: ' + (fd.get('ai') || ''),
+            'Team Size: ' + (fd.get('team') || ''),
+            'Cloud: ' + clouds,
+            '',
+            'CONSTRAINTS',
+            'Budget: ' + (fd.get('budget') || ''),
+            'Timeline: ' + (fd.get('timeline') || ''),
+            'Success Metrics: ' + (fd.get('metrics') || 'N/A'),
+        ].join('\n');
+
+        if (intakeSubmit) {
+            intakeSubmit.disabled = true;
+            intakeSubmit.textContent = 'Submitting…';
+        }
+
+        const payload = new FormData();
+        payload.append('access_key', accessKey);
+        payload.append('subject', 'Project Intake — ' + (company || name || 'New Inquiry'));
+        payload.append('name', name);
+        payload.append('email', fd.get('email') || '');
+        payload.append('message', message);
+        payload.append('botcheck', fd.get('botcheck') ? 'true' : '');
+
+        try {
+            // w3forms expects multipart FormData (not JSON); let the browser set the boundary.
+            const response = await fetch('https://api.w3forms.com/submit', {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: payload,
+            });
+            const result = await response.json();
+            if (result.success) {
+                intakeForm.reset();
+                showIntakeStatus('success', 'Thanks — your intake was submitted. We will follow up within 2 business days.');
+            } else {
+                showIntakeStatus('error', result.message || 'Something went wrong. Please try again or email us directly.');
+            }
+        } catch (err) {
+            showIntakeStatus('error', 'Could not submit right now. Please try again or email us directly.');
+        } finally {
+            if (intakeSubmit) {
+                intakeSubmit.disabled = false;
+                intakeSubmit.textContent = 'Submit Intake';
+            }
+        }
+    });
+}
+
+// ===== OFFERINGS CAROUSEL (hero) =====
+(function () {
+    const root = document.getElementById('wwd-carousel');
+    if (!root) return;
+
+    const track = document.getElementById('wwd-track');
+    const slides = Array.from(track.children);
+    const dots = Array.from(document.querySelectorAll('#wwd-dots button'));
+    const arrows = Array.from(root.querySelectorAll('[data-wwd-dir]')); // none in the current markup
+    if (!slides.length) return;
+
+    const AUTOPLAY_MS = 6000;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let timer = null;
+
+    const arts = Array.from(document.querySelectorAll('#wwd-visual .wwd-art'));
+
+    const counter = document.getElementById('wwd-count-now');
+
+    const render = () => {
+        slides.forEach((s, i) => {
+            s.classList.toggle('is-active', i === index);
+            s.setAttribute('aria-hidden', String(i !== index));
+        });
+        arts.forEach((a, i) => a.classList.toggle('is-active', i === index));
+        dots.forEach((d, i) => {
+            d.classList.toggle('is-active', i === index);
+            d.setAttribute('aria-selected', String(i === index));
+        });
+        if (counter) counter.textContent = String(index + 1).padStart(2, '0');
+    };
+
+    const goTo = (i) => {
+        index = (i + slides.length) % slides.length;
+        render();
+    };
+
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } root.classList.add('is-paused'); };
+    const start = () => {
+        if (reducedMotion) return;
+        if (timer) clearInterval(timer);
+        root.classList.remove('is-paused');
+        timer = setInterval(() => goTo(index + 1), AUTOPLAY_MS);
+    };
+    // Any deliberate interaction hands control to the reader and stops the rotation.
+    const takeOver = (i) => { stop(); goTo(i); };
+
+    arrows.forEach(btn => btn.addEventListener('click', () => {
+        takeOver(index + Number(btn.dataset.wwdDir));
+    }));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => takeOver(i)));
+
+    root.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); takeOver(index - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); takeOver(index + 1); }
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+
+    // Horizontal swipe on touch devices.
+    let touchX = null;
+    root.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener('touchend', (e) => {
+        if (touchX === null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) takeOver(index + (dx < 0 ? 1 : -1));
+        touchX = null;
+    }, { passive: true });
+
+    // Don't rotate while the hero is scrolled out of view.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([e]) => { e.isIntersecting ? start() : stop(); },
+            { threshold: 0.25 }).observe(root);
+    } else {
+        start();
+    }
+
+    render();
+})();
+
+// ===== MOBILE MENU TOGGLE =====
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+}
+
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+</script>

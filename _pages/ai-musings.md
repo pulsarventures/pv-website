@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-v6
 permalink: /ai-musings/
 title: "AI Musings"
 ---

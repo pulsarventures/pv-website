@@ -1,5 +1,5 @@
 ---
-layout: page-v4
+layout: page-v6
 title: "Products"
 permalink: /products/
 description: "Discover our innovative products that empower businesses with AI-powered solutions"

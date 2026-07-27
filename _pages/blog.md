@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-v6
 title: "Blog"
 permalink: /blog/
 description: "Insights, thoughts, and updates from Pulsar Ventures on AI, business, and innovation"

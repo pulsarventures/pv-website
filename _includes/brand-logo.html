@@ -1,0 +1,29 @@
+{% comment %}
+  Pulsar Ventures lockup — PV monogram + wordmark.
+
+  Replaces assets/img/pulsarventures.png, which was baked in the old violet and
+  carried a white plate that showed as a box on the dark brand bands. Rendered
+  as text so it takes the design-system tokens directly and stays crisp at any
+  size.
+
+  Colour logic follows the original mark: the P and "Pulsar" share one colour,
+  the V and "Ventures" the other.
+    default  — P/Pulsar in brand green, V/Ventures in ink
+    inverse  — P/Pulsar in peach,       V/Ventures in white  (for dark bands)
+
+  Params:
+    variant — "inverse" for use on brand-green/deep backgrounds
+    size    — CSS font-size for the lockup (default 1rem); everything scales off it
+{% endcomment %}
+<span class="pv-lockup{% if include.variant == 'inverse' %} pv-lockup--inverse{% endif %}"
+      {% if include.size %}style="font-size: {{ include.size }};"{% endif %}
+      role="img" aria-label="{{ site.title }}">
+    <span class="pv-mark" aria-hidden="true">
+        <span class="pv-mark-p">P</span>
+        <span class="pv-mark-v">V</span>
+    </span>
+    <span class="pv-word" aria-hidden="true">
+        <span class="pv-word-1">Pulsar</span>
+        <span class="pv-word-2">Ventures</span>
+    </span>
+</span>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    {% include head-v6.html %}
+    <style>
+        /* Landing nav sits on the paper surface and gains a rule + shadow on scroll. */
+        #landing-nav {
+            background: color-mix(in srgb, var(--background) 88%, transparent);
+            border-bottom: 1px solid var(--rule);
+        }
+        #landing-nav.is-scrolled { box-shadow: var(--shadow-brand-md); }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-900 bg-[#fcfdfc]">
+
+    {{ content }}
+
+    <!-- ===== SCRIPTS ===== -->
+    {% include scripts-v6.html %}
+</body>
+</html>

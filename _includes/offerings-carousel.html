@@ -1,0 +1,145 @@
+<!-- Hero slideshow — the four "What We Do" offerings.
+     Built from the design system's own vocabulary: eyebrow, hairline rules,
+     tabular index, accent-underline, and a tab row that names all four so
+     nothing is hidden behind anonymous dots. The copy stack and the artwork
+     stack are separate single-grid-cell stacks driven by one index, so their
+     heights are set by the tallest member and changing slides never reflows. -->
+<div class="wwd" id="wwd-carousel" aria-roledescription="carousel" aria-label="What we do">
+
+    <div class="wwd-head">
+        <h1 class="wwd-eyebrow">What We Do</h1>
+        <p class="wwd-count"><span id="wwd-count-now">01</span> <span class="wwd-count-sep">/</span> 04</p>
+    </div>
+
+    <div class="wwd-stage">
+        <div class="wwd-track" id="wwd-track">
+            <article class="wwd-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+                <h2 class="wwd-title">Advisory &amp; <em class="accent-underline not-italic">Consulting</em></h2>
+                <p class="wwd-text">Product strategy, system design, and AI use-case identification. We help you figure out what to build and why.</p>
+                <ul class="wwd-list">
+                    <li>Product strategy &amp; roadmapping</li>
+                    <li>Technology assessment &amp; architecture</li>
+                    <li>AI use case identification</li>
+                </ul>
+            </article>
+
+            <article class="wwd-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+                <h2 class="wwd-title">AI Builder <em class="accent-underline not-italic">Meetups</em></h2>
+                <p class="wwd-text">Community-driven events where builders share real-world learnings, tools, and system patterns. Focused on the what and how of building with AI.</p>
+                <ul class="wwd-list">
+                    <li>Monthly community events</li>
+                    <li>Real-world demos &amp; talks</li>
+                    <li>Builder networking</li>
+                </ul>
+            </article>
+
+            <article class="wwd-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+                <h2 class="wwd-title">Product <em class="accent-underline not-italic">Development</em></h2>
+                <p class="wwd-text">Hands-on build and delivery for early-stage and growth-stage companies. We build expert systems using a unified framework — from first idea through POC, MVP, and production.</p>
+                <ul class="wwd-list">
+                    <li>Expert systems &amp; AI platforms</li>
+                    <li>Full-stack development</li>
+                    <li>POC &rarr; MVP &rarr; Production</li>
+                </ul>
+            </article>
+
+            <article class="wwd-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+                <h2 class="wwd-title">AI Builder <em class="accent-underline not-italic">Workshops</em></h2>
+                <p class="wwd-text">Practitioner-led, hands-on sessions covering AI concepts, tools, application development, and agent building. In-person and virtual.</p>
+                <ul class="wwd-list">
+                    <li>AI Builder Workshops</li>
+                    <li>Custom team enablement</li>
+                    <li>In-person &amp; virtual sessions</li>
+                </ul>
+            </article>
+        </div>
+
+        <div class="wwd-figure" aria-hidden="true">
+            <div class="wwd-visual" id="wwd-visual">
+
+                <figure class="wwd-art is-active">
+                    <svg viewBox="0 0 320 200" fill="none" stroke="var(--brand)" stroke-width="2">
+                        <path d="M40 160 C 90 150, 90 70, 150 66 S 240 110, 282 46" stroke-dasharray="8 8"/>
+                        <circle cx="40" cy="160" r="10" fill="var(--accent)" stroke="none"/>
+                        <circle cx="150" cy="66" r="7" fill="var(--surface)"/>
+                        <path d="M282 46 l0 -26 l22 8 l-22 8" fill="var(--accent)" stroke="none"/>
+                        <circle cx="238" cy="146" r="30" fill="var(--surface)"/>
+                        <path d="M238 124 l8 30 -8 -7 -8 7 z" fill="var(--brand)" stroke="none"/>
+                        <circle cx="238" cy="146" r="3" fill="var(--accent)" stroke="none"/>
+                    </svg>
+                </figure>
+
+                <figure class="wwd-art">
+                    <svg viewBox="0 0 320 200" fill="none" stroke="var(--brand)" stroke-width="2">
+                        <line x1="90" y1="90" x2="160" y2="140"/>
+                        <line x1="230" y1="90" x2="160" y2="140"/>
+                        <line x1="90" y1="90" x2="230" y2="90"/>
+                        <circle cx="90" cy="74" r="16" fill="var(--accent)"/>
+                        <path d="M66 118 a24 24 0 0 1 48 0" fill="var(--accent)"/>
+                        <circle cx="230" cy="74" r="16" fill="var(--surface)"/>
+                        <path d="M206 118 a24 24 0 0 1 48 0" fill="var(--surface)"/>
+                        <circle cx="160" cy="126" r="16" fill="var(--surface)"/>
+                        <path d="M136 170 a24 24 0 0 1 48 0" fill="var(--surface)"/>
+                        <path d="M140 34 h60 v24 h-40 l-10 12 v-12 h-10 z" fill="var(--accent)"/>
+                    </svg>
+                </figure>
+
+                <figure class="wwd-art">
+                    <svg viewBox="0 0 320 200" fill="none" stroke="var(--brand)" stroke-width="2">
+                        <rect x="40" y="130" width="70" height="34" rx="4" fill="var(--surface)"/>
+                        <rect x="126" y="100" width="70" height="64" rx="4" fill="var(--accent)"/>
+                        <rect x="212" y="62" width="70" height="102" rx="4" fill="var(--brand)"/>
+                        <text x="75" y="152" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="var(--brand)" stroke="none">POC</text>
+                        <text x="161" y="136" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="var(--ink)" stroke="none">MVP</text>
+                        <text x="247" y="118" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="var(--accent)" stroke="none">PROD</text>
+                        <path d="M48 96 C 100 40, 200 30, 262 40" stroke-dasharray="7 7"/>
+                        <path d="M262 40 l-4 -14 14 6 z" fill="var(--brand)" stroke="none"/>
+                    </svg>
+                </figure>
+
+                <figure class="wwd-art">
+                    <svg viewBox="0 0 320 200" fill="none" stroke="var(--brand)" stroke-width="2">
+                        <rect x="92" y="60" width="136" height="86" rx="6" fill="var(--surface)"/>
+                        <path d="M76 146 h168 l14 22 h-196 z" fill="var(--accent)"/>
+                        <path d="M160 78 l7 16 17 2 -12 12 3 17 -15 -8 -15 8 3 -17 -12 -12 17 -2 z" fill="var(--accent)"/>
+                        <circle cx="126" cy="102" r="5" fill="var(--brand)" stroke="none"/>
+                        <circle cx="194" cy="102" r="5" fill="var(--brand)" stroke="none"/>
+                        <line x1="126" y1="102" x2="160" y2="88"/>
+                        <line x1="194" y1="102" x2="160" y2="88"/>
+                        <line x1="126" y1="102" x2="194" y2="102"/>
+                    </svg>
+                </figure>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wwd-cta">
+        <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Schedule a Call</a>
+    </div>
+
+    <!-- All four named along the base: navigation and table of contents at once.
+         The peach rule under the active one runs the autoplay interval. -->
+    <div class="wwd-tabs" id="wwd-dots" role="tablist" aria-label="Choose offering">
+        <button type="button" class="wwd-tab is-active" role="tab" aria-selected="true" aria-controls="wwd-track">
+            <span class="wwd-tab-n">01</span>
+            <span class="wwd-tab-l">Advisory &amp; Consulting</span>
+            <span class="wwd-tab-bar"></span>
+        </button>
+        <button type="button" class="wwd-tab" role="tab" aria-selected="false" aria-controls="wwd-track">
+            <span class="wwd-tab-n">02</span>
+            <span class="wwd-tab-l">AI Builder Meetups</span>
+            <span class="wwd-tab-bar"></span>
+        </button>
+        <button type="button" class="wwd-tab" role="tab" aria-selected="false" aria-controls="wwd-track">
+            <span class="wwd-tab-n">03</span>
+            <span class="wwd-tab-l">Product Development</span>
+            <span class="wwd-tab-bar"></span>
+        </button>
+        <button type="button" class="wwd-tab" role="tab" aria-selected="false" aria-controls="wwd-track">
+            <span class="wwd-tab-n">04</span>
+            <span class="wwd-tab-l">AI Builder Workshops</span>
+            <span class="wwd-tab-bar"></span>
+        </button>
+    </div>
+</div>
