@@ -1,0 +1,44 @@
+{% comment %}
+  Site navigation, ported from the design canvas.
+
+  The canvas shipped the same bar on the Homepage and About Us artboards; the
+  only difference was link resolution. On the homepage the section links are
+  bare fragments (#services) and "About us" points at the About page; on any
+  other page the fragments have to be qualified (/#services) and "About us"
+  points at the top of the current page. `home` below is empty on the homepage
+  and "/" everywhere else, which reproduces both artboards exactly.
+{% endcomment %}
+{% assign is_home = false %}
+{% if page.url == '/' %}{% assign is_home = true %}{% endif %}
+{% if is_home %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
+
+<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border-bottom:1px solid #e8ece9">
+  <div class="nav-bar" style="max-width:1240px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between">
+    <a href="{% if is_home %}#top{% else %}{{ '/' | relative_url }}{% endif %}" style="display:inline-flex; align-items:center; gap:10px; line-height:1">
+      <span style="display:grid; gap:1px; font-size:22px; font-weight:800; letter-spacing:-0.03em; line-height:0.88"><span style="color:#064e35">P</span><span style="color:#111714">V</span></span>
+      <span style="display:grid; gap:2px; font-size:15px; font-weight:600; letter-spacing:-0.015em"><span style="color:#064e35">Pulsar</span><span style="color:#111714">Ventures</span></span>
+    </a>
+    <button type="button" id="nav-burger" class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
+    </button>
+    <div id="nav-menu" class="nav-menu">
+      <a href="{{ home }}#services" class="nav-link hv-1">What we do</a>
+      <a href="{{ home }}#work" class="nav-link hv-1">Client work</a>
+      <a href="{{ home }}#process" class="nav-link hv-1">Process</a>
+      <a href="{% if page.url == '/about-us/' %}#top{% else %}{{ '/about-us/' | relative_url }}{% endif %}" class="nav-link hv-1">About us</a>
+      <div class="nav-dd">
+        <button type="button" id="nav-more" class="nav-link nav-more hv-1" aria-expanded="false" aria-haspopup="true" aria-controls="nav-more-menu">More<svg class="nav-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+        <div id="nav-more-menu" class="nav-more-menu" role="menu" aria-labelledby="nav-more">
+          <p class="nav-sub-head">Site pages</p>
+          <a role="menuitem" class="nav-sub" href="{{ '/products/' | relative_url }}"><span class="nav-sub-name">Products</span><span class="nav-sub-note">All nine, in detail</span></a>
+          <a role="menuitem" class="nav-sub" href="{{ '/services/' | relative_url }}"><span class="nav-sub-name">Services</span><span class="nav-sub-note">Advisory, build, and training</span></a>
+          <a role="menuitem" class="nav-sub" href="{{ '/about-us/' | relative_url }}"><span class="nav-sub-name">About us</span><span class="nav-sub-note">Team, brand, and principles</span></a>
+          <a role="menuitem" class="nav-sub" href="{{ '/company/' | relative_url }}"><span class="nav-sub-name">Company</span><span class="nav-sub-note">The original company page</span></a>
+          <a role="menuitem" class="nav-sub" href="{{ '/contact/' | relative_url }}"><span class="nav-sub-name">Contact</span><span class="nav-sub-note">Other ways to reach us</span></a>
+          <a role="menuitem" class="nav-sub" href="{{ '/ai-musings/' | relative_url }}"><span class="nav-sub-name">AI Musings</span><span class="nav-sub-note">Workshops, cohorts, writing</span></a>
+        </div>
+      </div>
+      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="nav-cta hv-2" style="display:inline-flex; align-items:center; gap:8px; background:#064e35; color:#ffffff; font-size:14px; font-weight:600; padding:10px 20px; border-radius:10px">Schedule a call</a>
+    </div>
+  </div>
+</nav>

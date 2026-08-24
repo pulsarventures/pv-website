@@ -1,0 +1,39 @@
+{% comment %}
+  Site footer, ported from the design canvas. Identical markup on both
+  artboards; the Navigate column is qualified with `home` for the same reason
+  the nav is, so those links still reach the homepage sections from About Us
+  (in the canvas export they were bare fragments and went nowhere off-home).
+{% endcomment %}
+{% if page.url == '/' %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
+
+<footer class="sec" data-screen-label="Footer" style="background:#043726; padding:72px 32px 40px">
+  <div style="max-width:1240px; margin:0 auto">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.12)">
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <span style="display:inline-flex; align-items:center; gap:10px; line-height:1">
+          <span style="display:grid; gap:1px; font-size:22px; font-weight:800; letter-spacing:-0.03em; line-height:0.88"><span style="color:#f5823f">P</span><span style="color:#ffffff">V</span></span>
+          <span style="display:grid; gap:2px; font-size:15px; font-weight:600; letter-spacing:-0.015em"><span style="color:#f5823f">Pulsar</span><span style="color:#ffffff">Ventures</span></span>
+        </span>
+        <p style="margin:0; font-size:14px; line-height:1.7; color:rgba(255,255,255,0.5); max-width:36ch">A venture studio that helps you decide what to build, then builds it with you. Advisory and product development, AI-native from day one.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Navigate</p>
+        <div style="display:flex; flex-direction:column; gap:12px">
+          <a href="{{ home }}#services" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">What we do</a>
+          <a href="{{ home }}#work" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Client work</a>
+          <a href="{{ home }}#process" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Process</a>
+          <a href="{{ home }}#intake" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Start a project</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Connect</p>
+        <div style="display:flex; flex-direction:column; gap:12px">
+          <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Schedule a call ↗</a>
+          <a href="mailto:{{ site.contact.email }}" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">{{ site.contact.email }}</a>
+          <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin:28px 0 0; text-align:center; font-size:13px; color:rgba(255,255,255,0.4)">© {{ 'now' | date: "%Y" }} Pulsar Ventures. All rights reserved.</p>
+  </div>
+</footer>

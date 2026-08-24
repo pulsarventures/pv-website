@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head-site.html %}
+</head>
+<body>
+
+    {% include site-nav.html %}
+
+    {{ content }}
+
+    {% include site-footer.html %}
+
+    <script src="{{ '/assets/js/site-nav.js' | relative_url }}"></script>
+    {% if page.page_js %}<script src="{{ page.page_js | relative_url }}"></script>{% endif %}
+</body>
+</html>
