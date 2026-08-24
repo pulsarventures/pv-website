@@ -47,6 +47,8 @@ a.hv-prodw:hover { border-color:#4e8a6e !important; box-shadow:0 2px 12px rgba(6
   .wwb-nodes { position:static !important; height:auto !important; display:flex !important; flex-direction:column; gap:26px; }
   .wwb-node { position:static !important; transform:none !important; width:100%; }
   .wwb-node > span:last-child { flex:1 1 auto; min-width:0; }
+  .wwb-art { display:none !important; }
+  .wwb-panel { flex-direction:column !important; }
 }
 .team-card:hover .team-img, .team-card[data-active="1"] .team-img { filter:grayscale(0) contrast(1) brightness(1) !important; opacity:1 !important; transform:scale(1.03) !important; }
 .team-card:focus-visible { outline:2px solid #16704c; outline-offset:-2px; }
