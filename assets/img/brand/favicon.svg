@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Pulsar Ventures">
+  <rect width="100" height="100" rx="24" fill="#064e35"></rect>
+  
+  <text x="50" y="35" text-anchor="middle" dominant-baseline="central" font-family="Figtree, Inter, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-2" fill="#ffffff">P</text>
+  <text x="50" y="70" text-anchor="middle" dominant-baseline="central" font-family="Figtree, Inter, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-2" fill="#f5823f">V</text>
+</svg>

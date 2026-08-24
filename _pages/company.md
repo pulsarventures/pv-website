@@ -171,7 +171,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
         <div class="card h-100 border-0 shadow-sm text-center">
             <div class="card-body p-4">
                 <div class="mb-3">
-                    <img src="/assets/img/team-sree.jpeg" alt="Sree Pradhip" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    <img src="/assets/img/team/sree.jpeg" alt="Sree Pradhip" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <h5 class="card-title">Sree Pradhip</h5>
                 <p class="text-muted mb-2">Founder and CEO</p>
@@ -184,7 +184,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
         <div class="card h-100 border-0 shadow-sm text-center">
             <div class="card-body p-4">
                 <div class="mb-3">
-                    <img src="/assets/img/team-balaji.jpeg" alt="Balaji Nagisetty" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    <img src="/assets/img/team/balaji.jpeg" alt="Balaji Nagisetty" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <h5 class="card-title">Balaji Nagisetty</h5>
                 <p class="text-muted mb-2">Principal Architect</p>
@@ -197,7 +197,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
         <div class="card h-100 border-0 shadow-sm text-center">
             <div class="card-body p-4">
                 <div class="mb-3">
-                    <img src="/assets/img/team-prathik.jpeg" alt="Prathik Anand" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    <img src="/assets/img/team/prathik.jpeg" alt="Prathik Anand" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <h5 class="card-title">Prathik Anand</h5>
                 <p class="text-muted mb-2">Principal Engineer</p>
@@ -210,7 +210,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
         <div class="card h-100 border-0 shadow-sm text-center">
             <div class="card-body p-4">
                 <div class="mb-3">
-                    <img src="/assets/img/team-bhoomika.jpeg" alt="Bhoomika Shah" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    <img src="/assets/img/team/bhoomika.jpeg" alt="Bhoomika Shah" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <h5 class="card-title">Bhoomika Shah</h5>
                 <p class="text-muted mb-2">Biz Dev and Biz Ops</p>
@@ -259,7 +259,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/clients-ez.png" alt="EZ Innovation Logo" class="img-fluid">
+                            <img src="/assets/img/clients/ez-innovation.png" alt="EZ Innovation Logo" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -270,7 +270,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/clients-exitous.png" alt="Exitous" class="img-fluid">
+                            <img src="/assets/img/clients/exitous.png" alt="Exitous" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -281,7 +281,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/clients-mw.png" alt="Mindwave Solutions" class="img-fluid">
+                            <img src="/assets/img/clients/mindwave.png" alt="Mindwave Solutions" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -292,7 +292,7 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/clients-tacilent.png" alt="Tacilent" class="img-fluid">
+                            <img src="/assets/img/clients/tacilent.png" alt="Tacilent" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -320,21 +320,21 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/partnerships-ta.png" alt="AI Collective" class="img-fluid">
+                            <img src="/assets/img/partners/tech-alpharetta.png" alt="AI Collective" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/partnerships-aic.png" alt="Atlanta Tech Village" class="img-fluid">
+                            <img src="/assets/img/partners/ai-collective.png" alt="Atlanta Tech Village" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/partnerships-aitinkerers.png" alt="AI Tinkerers" class="img-fluid">
+                            <img src="/assets/img/partners/ai-tinkerers.png" alt="AI Tinkerers" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -345,14 +345,14 @@ description: "Learn about our mission, team, and principles that drive innovatio
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/partnerships-aic.png" alt="AI Collective" class="img-fluid">
+                            <img src="/assets/img/partners/ai-collective.png" alt="AI Collective" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-center">
                         <div class="card-body p-4">
-                            <img src="/assets/img/partnerships-tie.png" alt="TiE Atlanta" class="img-fluid">
+                            <img src="/assets/img/partners/tie-atlanta.png" alt="TiE Atlanta" class="img-fluid">
                         </div>
                     </div>
                 </div>
