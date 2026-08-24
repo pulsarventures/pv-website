@@ -8,148 +8,6 @@
    ========================================================================== */
 (function () {
     'use strict';
-    /* ---------------------------------------------------------------- faq -- */
-    /* One panel at a time, matching the source component's openFaq state. */
-    var questions = document.querySelectorAll('.faq-q');
-
-    function setFaq(btn, open) {
-        var panel = document.getElementById(btn.getAttribute('aria-controls'));
-        var mark  = btn.querySelector('.faq-mark');
-        btn.setAttribute('aria-expanded', String(open));
-        panel.style.display   = open ? '' : 'none';
-        mark.style.color      = open ? '#c25a22' : '#7d8781';
-        mark.style.transform  = open ? 'rotate(45deg)' : 'none';
-    }
-
-    Array.prototype.forEach.call(questions, function (btn) {
-        btn.addEventListener('click', function () {
-            var isOpen = btn.getAttribute('aria-expanded') === 'true';
-            Array.prototype.forEach.call(questions, function (other) { setFaq(other, false); });
-            if (!isOpen) setFaq(btn, true);
-        });
-    });
-
-    /* -------------------------------------------------------------- pills -- */
-    /* stage and ai_core are single-select, platforms is multi — same as the
-       source's opts() helper, which branches on Array.isArray(sel). */
-    var picked = { stage: '', platforms: [], ai_core: '' };
-
-    function paint(group) {
-        var buttons = document.querySelectorAll('.pill[data-group="' + group + '"]');
-        Array.prototype.forEach.call(buttons, function (b) {
-            var on = group === 'platforms'
-                ? picked.platforms.indexOf(b.dataset.value) > -1
-                : picked[group] === b.dataset.value;
-            b.style.borderColor = on ? '#f5823f' : '#dde3df';
-            b.style.background  = on ? '#fff0e7' : '#ffffff';
-            b.style.color       = on ? '#c25a22' : '#4a534e';
-            b.setAttribute('aria-pressed', String(on));
-        });
-        var field = document.getElementById('f-' + group);
-        if (field) field.value = group === 'platforms' ? picked.platforms.join(', ') : picked[group];
-    }
-
-    Array.prototype.forEach.call(document.querySelectorAll('.pill'), function (b) {
-        b.addEventListener('click', function () {
-            var group = b.dataset.group, value = b.dataset.value;
-            if (group === 'platforms') {
-                var at = picked.platforms.indexOf(value);
-                if (at > -1) { picked.platforms.splice(at, 1); } else { picked.platforms.push(value); }
-            } else {
-                picked[group] = value;
-            }
-            paint(group);
-        });
-    });
-
-    /* --------------------------------------------------------- brief form -- */
-    /* The source form was a mock: submit only flipped a flag to reveal the
-       confirmation panel, and nothing was sent. It posts to w3forms here, using
-       the access key already in _config.yml. Visual behaviour is unchanged. */
-    var form     = document.getElementById('brief-form');
-    var received = document.getElementById('brief-received');
-    var errorBox = document.getElementById('brief-error');
-    var ACCESS_KEY = form.dataset.accessKey;
-
-    function fail(message) {
-        errorBox.textContent = message;
-        errorBox.style.display = 'block';
-    }
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        errorBox.style.display = 'none';
-        if (!form.reportValidity()) return;
-
-        var fd = new FormData(form);
-        if (fd.get('botcheck')) return;
-
-        var dash = function (v) { return v || '—'; };
-        var message = [
-            'ABOUT',
-            'Name: '        + dash(fd.get('name')),
-            'Email: '       + dash(fd.get('email')),
-            'Company: '     + dash(fd.get('company')),
-            '',
-            'THE IDEA',
-            'Stage: '       + dash(fd.get('stage')),
-            'Description: ' + dash(fd.get('description')),
-            '',
-            'TECHNICAL SCOPE',
-            'Platforms: '   + dash(fd.get('platforms')),
-            'AI core: '     + dash(fd.get('ai_core')),
-            'Team size: '   + dash(fd.get('team')),
-            '',
-            'CONSTRAINTS',
-            'Budget: '      + dash(fd.get('budget')),
-            'Timeline: '    + dash(fd.get('timeline'))
-        ].join('\n');
-
-        var payload = new FormData();
-        payload.append('access_key', ACCESS_KEY);
-        payload.append('subject', 'Project brief — ' + (fd.get('company') || fd.get('name') || 'New inquiry'));
-        payload.append('name', fd.get('name') || '');
-        payload.append('email', fd.get('email') || '');
-        payload.append('message', message);
-
-        var button = form.querySelector('button[type="submit"]');
-        var label  = button.innerHTML;
-        button.disabled = true;
-        button.textContent = 'Sending…';
-
-        // w3forms wants multipart FormData, not JSON; let the browser set the boundary.
-        fetch('https://api.w3forms.com/submit', {
-            method: 'POST',
-            headers: { Accept: 'application/json' },
-            body: payload
-        })
-            .then(function (r) { return r.json(); })
-            .then(function (out) {
-                if (out.success) {
-                    form.style.display = 'none';
-                    received.style.display = 'flex';
-                } else {
-                    fail(out.message || 'Something went wrong. Please try again, or email spradhip@pulsarventures.io.');
-                }
-            })
-            .catch(function () {
-                fail('Could not submit right now. Please try again, or email spradhip@pulsarventures.io.');
-            })
-            .finally(function () {
-                button.disabled = false;
-                button.innerHTML = label;
-            });
-    });
-
-    document.getElementById('brief-reset').addEventListener('click', function () {
-        form.reset();
-        picked = { stage: '', platforms: [], ai_core: '' };
-        ['stage', 'platforms', 'ai_core'].forEach(paint);
-        received.style.display = 'none';
-        form.style.display = 'flex';
-        errorBox.style.display = 'none';
-    });
-
     /* ======================================================================
        Section behaviours — the canvas component's methods, verbatim.
        ====================================================================== */
@@ -180,43 +38,6 @@
         n.addEventListener('click', () => set(i));
       });
       set(0);
-    }
-    function teamPicker() {
-      const cards = [].slice.call(document.querySelectorAll('.team-card'));
-      const details = [].slice.call(document.querySelectorAll('.team-detail'));
-      if (!cards.length || cards[0].dataset.on) return;
-      const set = (i) => {
-        cards.forEach((c) => { c.dataset.active = c.dataset.i === String(i) ? '1' : '0'; });
-        details.forEach((d) => { d.style.display = d.dataset.i === String(i) ? 'flex' : 'none'; });
-      };
-      cards.forEach((c) => {
-        c.dataset.on = '1';
-        const i = c.dataset.i;
-        c.addEventListener('mouseenter', () => set(i));
-        c.addEventListener('focus', () => set(i));
-        c.addEventListener('click', () => set(i));
-      });
-      set(0);
-    }
-    function processTimeline() {
-      const steps = [].slice.call(document.querySelectorAll('.proc-step'));
-      if (!steps.length || steps[0].dataset.on) return;
-      steps[0].dataset.on = '1';
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const activate = (el) => {
-        el.classList.add('is-on');
-        const prev = el.previousElementSibling;
-        if (prev) { const f = prev.querySelector('.proc-line-fill'); if (f) f.style.height = '100%'; }
-        const own = el.querySelector('.proc-line-fill');
-        if (own && el.nextElementSibling && el.nextElementSibling.classList.contains('is-on')) own.style.height = '100%';
-      };
-      if (reduce) { steps.forEach(activate); return; }
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
-          if (en.isIntersecting) { activate(en.target); io.unobserve(en.target); }
-        });
-      }, { rootMargin: '-20% 0px -30% 0px', threshold: 0.01 });
-      steps.forEach((st) => io.observe(st));
     }
     function fourA() {
       const rail = document.querySelector('.fa-rail');
@@ -290,7 +111,7 @@
       frame();
     }
 
-    [smoke, whatWeBuild, teamPicker, fourA, processTimeline].forEach(function (fn) {
+    [smoke, whatWeBuild, fourA].forEach(function (fn) {
         try { fn(); } catch (e) { console.warn(e); }
     });
 }());
