@@ -25,9 +25,9 @@
       <a href="{{ home }}#work" class="nav-link hv-1">Clients</a>
       <a href="{{ home }}#products" class="nav-link hv-1">Products</a>
       <div class="nav-dd">
-        <button type="button" class="nav-link nav-dd-btn hv-1" aria-expanded="false" aria-controls="nav-dd-menu">Company <svg class="nav-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class="nav-link nav-dd-btn hv-1" aria-expanded="false" aria-controls="nav-dd-menu">About Us <svg class="nav-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
         <div id="nav-dd-menu" class="nav-dd-menu" role="menu">
-          <a href="{% if page.url == '/about-us/' %}#top{% else %}{{ '/about-us/' | relative_url }}{% endif %}" class="nav-dd-item hv-1" role="menuitem">About Us</a>
+          <a href="{% if page.url == '/about-us/' %}#top{% else %}{{ '/about-us/' | relative_url }}{% endif %}" class="nav-dd-item hv-1" role="menuitem">Company</a>
           <a href="{{ '/about-us/' | relative_url }}#team" class="nav-dd-item hv-1" role="menuitem">Team</a>
           <a href="{{ home }}#products" class="nav-dd-item hv-1" role="menuitem">Brands</a>
           <a href="{{ '/about-us/' | relative_url }}#community" class="nav-dd-item hv-1" role="menuitem">Community</a>
