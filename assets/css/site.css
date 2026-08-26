@@ -69,7 +69,17 @@ a.prod-cell:hover span:last-child { color:#c25a22 !important; }
 @media (max-width: 980px) { .prod-grid { grid-template-columns:repeat(2, 1fr) !important; } }
 @media (max-width: 620px) { .prod-grid { grid-template-columns:1fr !important; } }
 @media (max-width: 900px) { .pv-head { grid-template-columns:1fr !important; gap:24px !important; } .pv-grid { grid-template-columns:1fr !important; } .pv-cell { padding:26px 0 !important; border-right:none !important; border-bottom:1px solid #dde3df; } .pf-head { grid-template-columns:1fr !important; gap:24px !important; } }
-@media (max-width: 980px) { .eng-grid { grid-template-columns:1fr !important; } .eng-cell { padding:26px 0 !important; border-right:none !important; border-bottom:1px solid #dde3df; } }
+@media (max-width: 980px) {
+  .eng-grid { grid-template-columns:1fr !important; }
+  .eng-grid > div { padding:26px 0 !important; border-right:none !important; border-bottom:1px solid #dde3df; }
+}
+@media (max-width: 720px) {
+  .landscape-eras { grid-template-columns:1fr !important; }
+  .landscape-tiles { grid-template-columns:1fr !important; }
+}
+@media (max-width: 620px) {
+  .prod-grid .prod-cell { border-left:1px dashed #cfd8d3 !important; border-right:1px dashed #cfd8d3 !important; }
+}
 .hv-hero-a:hover { background:#f2f5f3 !important; color:#07100c !important; }
 .hv-hero-b:hover { background:rgba(255,255,255,0.12) !important; border-color:rgba(255,255,255,0.4) !important; color:#ffffff !important; }
 @media (max-width: 720px) { .hero-stage { min-height:520px !important; padding:64px 20px 32px !important; border-radius:18px !important; } }
