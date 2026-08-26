@@ -19,13 +19,13 @@
       const set = (i) => {
         nodes.forEach((n) => {
           const on = n.dataset.i === String(i);
-          n.querySelector('.wwb-dot').style.background = on ? '#f5823f' : '#0b3d2b';
+          n.querySelector('.wwb-dot').style.background = on ? '#ff6b1a' : '#0b2452';
           n.querySelector('.wwb-dot').style.transform = on ? 'scale(1.15)' : 'scale(1)';
-          n.querySelector('.wwb-title').style.color = on ? '#0b3d2b' : '#8d968f';
+          n.querySelector('.wwb-title').style.color = on ? '#0b2452' : '#8494a8';
         });
         lines.forEach((l) => {
           const on = l.dataset.i === String(i);
-          l.setAttribute('stroke', on ? '#f5823f' : '#cfd8d3');
+          l.setAttribute('stroke', on ? '#ff6b1a' : '#c9d3e0');
           l.setAttribute('stroke-width', on ? '2' : '1.5');
         });
         panels.forEach((p) => { p.style.display = p.dataset.i === String(i) ? 'flex' : 'none'; });
@@ -48,11 +48,11 @@
       const paint = (i) => {
         steps.forEach((st, k) => {
           const on = i !== null && k <= i;
-          st.querySelector('.fa-dot').style.background = on ? '#f5823f' : '#ffffff';
-          st.querySelector('.fa-dot').style.borderColor = on ? '#f5823f' : '#dde3df';
+          st.querySelector('.fa-dot').style.background = on ? '#ff6b1a' : '#ffffff';
+          st.querySelector('.fa-dot').style.borderColor = on ? '#ff6b1a' : '#dee2e9';
           st.querySelector('.fa-dot').style.transform = (i === k) ? 'scale(1.12)' : 'scale(1)';
-          st.querySelector('.fa-icon').setAttribute('stroke', on ? '#ffffff' : '#0b5d40');
-          st.querySelector('.fa-title').style.color = on ? '#0b3d2b' : '#111714';
+          st.querySelector('.fa-icon').setAttribute('stroke', on ? '#ffffff' : '#0e3a6e');
+          st.querySelector('.fa-title').style.color = on ? '#0b2452' : '#0c1b33';
         });
         fill.style.width = i === null ? '0%' : (i / (steps.length - 1)) * 75 + '%';
       };
@@ -68,7 +68,10 @@
       if (!cv || cv.dataset.on) return;
       cv.dataset.on = '1';
       const gl = cv.getContext('webgl', { antialias: false, alpha: false });
-      if (!gl) { cv.style.background = 'radial-gradient(120% 90% at 30% 20%, #16352a, #07100c 70%)'; return; }
+      if (!gl) { cv.style.background = 'radial-gradient(120% 90% at 30% 20%, #0e3a6e, #04091a 70%)'; return; }
+      /* Nebula, at FULL density. Ground is space #04091a, the fbm clouds a
+         steel blue, the filaments pale plasma, and the one warm term is the
+         pulsar orange beam. Values sampled from Design.pdf p.6 and p.8. */
       const vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
       const fs = [
         'precision highp float;uniform vec2 u_res;uniform float u_t;',
@@ -81,9 +84,9 @@
         'vec2 r=vec2(fbm(uv*1.5+4.*q+vec2(1.7,9.2)+t*1.3),fbm(uv*1.5+4.*q+vec2(8.3,2.8)-t*1.05));',
         'float f=fbm(uv*1.7+4.*r);float v=smoothstep(-.25,.85,f);',
         'float e=pow(max(0.,1.-abs(f*1.7-.22)),7.);',
-        'vec3 col=mix(vec3(.027,.055,.043),vec3(.46,.62,.55),v*.62);',
-        'col+=vec3(.42,.62,.52)*e*.85;',
-        'col+=vec3(.96,.51,.25)*pow(max(0.,v-.55),2.)*.30;',
+        'vec3 col=mix(vec3(.016,.035,.102),vec3(.22,.31,.42),v*.62);',
+        'col+=vec3(.52,.68,.88)*e*.50;',
+        'col+=vec3(1.,.42,.10)*pow(max(0.,v-.55),2.)*.30;',
         'float vg=smoothstep(1.35,.15,length(uv*vec2(.72,1.)));',
         'gl_FragColor=vec4(col*mix(.35,1.,vg),1.);}'
       ].join('\n');

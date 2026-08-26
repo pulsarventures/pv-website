@@ -12,11 +12,11 @@
 {% if page.url == '/' %}{% assign is_home = true %}{% endif %}
 {% if is_home %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
 
-<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border-bottom:1px solid #e8ece9">
+<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border-bottom:1px solid #e3e7ee">
   <div class="nav-bar" style="max-width:1240px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between">
     <a href="{% if is_home %}#top{% else %}{{ '/' | relative_url }}{% endif %}" style="display:inline-flex; align-items:center; gap:10px; line-height:1">
-      <span style="display:grid; gap:1px; font-size:22px; font-weight:800; letter-spacing:-0.03em; line-height:0.88"><span style="color:#064e35">P</span><span style="color:#111714">V</span></span>
-      <span style="display:grid; gap:2px; font-size:15px; font-weight:600; letter-spacing:-0.015em"><span style="color:#064e35">Pulsar</span><span style="color:#111714">Ventures</span></span>
+      <span style="display:grid; gap:1px; font-size:22px; font-weight:800; letter-spacing:-0.03em; line-height:0.88"><span style="color:#ff6b1a">P</span><span style="color:#0b2452">V</span></span>
+      <span style="display:grid; gap:2px; font-size:15px; font-weight:600; letter-spacing:-0.015em"><span style="color:#0b2452">Pulsar</span><span style="color:#0b2452">Ventures</span></span>
     </a>
     <button type="button" id="nav-burger" class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
@@ -33,7 +33,7 @@
           <a href="{{ '/about-us/' | relative_url }}#community" class="nav-dd-item hv-1" role="menuitem">Community</a>
         </div>
       </div>
-      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="nav-cta hv-2" style="display:inline-flex; align-items:center; gap:8px; background:#064e35; color:#ffffff; font-size:14px; font-weight:600; padding:10px 20px; border-radius:10px">Schedule a call</a>
+      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="nav-cta hv-2" style="display:inline-flex; align-items:center; gap:8px; background:#0b2452; color:#ffffff; font-size:14px; font-weight:600; padding:10px 20px; border-radius:10px">Schedule a call</a>
     </div>
   </div>
 </nav>
