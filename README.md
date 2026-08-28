@@ -152,9 +152,11 @@ Edit `_includes/site-nav.html`. (`_includes/header.html` belongs to the legacy
 - `assets/css/design-system.css` is **orphaned** — only `_includes/head-v6.html`
   links it, and no built page renders a `-v6` layout. It still carries a stale
   `--brand: #064e35` from the retired green palette
-- `assets/css/main.scss` is legacy and only affects `404.html`. It builds clean —
-  it uses `@use "sass:color"` with `color.adjust()`, not the deprecated global
-  `darken()`/`lighten()`. Keep it that way if you touch it.
+- `assets/css/main.scss` is legacy and only affects `404.html`. It must stay on
+  the **old global Sass functions** (`darken()`, `lighten()`) — the production
+  builder runs Ruby Sass 3.7.4, which has no module system and dies on
+  `color.adjust()`. Dart Sass deprecates those functions locally; ignore it.
+  See [Deployment](#-deployment).
 
 ### Scripts
 Per-page JS is opted into via the `page_js` front-matter key, which the `site`
@@ -178,16 +180,38 @@ layout renders as a script tag. `site-nav.js` loads on every page.
 - **Live Site**: https://pulsarventures.co
 - **GitHub Pages**: https://pulsarventures.github.io/pv-website
 
-Deployment runs through `.github/workflows/deploy.yml` (Ruby → `bundle exec jekyll build`
-→ `peaceiris/actions-gh-pages`, publishing `./_site` with the CNAME).
+> **Pushing to `main` publishes the site.** There is no approval step. Whatever
+> lands on `main` is what pulsarventures.co serves a minute later.
 
-> **Deploys are manual.** The `push` and `pull_request` triggers in `deploy.yml` are
-> currently commented out — the workflow is `workflow_dispatch` only. Pushing to `main`
-> will **not** publish. Run the workflow from the Actions tab, or uncomment the `push`
-> trigger to restore automatic deploys.
+Pages is configured as `build_type: legacy`, source `main` at `/`. That means
+GitHub's own **`pages-build-deployment`** workflow builds and deploys on every
+push to `main`. It is not defined in this repo — you will not find it in
+`.github/workflows/` — but it is the real deploy path. Watch it with
+`gh run list --workflow=pages-build-deployment`.
 
-The deploy job additionally guards on `github.ref == 'refs/heads/main'`, so a
-dispatch from another branch builds but does not publish.
+`.github/workflows/deploy.yml` is **vestigial**. Its `push`/`pull_request`
+triggers are commented out so it only runs on `workflow_dispatch`, and it
+publishes via `peaceiris/actions-gh-pages` to the `gh-pages` branch — which
+Pages does not serve, because the source is `main`. Dispatching it changes
+nothing on the live site. Delete it, or repoint Pages at it, but do not trust it.
+
+### ⚠️ The production builder is not the one you run locally
+
+This is the trap. The two toolchains differ by a decade and disagree about Sass:
+
+| | Local (Docker, this README) | Production (`pages-build-deployment`) |
+|---|---|---|
+| Bundle | `Gemfile` → Jekyll 4.3.4 | `github-pages` v232 → Jekyll 3.10.0 |
+| Sass | `jekyll-sass-converter` 3.1 → **Dart Sass** (`sass-embedded` 1.90) | `jekyll-sass-converter` 1.5.2 → **Ruby Sass 3.7.4** |
+| Plugins | the three in `_config.yml` | the fixed `github-pages` allowlist |
+
+Ruby Sass 3.7.4 predates the Sass module system. It does **not** understand
+`@use "sass:color"` or `color.adjust()`. Writing modern Sass in `main.scss`
+builds perfectly under Docker and then fails the live deploy with
+`Invalid CSS after "...nd-color: color": expected ";"`. Keep `main.scss` on the
+old global functions (`darken()`, `lighten()`) even though Dart Sass deprecates
+them, and **always confirm a green `pages-build-deployment` run after merging** —
+a clean local build proves nothing about production.
 
 ## 🔍 SEO
 
@@ -197,9 +221,17 @@ dispatch from another branch builds but does not publish.
 
 ## 🐛 Known Issues
 
-None outstanding. No built page links to a route that 404s, and the build is clean
-apart from one unrelated notice from Ruby itself (`logger was loaded from the
-standard library…`), which comes from `jekyll` and not from this repo.
+No built page links to a route that 404s. Two harmless build messages remain, both
+expected:
+
+- `DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated
+  and will be removed in Dart Sass 3.0.0. Use color.adjust instead.` — from
+  `darken()` in `main.scss`. **Do not act on it.** Taking Dart Sass's advice
+  breaks the production deploy; see [Deployment](#-deployment). It becomes real
+  work only if the `github-pages` gem ever moves to Dart Sass, or if Pages is
+  repointed at an Actions workflow using this repo's own `Gemfile`.
+- `logger was loaded from the standard library…` — from `jekyll` itself, not
+  this repo.
 
 The legacy layouts (`landing*.html`, `page.html`, `page-v4.html`, `page-v6.html`,
 `post.html`) and their `-v6` includes are still checked in and still contain dead
