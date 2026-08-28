@@ -21,7 +21,7 @@
 :root {
     /* Ground — light */
     --page: #fbfaf8;          /* page ground                                */
-    --paper: var(--paper);         /* tinted panels, section grounds, row hover  */
+    --paper: #f1efec;         /* tinted panels, section grounds, row hover  */
     --surface: #ffffff;       /* cards, menus, buttons on dark              */
     --paper-hover: #f7f5f2;   /* cell hover                                 */
 
@@ -61,10 +61,10 @@
     --ink-micro: #93a1b5;
 
     /* Rules */
-    --rule: var(--rule);
-    --rule-soft: var(--rule-soft);
+    --rule: #d8dee8;
+    --rule-soft: #eef1f5;
     --rule-menu: #e3e7ee;
-    --rule-dash: var(--rule-dash);
+    --rule-dash: #bac7d8;
     --rule-line: #c9d3e0;     /* connector strokes                          */
 
     /* Elevation — shadows carry the display navy, not neutral black */

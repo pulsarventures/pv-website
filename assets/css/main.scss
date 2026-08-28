@@ -108,8 +108,8 @@ $light-color: #f1efec;     // paper
         border-color: $primary-color;
         
         &:hover {
-            background-color: darken($primary-color, 10%);
-            border-color: darken($primary-color, 10%);
+            background-color: color.adjust($primary-color, $lightness: -10%);
+            border-color: color.adjust($primary-color, $lightness: -10%);
             transform: translateY(-2px);
         }
     }
