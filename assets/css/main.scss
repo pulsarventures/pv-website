@@ -1,8 +1,6 @@
 ---
 ---
 
-@use "sass:color";
-
 // Custom variables
 // Cosmic Direction V1 — deep blue leads, one orange signals. Green and
 // purple are retired; see the palette block in assets/css/site.css.
@@ -108,8 +106,8 @@ $light-color: #f1efec;     // paper
         border-color: $primary-color;
         
         &:hover {
-            background-color: color.adjust($primary-color, $lightness: -10%);
-            border-color: color.adjust($primary-color, $lightness: -10%);
+            background-color: darken($primary-color, 10%);
+            border-color: darken($primary-color, 10%);
             transform: translateY(-2px);
         }
     }
