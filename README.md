@@ -91,7 +91,7 @@ pv-website/
 ├── _includes/                  # Reusable components
 ├── _pages/                     # Secondary pages (about-us, blog)
 ├── assets/
-│   ├── css/                    # site.css (live), design-system.css, main.scss (legacy)
+│   ├── css/                    # site.css (live + tokens); design-system.css, main.scss (legacy)
 │   ├── js/                     # home.js, about.js, site-nav.js, main.js
 │   └── img/                    # brand, clients, partners, products, team, tech-logos
 ├── index.html                  # Homepage
@@ -145,8 +145,13 @@ Edit `_includes/site-nav.html`. (`_includes/header.html` belongs to the legacy
 ## 🛠️ Customization
 
 ### Styling
-- **Live styles**: `assets/css/site.css`
-- **Design tokens**: `assets/css/design-system.css`
+- **Live styles**: `assets/css/site.css` — this is the whole live layer
+- **Design tokens**: the `:root` block at the top of `site.css`. The Cosmic
+  Direction palette lives there as CSS custom properties (`--page`, `--paper`,
+  `--ink-display`, `--pulsar`, …); change a colour there, not at the call site
+- `assets/css/design-system.css` is **orphaned** — only `_includes/head-v6.html`
+  links it, and no built page renders a `-v6` layout. It still carries a stale
+  `--brand: #064e35` from the retired green palette
 - `assets/css/main.scss` is legacy and only affects `404.html`. It builds clean —
   it uses `@use "sass:color"` with `color.adjust()`, not the deprecated global
   `darken()`/`lighten()`. Keep it that way if you touch it.
