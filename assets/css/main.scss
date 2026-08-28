@@ -4,16 +4,17 @@
 @use "sass:color";
 
 // Custom variables
-//$primary-color: #007bff;
-$primary-color: #6a1b9a;
-$secondary-color: #6c757d;
-$accent-color: #28a745;
-$dark-color: #212529;
-$light-color: #f8f9fa;
+// Cosmic Direction V1 — deep blue leads, one orange signals. Green and
+// purple are retired; see the palette block in assets/css/site.css.
+$primary-color: #0b2452;   // display navy
+$secondary-color: #7a8aa5; // ink-soft
+$accent-color: #ff6b1a;    // pulsar orange — the one action
+$dark-color: #0c1b33;      // ink
+$light-color: #f1efec;     // paper
 
 // Hero section styles
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0e3a6e 0%, #04091a 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -334,16 +335,16 @@ footer {
 
 // CTA Section
 .cta-section {
-    background-color: #6a1b9a !important; // Purple background
+    background-color: #0b2452 !important; // Display navy
 }
 
 // Service details section
 .service-details {
   padding: 2rem;
-  border: 1px solid #eee;
+  border: 1px solid #dee2e9;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
-  background-color: #f8f9fa;
+  background-color: #f1efec;
 }
 
 // Custom carousel styles
