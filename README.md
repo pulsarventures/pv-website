@@ -75,11 +75,12 @@ The site is currently a single-page landing plus two secondary routes. Only thes
 |---|---|---|
 | `/` | `index.html` | `site` |
 | `/about-us/` | `_pages/about-us.html` | `site` |
-| `/blog/` | `_pages/blog.md` | `page-v6` (meta-refresh redirect) |
+| `/blog/` | `_pages/blog.md` | `site` (meta-refresh to `/`, `noindex`, excluded from the sitemap) |
 
 Older routes — `/services/`, `/contact/`, `/products/`, `/company/`, `/ai-musings/` —
-were removed in `2065d12` when the landing page was consolidated. They now 404.
-See [Known Issues](#-known-issues).
+were removed in `2065d12` when the landing page was consolidated. They now 404. No
+live page links to them; the only remaining references are inside orphaned layouts
+(`page-v4.html`, `page-v6.html`, `footer-v6.html`) that no built page renders.
 
 ## 📁 Project Structure
 
@@ -146,8 +147,9 @@ Edit `_includes/site-nav.html`. (`_includes/header.html` belongs to the legacy
 ### Styling
 - **Live styles**: `assets/css/site.css`
 - **Design tokens**: `assets/css/design-system.css`
-- `assets/css/main.scss` is legacy — it still emits Dart Sass deprecation warnings
-  on every build (`darken()` and other global built-ins) but only affects `404.html`
+- `assets/css/main.scss` is legacy and only affects `404.html`. It builds clean —
+  it uses `@use "sass:color"` with `color.adjust()`, not the deprecated global
+  `darken()`/`lighten()`. Keep it that way if you touch it.
 
 ### Scripts
 Per-page JS is opted into via the `page_js` front-matter key, which the `site`
@@ -190,13 +192,15 @@ dispatch from another branch builds but does not publish.
 
 ## 🐛 Known Issues
 
-- **`/products/` link is dead.** `index.html:464` renders an "EXPLORE THE PORTFOLIO ↗"
-  link to `/products/`, but that page was deleted in `2065d12`. It 404s.
-- **`/blog/` redirects to a dead page.** `_pages/blog.md` is a meta-refresh to
-  `/ai-musings/`, which no longer exists.
-- **Dart Sass deprecations** on every build from `assets/css/main.scss`. Harmless
-  today (legacy 404-only path), but blocking a Dart Sass 3.0 upgrade. Migrate
-  `darken()` → `color.adjust()` / `color.scale()`.
+None outstanding. No built page links to a route that 404s, and the build is clean
+apart from one unrelated notice from Ruby itself (`logger was loaded from the
+standard library…`), which comes from `jekyll` and not from this repo.
+
+The legacy layouts (`landing*.html`, `page.html`, `page-v4.html`, `page-v6.html`,
+`post.html`) and their `-v6` includes are still checked in and still contain dead
+`/products/`, `/services/` and `/company/` links, but no built page renders them.
+They are dead weight rather than a live defect — delete them when someone is
+confident the design iterations are finished with.
 
 ## 🐛 Troubleshooting
 
