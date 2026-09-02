@@ -1,12 +1,17 @@
 {% comment %}
   Site navigation, ported from the design canvas.
 
-  The canvas shipped the same bar on the Homepage and About Us artboards; the
-  only difference was link resolution. On the homepage the section links are
-  bare fragments (#services) and "About us" points at the About page; on any
-  other page the fragments have to be qualified (/#services) and "About us"
-  points at the top of the current page. `home` below is empty on the homepage
-  and "/" everywhere else, which reproduces both artboards exactly.
+  The canvas shipped the same bar on the Homepage, About Us and Services
+  artboards; the only difference was link resolution. On the homepage the
+  section links are bare fragments (#work) and "About us" points at the
+  About page; on any other page the fragments have to be qualified (/#work)
+  and "About us" points at the top of the current page. `home` below is empty on
+  the homepage and "/" everywhere else, which reproduces every artboard exactly.
+
+  "Services" is a real page rather than a homepage section, so it links to its
+  permalink and follows the same rule as "About us": on /services/ it points at
+  #top, and there it takes the eyebrow orange (#bd450a) as its current-page
+  colour, per the Services artboard.
 {% endcomment %}
 {% assign is_home = false %}
 {% if page.url == '/' %}{% assign is_home = true %}{% endif %}
@@ -22,6 +27,7 @@
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
     </button>
     <div id="nav-menu" class="nav-menu">
+      <a href="{% if page.url == '/services/' %}#top{% else %}{{ '/services/' | relative_url }}{% endif %}" class="nav-link{% unless page.url == '/services/' %} hv-1{% endunless %}"{% if page.url == '/services/' %} aria-current="page" style="color:#bd450a"{% endif %}>Services</a>
       <a href="{{ home }}#work" class="nav-link hv-1">Clients</a>
       <a href="{{ home }}#products" class="nav-link hv-1">Products</a>
       <div class="nav-dd">

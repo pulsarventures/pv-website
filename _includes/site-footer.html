@@ -1,8 +1,10 @@
 {% comment %}
-  Site footer, ported from the design canvas. Identical markup on both
-  artboards; the Navigate column is qualified with `home` for the same reason
-  the nav is, so those links still reach the homepage sections from About Us
-  (in the canvas export they were bare fragments and went nowhere off-home).
+  Site footer, ported from the design canvas. Identical markup on every
+  artboard; the homepage-section links in the Navigate column are qualified
+  with `home` for the same reason the nav is, so they still reach the homepage
+  sections from About Us (in the canvas export they were bare fragments and
+  went nowhere off-home). Services is a page of its own, so it links to its
+  permalink and needs no qualifying.
 {% endcomment %}
 {% if page.url == '/' %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
 
@@ -19,6 +21,7 @@
       <div>
         <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Navigate</p>
         <div style="display:flex; flex-direction:column; gap:12px">
+          <a href="{{ '/services/' | relative_url }}" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Services</a>
           <a href="{{ home }}#work" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Clients</a>
           <a href="{{ home }}#products" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Products</a>
         </div>

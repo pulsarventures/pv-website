@@ -69,18 +69,23 @@ Either of:
 
 ### Routes
 
-The site is currently a single-page landing plus two secondary routes. Only these build:
+The site is currently a landing page plus three secondary routes. Only these build:
 
 | Route | Source | Layout |
 |---|---|---|
 | `/` | `index.html` | `site` |
+| `/services/` | `_pages/services.html` | `site` |
 | `/about-us/` | `_pages/about-us.html` | `site` |
 | `/blog/` | `_pages/blog.md` | `site` (meta-refresh to `/`, `noindex`, excluded from the sitemap) |
 
-Older routes — `/services/`, `/contact/`, `/products/`, `/company/`, `/ai-musings/` —
-were removed in `2065d12` when the landing page was consolidated. They now 404. No
-live page links to them; the only remaining references are inside orphaned layouts
-(`page-v4.html`, `page-v6.html`, `footer-v6.html`) that no built page renders.
+`/services/` was restored from the design canvas' Services artboard; it had been
+removed in `2065d12` along with the others and 404'd until then.
+
+The still-removed routes — `/contact/`, `/products/`, `/company/`, `/ai-musings/` —
+continue to 404. No live page links to them; the only remaining references are inside
+orphaned layouts (`page-v4.html`, `page-v6.html`, `footer-v6.html`) that no built page
+renders. The canvas ships artboards for all four, but they are empty stubs (a heading
+and nothing else), so they were deliberately not ported.
 
 ## 📁 Project Structure
 
@@ -89,10 +94,10 @@ pv-website/
 ├── _config.yml                 # Jekyll configuration
 ├── _layouts/                   # Page layouts (see "Live vs. legacy" below)
 ├── _includes/                  # Reusable components
-├── _pages/                     # Secondary pages (about-us, blog)
+├── _pages/                     # Secondary pages (services, about-us, blog)
 ├── assets/
 │   ├── css/                    # site.css (live + tokens); design-system.css, main.scss (legacy)
-│   ├── js/                     # home.js, about.js, site-nav.js, main.js
+│   ├── js/                     # home.js, services.js, about.js, site-nav.js, main.js
 │   └── img/                    # brand, clients, partners, products, team, tech-logos
 ├── index.html                  # Homepage
 ├── 404.html                    # Custom 404 page
