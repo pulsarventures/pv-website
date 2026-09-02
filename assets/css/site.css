@@ -248,3 +248,82 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
     * { transition-duration: 0.01ms !important; }
 }
 
+
+/* ==========================================================================
+   Services — the page's own layer, kept whole
+   --------------------------------------------------------------------------
+   The Services canvas is the only screen in the set built on named classes
+   rather than pure inline style: the offer cards, the three "fit" splits and
+   the process rail all repeat a shape too many times for an inline attribute
+   to carry honestly. Those classes come across here rather than being folded
+   into the blocks above, because the canvas breaks at 720px and 980px while
+   this file already breaks at 720/860/900/1024 — merging them would leave the
+   Services rules scattered across four unrelated blocks and impossible to
+   read against the canvas they came from.
+
+   Everything below is the canvas <style> block with three changes:
+     - the canvas neutrals are rewritten to this site's palette, so the page
+       does not clash with every other page (see the :root block at the top);
+     - '.svc-li i' is '.svc-li svg' — the lucide runtime is not on the live
+       site, so those icons ship as inline <svg stroke="currentColor">, which
+       is what the colour here is for;
+     - the canvas transitions referenced a var(--ease-standard) this file has
+       never defined, so they were silently running on the browser default.
+       The literal curve replaces it.
+
+   Rules the canvas shipped that are deliberately absent: its '.svc-faq'
+   details/summary styling (the ported FAQ is button + aria-expanded, so those
+   never match), and its redefinitions of '.hv-2', '.hv-6', '.fa-rail',
+   '.eng-grid' and '.grid-split', all of which already exist above and are
+   shared with the homepage and About.
+   ========================================================================== */
+.svc-sec { padding:104px 32px; scroll-margin-top:72px; }
+.svc-head { display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:1px solid #dee2e9; margin-bottom:48px; }
+.svc-kick { margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#bd450a; }
+.svc-kick--mute { color:#7a8aa5; }
+.svc-note { margin:0; font-size:14px; color:#7a8aa5; }
+.svc-t { margin:0; font-family:'Instrument Serif', serif; font-weight:400; letter-spacing:-0.02em; line-height:1.05; color:#0b2452; }
+.svc-b { margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty; }
+.svc-g3 { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1px; background:#dee2e9; border:1px solid #dee2e9; }
+.svc-offer { background:#ffffff; border:1px solid #dee2e9; border-top:3px solid #ff6b1a; padding:38px; display:flex; flex-direction:column; gap:22px; transition:box-shadow 220ms cubic-bezier(0.4, 0, 0.2, 1), transform 220ms cubic-bezier(0.4, 0, 0.2, 1); }
+.svc-offer:hover { transform:translateY(-3px); box-shadow:0 18px 44px rgba(7,26,58,0.10); }
+.svc-li { display:flex; gap:12px; align-items:flex-start; font-size:14.5px; line-height:1.6; color:#4a5464; }
+.svc-li svg { flex:none; width:15px; height:15px; color:#ff6b1a; margin-top:3px; }
+.svc-mono { margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#7a8aa5; }
+
+/* The process rail's active step. Driven by the page script toggling .is-on;
+   !important because each step paints its resting state inline. */
+.proc-step.is-on .proc-tile { background:#ff6b1a !important; border-color:#ff6b1a !important; }
+.proc-step.is-on .proc-tile svg { stroke:#ffffff !important; }
+.proc-step.is-on .proc-card { border-left-color:#ff6b1a !important; }
+.proc-step.is-on .proc-num { color:#bd450a !important; }
+
+@media (max-width: 980px) {
+  .proc-wrap { grid-template-columns:1fr !important; gap:44px !important; }
+  .proc-wrap > div:first-child { position:static !important; }
+}
+
+/* The canvas is a fixed desktop composition; this is the collapse it never
+   had. The .svc-sec padding carries !important the canvas did not need: two
+   of the seven sections set their padding inline, and without it those two
+   would keep 32px gutters on a phone while the other five went to 20px. */
+@media (max-width: 980px) {
+  .svc-sec { padding:72px 20px !important; }
+  /* The shorthand above is !important, so it outranks the hero's inline
+     padding and would drop its top to exactly the 72px of the fixed nav,
+     leaving the eyebrow touching the bar. #top.sec gets the same exemption
+     on the other two pages; svc-sec never matched that rule. */
+  #top.svc-sec { padding:116px 20px 48px !important; }
+  /* #process and #faq are .sec, which only collapses its gutters at 720px.
+     Without this they keep 32px gutters between 721 and 980 while every
+     neighbouring section has already gone to 20px. */
+  #process, #faq { padding-left:20px !important; padding-right:20px !important; }
+  .svc-head { flex-wrap:wrap; gap:6px !important; }
+  .svc-fit { grid-template-columns:1fr !important; gap:34px !important; }
+  /* svc-fit2 is a hairline grid: its 1px gap IS the divider, drawn by the
+     #dee2e9 background showing between white cells. Giving it the 34px gap
+     of its neighbours turns those hairlines into solid grey bands. */
+  .svc-fit2 { grid-template-columns:1fr !important; }
+  .svc-g3 { grid-template-columns:1fr; gap:1px; }
+  .svc-offer { padding:26px; }
+}
