@@ -5,10 +5,15 @@
    repainted the lucide icons and called four methods. The methods are plain
    functions here. nav() is gone — site-nav.js does that on every page — and
    the lucide createIcons() calls went with it, because the icons are inline
-   SVG now and there is no runtime to wait for. That also retires the canvas's
+   SVG now and there is no runtime to wait for. fourA() is gone too: the 4A
+   rail was taken off this page and now lives only on the homepage, so home.js
+   holds the sole copy. That also retires the canvas's
    `setTimeout(() => this.fourA(), 300)` retry, which existed only to re-bind
-   the rail after lucide swapped its <i> tags for <svg>. Everything else is
-   unchanged.
+   the rail after lucide swapped its <i> tags for <svg>.
+
+   faq() is deliberately still here while the FAQ block sits behind a Liquid
+   comment in _pages/services.html: it finds no .faq-q, returns, and costs
+   nothing, so un-commenting that block is the whole job of restoring it.
    ========================================================================== */
 (function () {
     'use strict';
@@ -54,38 +59,7 @@
         });
       });
     }
-    /* Duplicated from home.js, deliberately. The canvas gave every artboard
-       carrying a .fa-rail its own copy of this method, and the site layout
-       loads exactly one page_js file per page — so a shared helper has no home
-       yet. The palette values below are home.js's live ones (#dee2e9 border,
-       #0c1b33 title), not the canvas's (#dbe1ea, #0e1526), so both rails
-       behave identically. Change one copy, change the other. */
-    function fourA() {
-      const rail = document.querySelector('.fa-rail');
-      if (!rail || rail.dataset.on) return;
-      rail.dataset.on = '1';
-      const fill = rail.querySelector('.fa-fill');
-      const steps = [].slice.call(rail.querySelectorAll('.fa-step'));
-      const paint = (i) => {
-        steps.forEach((st, k) => {
-          const on = i !== null && k <= i;
-          st.querySelector('.fa-dot').style.background = on ? '#ff6b1a' : '#ffffff';
-          st.querySelector('.fa-dot').style.borderColor = on ? '#ff6b1a' : '#dee2e9';
-          st.querySelector('.fa-dot').style.transform = (i === k) ? 'scale(1.12)' : 'scale(1)';
-          st.querySelector('.fa-icon').setAttribute('stroke', on ? '#ffffff' : '#0e3a6e');
-          st.querySelector('.fa-title').style.color = on ? '#0b2452' : '#0c1b33';
-        });
-        fill.style.width = i === null ? '0%' : (i / (steps.length - 1)) * 75 + '%';
-      };
-      steps.forEach((st, k) => {
-        st.addEventListener('mouseenter', () => paint(k));
-        st.addEventListener('click', () => paint(k));
-      });
-      rail.addEventListener('mouseleave', () => paint(null));
-      paint(null);
-    }
-
-    [fourA, processTimeline, faq].forEach(function (fn) {
+    [processTimeline, faq].forEach(function (fn) {
         try { fn(); } catch (e) { console.warn(e); }
     });
 }());

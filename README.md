@@ -81,6 +81,19 @@ The site is currently a landing page plus three secondary routes. Only these bui
 `/services/` was restored from the design canvas' Services artboard; it had been
 removed in `2065d12` along with the others and 404'd until then.
 
+Three blocks that shipped with that restore are no longer on the page. The 4A
+framework rail and the fee/growth/equity engagement block came off as duplicates
+of the homepage, which still carries both. The FAQ is parked behind a
+`{% raw %}{% comment %}{% endraw %}` wrapper rather than deleted (its background is pre-set
+to canvas so an un-comment still alternates against the now-white `#process`) —
+`faq()` is still in `services.js` and the `#faq` rule is still in `site.css`, so
+restoring it means deleting two Liquid tags and nothing else. An Advisory section
+for CIOs and CTOs was added directly after the hero, ahead of every build section,
+because that is the order an engagement actually starts in. Adding a section at the
+top of the stack flipped every background below it — `#ways`, `#teach`, `#with`,
+`#for` and `#process` each paint the opposite of what they used to — which is what
+keeps the page's white/canvas alternation intact.
+
 The still-removed routes — `/contact/`, `/products/`, `/company/`, `/ai-musings/` —
 continue to 404. No live page links to them; the only remaining references are inside
 orphaned layouts (`page-v4.html`, `page-v6.html`, `footer-v6.html`) that no built page

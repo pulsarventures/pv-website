@@ -320,6 +320,11 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
   #process, #faq { padding-left:20px !important; padding-right:20px !important; }
   .svc-head { flex-wrap:wrap; gap:6px !important; }
   .svc-fit { grid-template-columns:1fr !important; gap:34px !important; }
+  /* .proc-wrap gets this reset above; .svc-fit never did. Chromium constrains a sticky
+     grid item to the grid container's content box rather than its own grid area, so once
+     the two columns stack the sticky left column pins at top:104px and rides down over
+     the column beneath it — measured at 347px of overlap on #teach and #for. */
+  .svc-fit > div:first-child { position:static !important; }
   /* svc-fit2 is a hairline grid: its 1px gap IS the divider, drawn by the
      #dee2e9 background showing between white cells. Giving it the 34px gap
      of its neighbours turns those hairlines into solid grey bands. */
