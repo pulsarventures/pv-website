@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.75 363.75" width="64" height="64" role="img" aria-label="Signal">
+  <title>Signal</title>
+  <g fill="#a3a8b4">
+    <circle cx="155.50" cy="12.50" r="10.50"/>
+    <circle cx="305.00" cy="21.00" r="11.00"/>
+    <circle cx="79.50" cy="40.00" r="15.75"/>
+    <circle cx="152.00" cy="81.00" r="14.00"/>
+    <circle cx="11.00" cy="92.00" r="11.00"/>
+    <circle cx="282.00" cy="96.00" r="15.00"/>
+    <circle cx="352.50" cy="106.00" r="10.75"/>
+    <circle cx="88.00" cy="123.50" r="12.25"/>
+    <circle cx="213.50" cy="124.00" r="10.75"/>
+    <circle cx="149.00" cy="164.00" r="13.00"/>
+    <circle cx="225.00" cy="194.50" r="13.25"/>
+    <circle cx="104.00" cy="214.50" r="12.75"/>
+    <circle cx="176.50" cy="240.50" r="13.50"/>
+    <circle cx="350.00" cy="240.50" r="13.75"/>
+    <circle cx="50.50" cy="257.50" r="13.50"/>
+    <circle cx="269.50" cy="257.50" r="14.50"/>
+    <circle cx="204.50" cy="294.50" r="10.00"/>
+    <circle cx="15.00" cy="314.00" r="11.00"/>
+    <circle cx="327.00" cy="314.00" r="11.00"/>
+    <circle cx="171.00" cy="345.00" r="11.00"/>
+    <circle cx="86.00" cy="350.50" r="11.25"/>
+  </g>
+  <g fill="#2d3afd">
+    <circle cx="225.00" cy="40.00" r="16.00"/>
+    <circle cx="315.00" cy="174.00" r="16.00"/>
+    <circle cx="24.00" cy="175.00" r="19.00"/>
+    <circle cx="123.00" cy="287.00" r="16.00"/>
+    <circle cx="255.00" cy="341.00" r="16.00"/>
+  </g>
+</svg>
