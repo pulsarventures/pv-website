@@ -183,8 +183,12 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
    Navigation — the source design shipped anchor links only, with no dropdown
    and no mobile treatment. Both are added here.
    ========================================================================== */
-.nav-menu { display: flex; align-items: center; gap: 32px; }
-.nav-link { font-size: 14px; font-weight: 500; color: var(--ink-body); background: none; border: none; padding: 0; font-family: inherit; cursor: pointer; }
+.nav-menu { display: flex; align-items: center; gap: 28px; }
+.site-nav .nav-link.hv-1:hover, .site-nav .nav-dd-item.hv-1:hover { color: var(--blue-line) !important; }
+/* Orange focus ring in the bar, as in the redesign canvas; #bd450a keeps 5:1 on white */
+.site-nav a:focus-visible, .site-nav button:focus-visible { outline: 3px solid #bd450a; outline-offset: 3px; border-radius: 6px; }
+.site-nav .nav-cta:focus-visible { border-radius: 999px; }
+.nav-link { font-size: 15px; font-weight: 600; letter-spacing: -0.005em; color: var(--ink-display); background: none; border: none; padding: 0; font-family: inherit; cursor: pointer; }
 .nav-burger { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; margin-right: -8px; padding: 0; background: none; border: none; border-radius: 9px; color: var(--ink-nav); cursor: pointer; }
 .nav-burger:hover { background: var(--paper); }
 
@@ -201,7 +205,7 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
     z-index: 60;
 }
 .nav-dd-menu.is-open { display: flex; flex-direction: column; }
-.nav-dd-item { display: block; padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--ink-body); white-space: nowrap; }
+.nav-dd-item { display: block; padding: 10px 20px; font-size: 15px; font-weight: 600; color: var(--ink-display); white-space: nowrap; }
 .nav-dd-item:hover { background: var(--paper); color: var(--ink-display); }
 
 @media (max-width: 1024px) {
