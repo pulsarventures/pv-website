@@ -8,7 +8,7 @@
   aggressively than pages, so a bare swap leaves the old icon in the tab.
   Bump the number whenever the icon art changes.
 {% endcomment %}
-{% assign icon_v = '4' %}
+{% assign icon_v = '5' %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}?v={{ icon_v }}" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}?v={{ icon_v }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16.png' | relative_url }}?v={{ icon_v }}">
@@ -23,4 +23,4 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">

@@ -17,7 +17,7 @@
 {% if page.url == '/' %}{% assign is_home = true %}{% endif %}
 {% if is_home %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
 
-<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border-bottom:1px solid #e3e7ee">
+<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:50; background:#ffffff; border-bottom:1px solid #e3e7ee">
   <div class="nav-bar" style="max-width:1240px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between">
     <a href="{% if is_home %}#top{% else %}{{ '/' | relative_url }}{% endif %}" style="display:inline-flex; align-items:center; gap:10px; line-height:1">
       <img src="{{ '/assets/img/brand/pulsar-icon.png' | relative_url }}" alt="" aria-hidden="true" width="36" height="36" style="display:block; width:36px; height:36px; border-radius:9px">
@@ -39,7 +39,7 @@
           <a href="{{ '/about-us/' | relative_url }}#community" class="nav-dd-item hv-1" role="menuitem">Community</a>
         </div>
       </div>
-      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="nav-cta hv-2" style="display:inline-flex; align-items:center; gap:8px; background:#0b2452; color:#ffffff; font-size:14px; font-weight:600; padding:10px 20px; border-radius:10px">Schedule a call</a>
+      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="nav-cta hv-2" style="display:inline-flex; align-items:center; gap:8px; background:#0b2452; color:#ffffff; font-size:14px; font-weight:600; padding:10px 22px; min-height:44px; box-sizing:border-box; border-radius:999px">Schedule a call</a>
     </div>
   </div>
 </nav>
