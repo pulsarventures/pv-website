@@ -114,7 +114,24 @@
       frame();
     }
 
-    [smoke, whatWeBuild, fourA].forEach(function (fn) {
+    /* "The fleet" drawer: the HTML ships open so the six stay reachable
+       without JavaScript; this closes it and wires the toggle. */
+    function fleet() {
+      const btn = document.querySelector('#portfolio .drawer');
+      const panel = document.getElementById('fleet-panel');
+      if (!btn || !panel || btn.dataset.on) return;
+      btn.dataset.on = '1';
+      const label = btn.querySelector('.drawer-label');
+      const set = (open) => {
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        panel.hidden = !open;
+        if (label) label.textContent = open ? 'Hide' : 'Show all';
+      };
+      set(false);
+      btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+    }
+
+    [smoke, whatWeBuild, fourA, fleet].forEach(function (fn) {
         try { fn(); } catch (e) { console.warn(e); }
     });
 }());
