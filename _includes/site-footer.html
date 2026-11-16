@@ -11,7 +11,16 @@
       <div class="pvf-brand">
         <a class="pvn-logo" href="{% if page.url == '/' %}#top{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Pulsar Ventures home"><svg aria-hidden="true" style="color:#4A3A9C;--mk-dot:#fff;--mk-bg:#2B1766"><use href="#mark"/></svg><span class="pvn-lw">Pulsar<br>Ventures</span></a>
         <div class="pvf-soc">
-          <a href="mailto:{{ site.contact.email }}" aria-label="Email Pulsar Ventures"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path class="ac a-flap" d="m4.5 7 7.5 6 7.5-6"/></svg></a>
+          <div class="pvf-mail">
+            <a href="mailto:{{ site.contact.email }}" id="pvfMailBtn" aria-label="Email Pulsar Ventures" aria-haspopup="true" aria-expanded="false" aria-controls="pvfMailMenu"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path class="ac a-flap" d="m4.5 7 7.5 6 7.5-6"/></svg></a>
+            <div class="pvf-mail-menu" id="pvfMailMenu" hidden>
+              <p>Write to us at<b>{{ site.contact.email }}</b></p>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.contact.email | url_encode }}" target="_blank" rel="noopener noreferrer">Compose in Gmail</a>
+              <a href="https://outlook.office.com/mail/deeplink/compose?to={{ site.contact.email | url_encode }}" target="_blank" rel="noopener noreferrer">Compose in Outlook</a>
+              <a href="mailto:{{ site.contact.email }}">Open my mail app</a>
+              <button type="button" data-copy="{{ site.contact.email }}">Copy address</button>
+            </div>
+          </div>
           <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="Pulsar Ventures on LinkedIn"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8 10.5V16M11.5 16v-5.5M11.5 13c0-1.6 1-2.5 2.3-2.5S16 11.2 16 13v3"/><circle class="acf a-pulse" cx="8" cy="7.8" r=".9"/></svg></a>
           <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" aria-label="Schedule a call"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle class="acf a-pulse" cx="15.5" cy="15" r="1.4"/></svg></a>
         </div>

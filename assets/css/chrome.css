@@ -91,3 +91,13 @@
 @media (prefers-reduced-motion:reduce){
   .pv-orbit ellipse,.pv-duo *{animation:none!important}
 }
+
+/* footer email: a menu of compose options, because a bare mailto: does
+   nothing on machines without a default mail app (most webmail users) */
+.pvf-mail{position:relative}
+.pvf-mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:5;min-width:260px;background:#fff;border:1px solid var(--pv-line);border-radius:16px;padding:8px;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);display:grid;gap:2px;font-family:var(--pv-f-display)}
+.pvf-mail-menu[hidden]{display:none}
+.pvf-mail-menu p{margin:0;padding:.45rem .8rem .55rem;font-size:.8rem;color:#7A7499;border-bottom:1px solid var(--pv-line);margin-bottom:4px}
+.pvf-mail-menu p b{display:block;margin-top:2px;font-size:.88rem;color:var(--pv-ink);font-weight:700;white-space:nowrap}
+.pvf-soc .pvf-mail-menu a,.pvf-mail-menu button{width:auto;height:auto;display:block;border:0;border-radius:10px;padding:.6rem .8rem;font:600 .95rem var(--pv-f-display);color:var(--pv-ink);background:none;text-align:left;cursor:pointer;text-decoration:none}
+.pvf-soc .pvf-mail-menu a:hover,.pvf-mail-menu button:hover{background:var(--pv-lav);color:var(--pv-galaxy)}
