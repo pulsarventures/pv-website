@@ -3,625 +3,232 @@ layout: site
 title: "Build with AI."
 description: "Pulsar Ventures builds AI products and systems — our own portfolio and yours. Every recommendation is backed by working systems we shipped."
 permalink: /
+site_css: false
+page_css: /assets/css/home.css
 page_js: /assets/js/home.js
 ---
+{% comment %}
+  Homepage, from the "Pulsar Homepage" redesign artifact (Nov 2026).
+  Styles: assets/css/home.css. Behaviour: assets/js/home.js.
+  The SVG sprite (#mark, #petal, arrows) comes from _includes/pv-sprite.html.
+{% endcomment %}
+<!-- the one pulsar: background magnetic loops that travel between sections and become the logo's core on each mark -->
+<div id="field" aria-hidden="true">
+  <svg viewBox="-725 -500 1450 1000">
+    <g id="loops">
+      <g class="L" id="fL"><circle class="loop" cx="-250" r="250"/><circle class="loop" cx="-185" r="185"/><circle class="loop" cx="-125" r="125"/></g>
+      <g class="R" id="fR"><circle class="loop" cx="250" r="250"/><circle class="loop" cx="185" r="185"/><circle class="loop" cx="125" r="125"/></g>
+    </g>
+    <g id="beads">
+      <g><circle class="bead" cx="-500" cy="0" r="9"/><animateTransform attributeName="transform" type="rotate" from="0 -250 0" to="360 -250 0" dur="26s" repeatCount="indefinite"/></g>
+      <g><circle class="bead" cx="-185" cy="185" r="8"/><animateTransform attributeName="transform" type="rotate" from="0 -185 0" to="360 -185 0" dur="19s" repeatCount="indefinite"/></g>
+      <g><circle class="bead" cx="250" cy="-250" r="9"/><animateTransform attributeName="transform" type="rotate" from="360 250 0" to="0 250 0" dur="24s" repeatCount="indefinite"/></g>
+      <g><circle class="bead" cx="125" cy="125" r="7"/><animateTransform attributeName="transform" type="rotate" from="360 125 0" to="0 125 0" dur="14s" repeatCount="indefinite"/></g>
+    </g>
+    <g id="logoCore" opacity="0">
+      <g class="rays"><path d="M0 -108.5 L39.0 -409.8 A39.0 39.0 0 0 0 -39.0 -409.8 Z"/><path d="M0 108.5 L-39.0 409.8 A39.0 39.0 0 0 0 39.0 409.8 Z"/><animateTransform attributeName="transform" type="rotate" values="-6;6;-6" dur="5s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/></g>
+      <circle class="cring" id="cRing" r="98"/>
+      <circle id="cCore" r="68"/>
+    </g>
+  </svg>
+</div>
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1><span class="serif">Build</span> with AI.</h1>
+      <p class="serif">We ship what we advise.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#engage">Start a project <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#products">See our products</a>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="tile"><svg class="ico duo i-grid" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><g class="a-turn"><rect class="ac" x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></g></svg></div><div><b>9</b><span>own products</span></div></div>
+      <div class="stat"><div class="tile"><svg class="ico duo i-signal" viewBox="0 0 24 24" aria-hidden="true"><circle class="ac acf" cx="12" cy="12" r="2"/><path class="a-wave1" d="M8.2 15.8a5.4 5.4 0 0 1 0-7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6"/><path class="a-wave2" d="M5.3 18.7a9.5 9.5 0 0 1 0-13.4M18.7 5.3a9.5 9.5 0 0 1 0 13.4"/></svg></div><div><b>6</b><span>live in market</span></div></div>
+      <div class="stat"><div class="tile"><svg class="ico duo i-brief" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h7M13.5 12.5h7"/><g class="a-pulse"><rect class="ac" x="10.5" y="11" width="3" height="3" rx=".8"/></g></svg></div><div><b>6</b><span>client engagements</span></div></div>
+      <div class="stat"><div class="tile"><svg class="ico duo i-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><g class="a-rotate"><ellipse class="ac" cx="12" cy="12" rx="3.6" ry="8.5"/></g></svg></div><div><b>3</b><span>cities, one team</span></div></div>
+    </div>
+    <div class="marquee hero-clients reveal" id="scope" aria-label="Clients"><div class="clients">
+      <div class="client"><img src="{{ '/assets/img/clients/light/tacilent.png' | relative_url }}" alt="Tacilent"></div>
+      <div class="client"><img src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt="Exitous"></div>
+      <div class="client"><img src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"></div>
+      <div class="client"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt="" style="max-height:36px"><span>RIB Software</span></div>
+      <div class="client"><img src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt="Mindwave Solutions"></div>
+      <div class="client"><img src="{{ '/assets/img/clients/light/ez-innovation.png' | relative_url }}" alt="EZ Innovation"></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/tacilent.png' | relative_url }}" alt=""></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt=""></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt=""></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt="" style="max-height:36px"><span>RIB Software</span></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt=""></div>
+      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/ez-innovation.png' | relative_url }}" alt=""></div>
+    </div></div>
+  </div>
+  <span class="hero-slot" data-anchor data-scale="1.45" data-rot="20" data-opacity="1" data-stroke="#D3D0DC"></span>
+</section>
 
-<section class="sec" id="top" data-screen-label="Hero" style="position:relative; padding:96px 24px 0; background:#ffffff">
-  <div class="hero-stage" style="position:relative; max-width:1240px; margin:0 auto; overflow:hidden; border-radius:26px; background:#04091a; min-height:660px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; padding:88px 32px 44px; text-align:center">
-    <canvas id="hero-smoke" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none"></canvas>
-    <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; background:radial-gradient(58% 54% at 50% 50%, rgba(4,9,26,0.74), rgba(4,9,26,0.22) 72%, rgba(4,9,26,0) 100%)"></div>
-    <h1 style="position:relative; margin:0; font-family:'Instrument Serif', serif; font-size:clamp(46px, 6.4vw, 88px); font-weight:400; line-height:1.02; letter-spacing:-0.02em; color:#ffffff; max-width:19ch; text-wrap:balance"><em style="font-style:italic; font-weight:400; color:#ffa24b">Build</em> with AI.</h1>
-    <p style="position:relative; margin:0; font-size:18px; line-height:1.7; color:rgba(255,255,255,0.8); max-width:72ch">We build our own products, build alongside our clients, and enable professionals to work differently with AI. That means our advisory work is grounded in real systems, real constraints, and lessons from actually building, shipping, and adopting AI.</p>
-    <div style="position:relative; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px">
-      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="hv-hero-a" style="display:inline-flex; align-items:center; gap:10px; background:#ffffff; color:#04091a; font-size:15px; font-weight:600; padding:15px 28px; border-radius:12px; white-space:nowrap">Discuss what you're building<span style="font-family:'JetBrains Mono', monospace">↗</span></a>
+<!-- ECOSYSTEM -->
+<section class="hsec" id="ecosystem">
+  <div class="wrap">
+    <div class="head center">
+      <h2>Our Ecosystem</h2>
     </div>
-    <div style="position:relative; display:flex; align-items:center; gap:18px; width:100%; max-width:760px; margin-top:26px">
-      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; color:rgba(255,255,255,0.45); white-space:nowrap">SCROLL DOWN</span>
-      <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.26), rgba(255,255,255,0.04))"></span>
-      <a href="#work" style="display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); color:rgba(255,255,255,0.7); font-size:12px">↓</a>
-      <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.26), rgba(255,255,255,0.04))"></span>
-      <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; color:rgba(255,255,255,0.45); white-space:nowrap">HOW WE WORK</span>
-    </div>
-    <div style="position:relative; width:100%; margin-top:34px; padding-top:26px; border-top:1px solid rgba(255,255,255,0.10)">
-      <p style="margin:0 0 18px; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; color:rgba(255,255,255,0.4); text-align:center">CLIENTS</p>
-      <div class="marquee" style="position:relative; overflow:hidden; width:100%; mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)">
-        <div class="marquee-track" style="display:flex; align-items:center; width:max-content">
-      <div style="display:flex; align-items:center; gap:56px; flex:0 0 auto; padding-right:56px"><a href="https://smithdouglas.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/smith-douglas.svg' | relative_url }}" alt="Smith Douglas Homes" style="height:44px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <a href="https://rib-software.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; opacity:0.62; transition:opacity 0.2s" class="hv-4 logo-w"><img src="{{ '/assets/img/clients/rib-software.png' | relative_url }}" alt="RIB Software" referrerpolicy="no-referrer" style="width:24px; height:24px; border-radius:5px; object-fit:contain"><span style="font-size:15px; font-weight:700; letter-spacing:-0.01em; color:#ffffff; white-space:nowrap">RIB Software</span></a>
-        <a href="https://tacilent.ai" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/tacilent.png' | relative_url }}" alt="Tacilent" style="height:44px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <a href="https://exitous.co" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/exitous.png' | relative_url }}" alt="Exitous" style="height:42px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <img class="logo-w" src="{{ '/assets/img/clients/mindwave.png' | relative_url }}" alt="Mindwave Solutions" style="height:26px; width:auto; object-fit:contain">
-        <img class="logo-w" src="{{ '/assets/img/clients/ez-innovation.png' | relative_url }}" alt="EZ Innovation" style="height:28px; width:auto; object-fit:contain"></div>
-      <div aria-hidden="true" style="display:flex; align-items:center; gap:56px; flex:0 0 auto; padding-right:56px"><a href="https://smithdouglas.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/smith-douglas.svg' | relative_url }}" alt="Smith Douglas Homes" style="height:44px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <a href="https://rib-software.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; opacity:0.62; transition:opacity 0.2s" class="hv-4 logo-w"><img src="{{ '/assets/img/clients/rib-software.png' | relative_url }}" alt="RIB Software" referrerpolicy="no-referrer" style="width:24px; height:24px; border-radius:5px; object-fit:contain"><span style="font-size:15px; font-weight:700; letter-spacing:-0.01em; color:#ffffff; white-space:nowrap">RIB Software</span></a>
-        <a href="https://tacilent.ai" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/tacilent.png' | relative_url }}" alt="Tacilent" style="height:44px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <a href="https://exitous.co" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.62; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/clients/exitous.png' | relative_url }}" alt="Exitous" style="height:42px; box-sizing:content-box; background:#ffffff; padding:6px 10px; border-radius:8px; width:auto; object-fit:contain"></a>
-        <img class="logo-w" src="{{ '/assets/img/clients/mindwave.png' | relative_url }}" alt="Mindwave Solutions" style="height:26px; width:auto; object-fit:contain">
-        <img class="logo-w" src="{{ '/assets/img/clients/ez-innovation.png' | relative_url }}" alt="EZ Innovation" style="height:28px; width:auto; object-fit:contain"></div>
-        </div>
+    <div class="eco">
+      <div class="eco-col left">
+        <article class="pillar hot reveal"><div class="k"><div class="tile"><svg class="ico duo i-connect" viewBox="0 0 24 24" aria-hidden="true"><g class="a-ping"><circle class="ac" cx="12" cy="5" r="2.3"/></g><path d="M12 7.3V12M12 12l-5 4.6M12 12l5 4.6"/><circle cx="5.6" cy="18.5" r="2.3"/><circle cx="18.4" cy="18.5" r="2.3"/></svg></div><h3>Connect</h3></div><p>Active participants in the Atlanta tech ecosystem. We run the <a class="inl" href="https://aibuildersmeetup.com/" target="_blank" rel="noopener">AI Builders Meetup</a> and contribute across the groups that make this community work.</p><div class="logos" aria-label="Community partners"><div class="logo-track"><span class="lg-text">AI Builders Meetup</span><i class="lg-sep"></i><img src="{{ '/assets/img/partnerships-tn.png' | relative_url }}" alt="Tech North Atlanta"><img src="{{ '/assets/img/partnerships-atv.png' | relative_url }}" alt="Atlanta Tech Village"><i class="lg-sep"></i><img src="{{ '/assets/img/partnerships-aic.png' | relative_url }}" alt="The AI Collective"><img src="{{ '/assets/img/partnerships-aitinkerers.png' | relative_url }}" alt="AI Tinkerers"><img src="{{ '/assets/img/partnerships-tie.png' | relative_url }}" alt="TiE Atlanta"><i class="lg-sep"></i></div></div><div class="chips"><div class="chip-track"><span class="chip">AI Builders Meetup — founded &amp; run by us</span><span class="chip">Community events &amp; talks</span><span class="chip">Builder networking</span></div></div></article>
+        <article class="pillar reveal"><div class="k"><div class="tile"><svg class="ico duo i-enable" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11.2v4.3c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.3"/><g class="a-swing"><path class="ac" d="M19.5 10v5.2"/><circle class="ac acf" cx="19.5" cy="16.6" r="1.1"/></g></svg></div><h3>Enable</h3></div><p>Workshops and playbooks that get your team shipping with AI, not just talking about it.</p><div class="chips"><div class="chip-track"><span class="chip">Consultants &amp; entrepreneurs</span><span class="chip">Product managers &amp; marketers</span><span class="chip">Executives &amp; leadership teams</span><span class="chip">Individual</span><span class="chip">Corporate</span><span class="chip">Universities</span></div></div></article>
+      </div>
+      <div class="mark-wrap" aria-label="The Pulsar mark: Connect, Build, Enable and Advice around one core">
+        <svg viewBox="-8 -8 224 224">
+          <g class="p"><use href="#petal" class="petal-out hot"/><svg class="duo pi i-connect" x="30" y="26" width="36" height="36" viewBox="0 0 24 24"><g class="a-ping"><circle class="ac" cx="12" cy="5" r="2.3"/></g><path d="M12 7.3V12M12 12l-5 4.6M12 12l5 4.6"/><circle cx="5.6" cy="18.5" r="2.3"/><circle cx="18.4" cy="18.5" r="2.3"/></svg></g>
+          <g class="p"><use href="#petal" class="petal-out" transform="rotate(90 104 104)"/><svg class="duo pi i-build" x="146" y="30" width="36" height="36" viewBox="0 0 24 24"><g class="a-drop"><rect class="ac" x="8.5" y="3.5" width="7" height="7" rx="1.8"/></g><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.8"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.8"/></svg></g>
+          <g class="p"><use href="#petal" class="petal-out" transform="rotate(270 104 104)"/><svg class="duo pi i-enable" x="26" y="142" width="36" height="36" viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11.2v4.3c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.3"/><g class="a-swing"><path class="ac" d="M19.5 10v5.2"/><circle class="ac acf" cx="19.5" cy="16.6" r="1.1"/></g></svg></g>
+          <g class="p"><use href="#petal" class="petal-out" transform="rotate(180 104 104)"/><svg class="duo pi i-advice" x="142" y="146" width="36" height="36" viewBox="0 0 24 24"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h-1a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2z"/><path class="ac a-type1" d="M8 9h8"/><path class="ac a-type2" d="M8 12.5h5"/></svg></g>
+        </svg>
+        <span class="slot" data-k=".68" data-anchor data-logo data-rot="12" data-opacity="1" data-stroke="#2B1766" data-bg="#FFFFFF"></span>
+      </div>
+      <div class="eco-col">
+        <article class="pillar reveal"><div class="k"><div class="tile"><svg class="ico duo i-build" viewBox="0 0 24 24" aria-hidden="true"><g class="a-drop"><rect class="ac" x="8.5" y="3.5" width="7" height="7" rx="1.8"/></g><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.8"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.8"/></svg></div><h3>Build</h3></div><p>We design and ship products end to end, our own and yours, from first prototype to live release.</p><div class="chips"><div class="chip-track"><span class="chip">CIO/CTO advisory &amp; fractional CTO</span><span class="chip">Architecture &amp; system design</span><span class="chip">Full-stack engineering: frontend, backend, data, APIs, cloud</span><span class="chip">AI-enabled tooling &amp; agentic engineering</span><span class="chip">New products &amp; codebase modernization</span></div></div></article>
+        <article class="pillar reveal"><div class="k"><div class="tile"><svg class="ico duo i-advice" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h-1a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2z"/><path class="ac a-type1" d="M8 9h8"/><path class="ac a-type2" d="M8 12.5h5"/></svg></div><h3>Advice</h3></div><p>Architecture and AI strategy reviews from people who build every week, so the advice holds up in production.</p></article>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- What we build — branch map, panels, CTA, 4A Framework -->
-  <div style="max-width:1240px; margin:0 auto; padding:88px 8px 0">
-    <div style="display:flex; flex-direction:column; align-items:center; gap:22px; margin-bottom:72px; text-align:center">
-      <h2 style="margin:0; font-family:'Instrument Serif', serif; font-weight:400; font-size:clamp(44px, 5.4vw, 74px); line-height:1.02; letter-spacing:-0.02em; color:#0b2452">Our <em style="font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; background:linear-gradient(transparent 70%, #ffe2cc 70%)">ecosystem</em></h2>
-      <p style="margin:0; font-size:17px; line-height:1.75; color:#4a5464; max-width:70ch; text-wrap:pretty">Three pillars, one studio. Hover a branch for detail.</p>
+<!-- 4A FRAMEWORK -->
+<section class="hsec fa" id="framework">
+  <div class="wrap">
+    <div class="head center">
+      <h2>THE 4A FRAMEWORK</h2>
+      <p class="serif">How AI shows up in what we build.</p>
+      <a class="btn btn-primary btn-sm" href="#engage" style="margin-top:.5rem;position:relative;z-index:3">Map your use case <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="wwb-map" style="position:relative; height:380px; margin-bottom:56px">
-      <span aria-hidden="true" style="position:absolute; left:0; top:50%; width:54%; height:1px; background:#c9d3e0"></span>
-      <div style="position:absolute; left:7%; top:50%; transform:translateY(-50%); background:#0b2452; color:#ffffff; font-size:15px; font-weight:600; letter-spacing:-0.01em; padding:15px 28px; white-space:nowrap">Pulsar Ventures</div>
-      <div aria-hidden="true" style="position:absolute; z-index:2; left:54%; top:50%; transform:translate(-50%,-50%); width:58px; height:58px; border-radius:50%; background:#0b2452; display:flex; align-items:center; justify-content:center">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
-      </div>
-      <svg class="wwb-svg" viewBox="0 0 400 380" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; z-index:1; left:54%; top:0; width:18%; height:380px; overflow:visible">
-        <line class="wwb-line" data-i="0" x1="52" y1="190" x2="430" y2="76"  stroke="#c9d3e0" stroke-width="1.5" vector-effect="non-scaling-stroke"></line>
-        <line class="wwb-line" data-i="1" x1="52" y1="190" x2="430" y2="190" stroke="#c9d3e0" stroke-width="1.5" vector-effect="non-scaling-stroke"></line>
-        <line class="wwb-line" data-i="2" x1="52" y1="190" x2="430" y2="304" stroke="#c9d3e0" stroke-width="1.5" vector-effect="non-scaling-stroke"></line>
+    <div class="fa-track" id="faTrack">
+      <span class="slot" style="top:45%;left:50%" data-anchor data-scale="1.7" data-rot="72" data-opacity=".9" data-stroke="#D3D0DC"></span>
+      <svg class="rail" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="railInk" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="950" y2="0">
+            <stop offset="0" stop-color="#2B1766"/><stop offset=".86" stop-color="#2B1766"/><stop offset=".9" stop-color="#B7B0D2"/><stop offset="1" stop-color="#DCD8EA"/>
+          </linearGradient>
+          <clipPath id="railClip"><rect id="railReveal" x="0" y="0" width="1000" height="460"/></clipPath>
+        </defs>
+        <path d="M150.2 331.7 L160.2 328.2 L170.2 324.6 L180.2 321.1 L190.2 317.6 L200.2 314.0 L210.2 310.5 L220.2 306.9 L230.2 303.4 L240.2 299.9 L250.2 296.3 L260.2 292.8 L270.2 289.3 L280.2 285.7 L290.2 282.2 L300.2 278.6 L310.2 275.1 L320.2 271.6 L330.2 268.0 L340.3 264.5 L350.3 260.9 L360.3 257.4 L370.3 253.9 L380.3 250.3 L390.3 246.8 L400.3 243.4 L410.3 239.9 L420.4 236.4 L430.4 232.9 L440.4 229.5 L450.4 226.0 L460.5 222.5 L470.5 219.0 L480.5 215.6 L490.5 212.1 L500.6 208.6 L510.6 205.0 L520.6 201.5 L530.6 197.9 L540.6 194.4 L550.5 190.8 L560.5 187.2 L570.5 183.7 L580.5 180.1 L590.5 176.6 L600.5 173.0 L610.5 169.4 L620.5 165.9 L630.5 162.3 L640.5 158.8 L650.5 155.2 L660.5 151.6 L670.5 148.1 L680.5 144.5 L690.5 140.9 L700.5 137.4 L710.5 133.8 L720.5 130.3 L730.5 126.7 L740.5 123.1 L750.5 119.6 L760.5 116.0 L770.5 112.5 L780.4 108.9 L790.4 105.3 L800.4 101.8 L810.4 98.2 L820.4 94.7 L830.4 91.1 L840.4 87.5 L850.4 84.0 L860.4 80.3 L870.4 76.7 L880.3 73.0 L890.3 69.4 L900.3 65.8 L910.2 62.1 L920.2 58.5 L930.2 54.8 L940.1 51.2 L950.1 47.5 L949.9 47.1 L939.9 50.5 L929.8 54.0 L919.8 57.4 L909.8 60.9 L899.7 64.4 L889.7 67.8 L879.7 71.3 L869.6 74.7 L859.6 78.2 L849.6 81.6 L839.6 85.2 L829.6 88.7 L819.6 92.2 L809.6 95.8 L799.6 99.3 L789.6 102.8 L779.6 106.4 L769.5 109.9 L759.5 113.4 L749.5 117.0 L739.5 120.5 L729.5 124.1 L719.5 127.6 L709.5 131.1 L699.5 134.7 L689.5 138.2 L679.5 141.7 L669.5 145.3 L659.5 148.8 L649.5 152.4 L639.5 155.9 L629.5 159.4 L619.5 163.0 L609.5 166.5 L599.5 170.0 L589.5 173.6 L579.5 177.1 L569.5 180.6 L559.5 184.2 L549.5 187.7 L539.4 191.3 L529.4 194.8 L519.4 198.3 L509.4 201.9 L499.4 205.4 L489.5 209.0 L479.5 212.6 L469.5 216.3 L459.5 219.9 L449.6 223.5 L439.6 227.1 L429.6 230.7 L419.6 234.4 L409.7 238.0 L399.7 241.6 L389.7 245.2 L379.7 248.8 L369.7 252.4 L359.7 255.9 L349.7 259.5 L339.7 263.1 L329.8 266.6 L319.8 270.2 L309.8 273.7 L299.8 277.3 L289.8 280.9 L279.8 284.4 L269.8 288.0 L259.8 291.5 L249.8 295.1 L239.8 298.7 L229.8 302.2 L219.8 305.8 L209.8 309.3 L199.8 312.9 L189.8 316.4 L179.8 320.0 L169.8 323.6 L159.8 327.1 L149.8 330.7Z" fill="url(#railInk)" clip-path="url(#railClip)"/>
       </svg>
-      <div class="wwb-nodes" style="position:absolute; left:73%; top:0; right:0; height:380px">
-        <button type="button" class="wwb-node" data-i="0" style="position:absolute; left:0; top:76px; transform:translateY(-50%); display:flex; align-items:flex-start; gap:16px; background:none; border:none; padding:0; margin:0; font-family:inherit; text-align:left; cursor:pointer">
-          <span class="wwb-dot" style="width:18px; height:18px; border-radius:50%; background:#0b2452; flex-shrink:0; margin-top:7px; transition:background 0.22s, transform 0.22s"></span>
-          <span style="display:flex; flex-direction:column; gap:3px">
-            <span class="wwb-title" style="font-size:26px; font-weight:700; letter-spacing:-0.02em; line-height:1.1; color:#8494a8; transition:color 0.22s">Build</span>
-            <span style="font-size:14px; color:#8494a8">Architecture · Engineering</span>
-          </span>
-        </button>
-        <button type="button" class="wwb-node" data-i="1" style="position:absolute; left:0; top:190px; transform:translateY(-50%); display:flex; align-items:flex-start; gap:16px; background:none; border:none; padding:0; margin:0; font-family:inherit; text-align:left; cursor:pointer">
-          <span class="wwb-dot" style="width:18px; height:18px; border-radius:50%; background:#0b2452; flex-shrink:0; margin-top:7px; transition:background 0.22s, transform 0.22s"></span>
-          <span style="display:flex; flex-direction:column; gap:3px">
-            <span class="wwb-title" style="font-size:26px; font-weight:700; letter-spacing:-0.02em; line-height:1.1; color:#8494a8; transition:color 0.22s">Enablement</span>
-            <span style="font-size:14px; color:#8494a8">Workshops</span>
-          </span>
-        </button>
-        <button type="button" class="wwb-node" data-i="2" style="position:absolute; left:0; top:304px; transform:translateY(-50%); display:flex; align-items:flex-start; gap:16px; background:none; border:none; padding:0; margin:0; font-family:inherit; text-align:left; cursor:pointer">
-          <span class="wwb-dot" style="width:18px; height:18px; border-radius:50%; background:#0b2452; flex-shrink:0; margin-top:7px; transition:background 0.22s, transform 0.22s"></span>
-          <span style="display:flex; flex-direction:column; gap:3px">
-            <span class="wwb-title" style="font-size:26px; font-weight:700; letter-spacing:-0.02em; line-height:1.1; color:#8494a8; transition:color 0.22s">Community</span>
-            <span style="font-size:14px; color:#8494a8">Events · Partnerships</span>
-          </span>
-        </button>
-      </div>
-    </div>
-    <div class="wwb-panels">
-      <div class="wwb-panel" data-i="0" style="display:flex; gap:36px; align-items:flex-start; padding:4px 0 4px 26px; border-left:2px solid #ff6b1a">
-        <div style="display:flex; flex-direction:column; gap:20px; flex:1; min-width:0">
-          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.12em; color:#bd450a">BUILD — ARCHITECTURE · ENGINEERING</p>
-          <p style="margin:0; font-size:18px; line-height:1.65; color:#38424f; max-width:74ch; text-wrap:pretty">We work with CIOs and CTOs — as advisors and in fractional CTO roles — to drive the transformation from traditional SDLC teams to AI-native and agentic engineering. Architecture and full-stack delivery across five pillars: people, process, product, technology, and capital.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:10px 28px">
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>CIO/CTO advisory &amp; fractional CTO</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Architecture &amp; system design</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Full-stack engineering — frontend, backend, data, APIs, cloud</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>AI-enabled tooling &amp; agentic engineering</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>New products &amp; existing codebase modernization</span>
-          </div>
-        </div>
-        <svg class="wwb-art" viewBox="0 0 320 200" fill="none" stroke="#0b2452" stroke-width="2" aria-hidden="true" style="width:180px; height:auto; flex-shrink:0">
-          <rect x="40" y="130" width="70" height="34" rx="4" fill="#f1efec"/>
-          <rect x="126" y="100" width="70" height="64" rx="4" fill="#ff6b1a"/>
-          <rect x="212" y="62" width="70" height="102" rx="4" fill="#0b2452"/>
-          <text x="75" y="152" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="#0b2452" stroke="none">POC</text>
-          <text x="161" y="136" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="#0c1b33" stroke="none">MVP</text>
-          <text x="247" y="118" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="600" fill="#ff6b1a" stroke="none">PROD</text>
-          <path d="M48 96 C 100 40, 200 30, 262 40" stroke-dasharray="7 7"/>
-          <path d="M262 40 l-4 -14 14 6 z" fill="#0b2452" stroke="none"/>
-        </svg>
-      </div>
-      <div class="wwb-panel" data-i="1" style="display:none; gap:36px; align-items:flex-start; padding:4px 0 4px 26px; border-left:2px solid #ff6b1a">
-        <div style="display:flex; flex-direction:column; gap:20px; flex:1; min-width:0">
-          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.12em; color:#bd450a">ENABLEMENT — WORKSHOPS</p>
-          <p style="margin:0; font-size:18px; line-height:1.65; color:#38424f; max-width:74ch; text-wrap:pretty">Experiential learning with the right mix of interaction, discussion, show-and-tell, and hands-on work. Designed for business professionals — delivered individually, in corporate settings, and through university partnerships.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:10px 28px">
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Consultants &amp; entrepreneurs</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Product managers &amp; marketers</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Executives &amp; leadership teams</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Individual · Corporate · Universities</span>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin-top:8px; padding-top:16px; border-top:1px solid #e3e7ee">
-            <a href="https://aimusings.site" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; opacity:0.65; transition:opacity 0.2s" class="hv-4"><img src="{{ '/assets/img/brand/aimusings.png' | relative_url }}" alt="AI Musings" style="height:28px; width:auto; object-fit:contain"></a>
-          </div>
-        </div>
-        <svg class="wwb-art" viewBox="0 0 320 200" fill="none" stroke="#0b2452" stroke-width="2" aria-hidden="true" style="width:180px; height:auto; flex-shrink:0">
-          <rect x="92" y="60" width="136" height="86" rx="6" fill="#f1efec"/>
-          <path d="M76 146 h168 l14 22 h-196 z" fill="#ff6b1a"/>
-          <path d="M160 78 l7 16 17 2 -12 12 3 17 -15 -8 -15 8 3 -17 -12 -12 17 -2 z" fill="#ff6b1a"/>
-          <circle cx="126" cy="102" r="5" fill="#0b2452" stroke="none"/>
-          <circle cx="194" cy="102" r="5" fill="#0b2452" stroke="none"/>
-          <line x1="126" y1="102" x2="160" y2="88"/>
-          <line x1="194" y1="102" x2="160" y2="88"/>
-          <line x1="126" y1="102" x2="194" y2="102"/>
-        </svg>
-      </div>
-      <div class="wwb-panel" data-i="2" style="display:none; gap:36px; align-items:flex-start; padding:4px 0 4px 26px; border-left:2px solid #ff6b1a">
-        <div style="display:flex; flex-direction:column; gap:20px; flex:1; min-width:0">
-          <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.12em; color:#bd450a">COMMUNITY — EVENTS · PARTNERSHIPS</p>
-          <p style="margin:0; font-size:18px; line-height:1.65; color:#38424f; max-width:74ch; text-wrap:pretty">Active participants in the Atlanta tech ecosystem. We run the <a href="https://aibuildersmeetup.com" target="_blank" rel="noopener noreferrer" style="color:#bd450a; font-weight:600; text-decoration:underline; text-underline-offset:3px">AI Builders Meetup</a> and contribute across the groups that make this community work.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:10px 28px">
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>AI Builders Meetup — founded &amp; run by us</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Community events &amp; talks</span>
-            <span style="display:inline-flex; align-items:center; gap:10px; font-size:14.5px; color:#4a5464"><span style="width:6px; height:6px; background:#ff6b1a; border-radius:1px; transform:rotate(45deg); flex-shrink:0"></span>Builder networking</span>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin-top:8px; padding-top:16px; border-top:1px solid #e3e7ee">
-            <a href="https://aibuildersmeetup.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; opacity:0.65; transition:opacity 0.2s; font-size:14px; font-weight:700; letter-spacing:-0.01em; color:#4a5464; white-space:nowrap" class="hv-4">AI Builders Meetup</a>
-            <span style="width:1px; height:20px; background:#dee2e9; flex-shrink:0"></span>
-            <img src="{{ '/assets/img/partnerships-tn.png' | relative_url }}" alt="Tech North Atlanta" style="height:28px; width:auto; opacity:0.65">
-            <img src="{{ '/assets/img/partnerships-atv.png' | relative_url }}" alt="Atlanta Tech Village" style="height:28px; width:auto; opacity:0.65">
-            <span style="width:1px; height:20px; background:#dee2e9; flex-shrink:0"></span>
-            <img src="{{ '/assets/img/partnerships-aic.png' | relative_url }}" alt="AI Collective" style="height:28px; width:auto; opacity:0.65">
-            <img src="{{ '/assets/img/partnerships-aitinkerers.png' | relative_url }}" alt="AI Tinkerers" style="height:28px; width:auto; opacity:0.65">
-            <img src="{{ '/assets/img/partnerships-tie.png' | relative_url }}" alt="TiE Atlanta" style="height:28px; width:auto; opacity:0.65">
-          </div>
-        </div>
-        <svg class="wwb-art" viewBox="0 0 320 200" fill="none" stroke="#0b2452" stroke-width="2" aria-hidden="true" style="width:180px; height:auto; flex-shrink:0">
-          <line x1="90" y1="90" x2="160" y2="140"/>
-          <line x1="230" y1="90" x2="160" y2="140"/>
-          <line x1="90" y1="90" x2="230" y2="90"/>
-          <circle cx="90" cy="74" r="16" fill="#ff6b1a"/>
-          <path d="M66 118 a24 24 0 0 1 48 0" fill="#ff6b1a"/>
-          <circle cx="230" cy="74" r="16" fill="#f1efec"/>
-          <path d="M206 118 a24 24 0 0 1 48 0" fill="#f1efec"/>
-          <circle cx="160" cy="126" r="16" fill="#f1efec"/>
-          <path d="M136 170 a24 24 0 0 1 48 0" fill="#f1efec"/>
-          <path d="M140 34 h60 v24 h-40 l-10 12 v-12 h-10 z" fill="#ff6b1a"/>
-        </svg>
-      </div>
-    </div>
-    <div style="display:flex; justify-content:center; margin-top:52px">
-      <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" class="hv-6" style="display:inline-flex; align-items:center; gap:10px; background:#ff6b1a; color:#ffffff; font-size:16px; font-weight:600; padding:16px 32px; border-radius:10px; white-space:nowrap">Let's talk →</a>
-    </div>
-  </div>
-
-  <!-- Why us — builder identity -->
-  <div style="max-width:1240px; margin:0 auto; padding:88px 8px 88px">
-    <div class="sec-head" style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:1px solid #dee2e9; margin-bottom:48px">
-      <h2 style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#bd450a">Why us</h2>
-      <p style="margin:0; font-size:14px; color:#7a8aa5">Builders, not slide decks.</p>
-    </div>
-    <div style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:end" class="pv-head">
-      <h3 style="margin:0; font-family:'Instrument Serif', serif; font-weight:400; font-size:clamp(36px, 4.2vw, 56px); line-height:1.06; letter-spacing:-0.02em; color:#0b2452; text-wrap:pretty">We advise what we <em style="font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; background:linear-gradient(transparent 70%, #ffe2cc 70%)">build</em>.</h3>
-      <p style="margin:0; font-size:17px; line-height:1.75; color:#4a5464; text-wrap:pretty">Our own portfolio is the proof. The same senior team that ships our products ships yours — no handoffs, no junior bench.</p>
-    </div>
-    <div class="pv-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0; margin-top:20px; padding-bottom:8px; border-bottom:1px solid #dee2e9">
-      <div class="pv-cell" style="display:flex; flex-direction:column; gap:12px; padding:32px 34px 0 0; border-right:1px solid #dee2e9">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; background:#ffffff; border:1px solid #dee2e9"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.373 8.373a1 1 0 1 1-3-3L12 9"></path><path d="M18 15l4-4"></path><path d="M21.5 11.5l-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg></span>
-        <p style="margin:8px 0 0; font-size:18px; font-weight:600; letter-spacing:-0.015em; color:#0b2452">Our own products</p>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Nine products in our portfolio, seven live. We build with the same tools, standards, and urgency we bring to client work.</p>
-      </div>
-      <div class="pv-cell" style="display:flex; flex-direction:column; gap:12px; padding:32px 0 0 34px; border-right:none">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; background:#ffffff; border:1px solid #dee2e9"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
-        <p style="margin:8px 0 0; font-size:18px; font-weight:600; letter-spacing:-0.015em; color:#0b2452">Your products</p>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Six active client engagements. Advisory, product development, and AI training — from first idea through production.</p>
-      </div>
+      <div class="step" style="left:15%;top:72%"><div class="node"><svg class="ico duo i-assist" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4c.7 4.2 2.3 5.8 6.5 6.5-4.2.7-5.8 2.3-6.5 6.5-.7-4.2-2.3-5.8-6.5-6.5 4.2-.7 5.8-2.3 6.5-6.5z"/><g class="a-twinkle"><path class="ac" d="M18.5 14.5c.3 1.8.9 2.4 2.5 2.7-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.6-2.6 1.7-.3 2.3-.9 2.6-2.7z"/></g></svg></div><h3>Assist</h3><p>AI surfaces context and recommendations to support decisions.</p></div>
+      <div class="step" style="left:38.333%;top:54%"><div class="node"><svg class="ico duo i-automate" viewBox="0 0 24 24" aria-hidden="true"><g class="a-spin"><path d="M4.5 10a7.5 7.5 0 0 1 13.4-3.6M19.5 14a7.5 7.5 0 0 1-13.4 3.6"/><path class="ac" d="M20 4.5V9h-4.5M4 19.5V15h4.5"/></g></svg></div><h3>Automate</h3><p>Repeatable tasks and workflows run without manual effort.</p></div>
+      <div class="step" style="left:61.667%;top:36%"><div class="node"><svg class="ico duo i-augment" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.6-3.3 2.8-5.3 5.5-5.3s4.9 2 5.5 5.3"/><g class="a-pulse"><path class="ac" d="M18 8v6M15 11h6"/></g></svg></div><h3>Augment</h3><p>AI works alongside people, improving judgment, not replacing it.</p></div>
+      <div class="step auto" style="left:85%;top:18%"><div class="node"><svg class="ico duo i-autonomy" viewBox="0 0 24 24" aria-hidden="true"><g class="a-nudge"><path d="M5 11.2 20 4l-7.2 15-2-5.8z"/></g><path class="ac a-trail" d="M3 21l3.5-3.5"/></svg></div><h3>Autonomy</h3><p>Systems operate independently within clear guardrails.</p></div>
+      
     </div>
   </div>
 </section>
 
-<!-- The landscape — why AI-first matters -->
-<section class="sec" id="landscape" data-screen-label="The landscape" style="background:#061530; padding:104px 32px; color:#ffffff">
-  <div style="max-width:1240px; margin:0 auto">
-    <div style="text-align:center; margin-bottom:56px">
-      <p style="margin:0 0 12px; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#ff6b1a">The Landscape</p>
-      <h2 style="margin:0; font-family:'Instrument Serif', serif; font-weight:400; font-size:clamp(36px, 4.8vw, 62px); line-height:1.06; letter-spacing:-0.02em; color:#ffffff">The Business Landscape is <em style="font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; background:linear-gradient(transparent 70%, rgba(255,107,26,0.35) 70%)">Changing</em></h2>
-      <p style="margin:18px auto 0; font-size:17px; line-height:1.75; color:rgba(255,255,255,0.55); max-width:64ch; text-wrap:pretty">AI is rewriting how companies compete, operate, and grow — not gradually, but all at once. The businesses that pull ahead share two things: an AI-first mindset and an AI-native toolset. That's exactly how we operate, and what we bring to every engagement.</p>
+<!-- LANDSCAPE (P-form petals) -->
+<section class="hsec land2" id="landscape">
+  <div class="wrap">
+    <div class="head center">
+      <h2>The Business Landscape<br>is <span class="serif">Changing</span></h2>
     </div>
-    <!-- Three eras -->
-    <div class="landscape-eras" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-bottom:48px">
-      <div style="padding:36px 28px; border:1px solid rgba(255,255,255,0.1); border-radius:16px; background:rgba(255,255,255,0.04); text-align:center">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,0.08); margin-bottom:16px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>
-        </span>
-        <p style="margin:0 0 6px; font-size:18px; font-weight:700; color:#ffffff">Industrial Age</p>
-        <p style="margin:0; font-size:14px; color:rgba(255,255,255,0.45)">Machines replaced human labor</p>
-      </div>
-      <div style="padding:36px 28px; border:1px solid rgba(255,255,255,0.1); border-radius:16px; background:rgba(255,255,255,0.04); text-align:center">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,0.08); margin-bottom:16px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-        </span>
-        <p style="margin:0 0 6px; font-size:18px; font-weight:700; color:#ffffff">Information Age</p>
-        <p style="margin:0; font-size:14px; color:rgba(255,255,255,0.45)">Internet, automation, and global connectivity</p>
-      </div>
-      <div style="padding:36px 28px; border:1px solid rgba(255,107,26,0.35); border-radius:16px; background:rgba(255,107,26,0.08); text-align:center">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:12px; background:rgba(255,107,26,0.15); margin-bottom:16px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M19.938 10.5a4 4 0 0 1 .585.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M19.967 17.484A4 4 0 0 1 18 18"></path></svg>
-        </span>
-        <p style="margin:0 0 6px; font-size:18px; font-weight:700; color:#ffffff">Intelligent Age</p>
-        <p style="margin:0; font-size:14px; color:rgba(255,255,255,0.55)">AI and human co-intelligence redefining business</p>
-      </div>
-    </div>
-    <!-- AI-First + AI-Native tiles -->
-    <div class="landscape-tiles" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px">
-      <div style="padding:36px 32px; border:1px solid rgba(255,255,255,0.1); border-radius:16px; background:rgba(255,255,255,0.04)">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:12px; background:rgba(255,107,26,0.15); margin-bottom:16px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M19.938 10.5a4 4 0 0 1 .585.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M19.967 17.484A4 4 0 0 1 18 18"></path></svg>
-        </span>
-        <p style="margin:0 0 10px; font-size:20px; font-weight:700; color:#ffffff">AI-First Mindset</p>
-        <p style="margin:0; font-size:15px; line-height:1.68; color:rgba(255,255,255,0.55)">AI is our starting point, not an add-on. Every workflow, decision, and process is designed with intelligence, automation, and augmentation from day one.</p>
-      </div>
-      <div style="padding:36px 32px; border:1px solid rgba(255,255,255,0.1); border-radius:16px; background:rgba(255,255,255,0.04)">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:12px; background:rgba(255,107,26,0.15); margin-bottom:16px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"></path></svg>
-        </span>
-        <p style="margin:0 0 10px; font-size:20px; font-weight:700; color:#ffffff">AI-Native Toolset</p>
-        <p style="margin:0; font-size:15px; line-height:1.68; color:rgba(255,255,255,0.55)">We build with AI-native tools and systems — agents, workflows, and platforms designed to operate with intelligence built in, not bolted on.</p>
-      </div>
+    <div class="petals pform">
+      <article class="pcard tl hot reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-info" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="11.5" rx="2"/><path d="M9 20h6M12 16v4"/><circle class="ac acf" cx="12" cy="12.6" r="1"/><path class="ac a-wave1" d="M10.4 10.6a2.3 2.3 0 0 1 3.2 0"/><path class="ac a-wave2" d="M8.7 8.7a4.7 4.7 0 0 1 6.6 0"/></svg></div></div><h3>Information Age</h3><p>Internet, automation and global connectivity.</p></article>
+      <article class="pcard tr reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-intel" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9.5 3v3M14.5 3v3M9.5 18v3M14.5 18v3M3 9.5h3M3 14.5h3M18 9.5h3M18 14.5h3"/><g class="a-twinkle"><path class="ac" d="M12 8.6c.3 1.9.9 2.5 2.7 2.8-1.8.3-2.4.9-2.7 2.8-.3-1.9-.9-2.5-2.7-2.8 1.8-.3 2.4-.9 2.7-2.8z"/></g></svg></div></div><h3>Intelligent Age</h3><p>AI and human co-intelligence redefining business.</p></article>
+      <article class="pcard bl reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-toolset" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/><g class="a-twinkle"><path class="ac" d="M5 3.5c.2 1.2.6 1.6 1.8 1.8-1.2.2-1.6.6-1.8 1.8-.2-1.2-.6-1.6-1.8-1.8 1.2-.2 1.6-.6 1.8-1.8z"/></g></svg></div></div><h3>AI-Native Toolset</h3><p>We build with AI-native tools and systems: agents, workflows and platforms designed to operate with intelligence built in, not bolted on.</p></article>
+      <article class="pcard br reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-mindset" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5h5M10.5 20.5h3"/><path d="M12 3.5a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v1.1h5v-1.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3.5z"/><g class="a-pulse"><path class="ac" d="M12 7.5v4M10 9.5h4"/></g></svg></div></div><h3>AI-First Mindset</h3><p>Every workflow, decision and process is designed with intelligence, automation and augmentation from day one.</p></article>
+      <span class="shift" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+      <div class="mark-wrap core-slot" aria-hidden="true"><span class="slot" data-anchor data-logo data-rot="12" data-opacity="1" data-stroke="#2B1766" data-bg="#FFFFFF"></span></div>
     </div>
   </div>
 </section>
 
-<!-- The 4A Framework -->
-<section class="sec" id="framework" data-screen-label="4A Framework" style="background:#ffffff; padding:88px 32px">
-  <div style="max-width:1240px; margin:0 auto">
-    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px solid #dee2e9; margin-bottom:48px">
-      <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; color:#7a8aa5">THE 4A FRAMEWORK</p>
-      <p style="margin:0; font-size:14px; color:#7a8aa5">How AI shows up in what we build.</p>
+<!-- ENGAGE -->
+<section class="hsec engage" id="engage">
+  <div class="wrap">
+    <div class="head center">
+      <h2>How we engage</h2>
     </div>
-    <div class="fa-rail" style="position:relative; max-width:900px; margin:0 auto; padding-top:8px">
-      <span aria-hidden="true" style="position:absolute; left:12.5%; right:12.5%; top:28px; height:2px; background:#dee2e9"></span>
-      <span class="fa-fill" aria-hidden="true" style="position:absolute; left:12.5%; top:28px; height:2px; width:0; background:#ff6b1a; transition:width 0.45s cubic-bezier(.4,0,.2,1)"></span>
-      <div style="position:relative; display:grid; grid-template-columns:repeat(4, 1fr)">
-        <div class="fa-step" data-i="0" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:0 12px; text-align:center; cursor:default">
-          <span class="fa-dot" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#ffffff; border:2px solid #dee2e9; transition:background 0.3s, border-color 0.3s, transform 0.3s">
-            <svg class="fa-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:stroke 0.3s"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.3-4.3"></path></svg>
-          </span>
-          <p class="fa-title" style="margin:0; font-size:15px; font-weight:700; color:#0c1b33; transition:color 0.3s">Assist</p>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#7a8aa5; max-width:22ch">AI surfaces context and recommendations to support decisions.</p>
-        </div>
-        <div class="fa-step" data-i="1" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:0 12px; text-align:center; cursor:default">
-          <span class="fa-dot" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#ffffff; border:2px solid #dee2e9; transition:background 0.3s, border-color 0.3s, transform 0.3s">
-            <svg class="fa-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:stroke 0.3s"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
-          </span>
-          <p class="fa-title" style="margin:0; font-size:15px; font-weight:700; color:#0c1b33; transition:color 0.3s">Automate</p>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#7a8aa5; max-width:22ch">Repeatable tasks and workflows run without manual effort.</p>
-        </div>
-        <div class="fa-step" data-i="2" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:0 12px; text-align:center; cursor:default">
-          <span class="fa-dot" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#ffffff; border:2px solid #dee2e9; transition:background 0.3s, border-color 0.3s, transform 0.3s">
-            <svg class="fa-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:stroke 0.3s"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </span>
-          <p class="fa-title" style="margin:0; font-size:15px; font-weight:700; color:#0c1b33; transition:color 0.3s">Augment</p>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#7a8aa5; max-width:22ch">AI works alongside people, improving judgment, not replacing it.</p>
-        </div>
-        <div class="fa-step" data-i="3" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:0 12px; text-align:center; cursor:default">
-          <span class="fa-dot" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#ffffff; border:2px solid #dee2e9; transition:background 0.3s, border-color 0.3s, transform 0.3s">
-            <svg class="fa-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:stroke 0.3s"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
-          </span>
-          <p class="fa-title" style="margin:0; font-size:15px; font-weight:700; color:#0c1b33; transition:color 0.3s">Autonomy</p>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#7a8aa5; max-width:22ch">Systems operate independently within clear guardrails.</p>
-        </div>
-      </div>
+    <div class="venn">
+      <div class="mode" tabindex="0" data-side="L"><div class="node"><svg class="ico duo i-fee" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h7.5l4.5 4.5v11a1.5 1.5 0 0 1-1.5 1.5h-10.5a1.5 1.5 0 0 1-1.5-1.5v-14a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M14 3.5V8h4.5"/><path class="ac a-type1" d="M8.5 12.5h7"/><path class="ac a-type2" d="M8.5 16h4.5"/></svg></div><h3>Fee-based</h3><p class="sub2">Retainers · Scoped projects</p><span class="who">Enterprises · Startups</span></div>
+      <div class="mode" tabindex="0" data-side="LR"><div class="node"><svg class="ico duo i-growth" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16.5v-3M12 16.5v-6"/><g class="a-bob"><path class="ac" d="M16 16.5v-9"/></g></svg></div><h3>Growth-linked</h3><p class="sub2">Tied to business outcomes</p><span class="who">Startups</span></div>
+      <div class="mode" tabindex="0" data-side="R"><div class="node"><svg class="ico duo i-equity" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12h8.5"/><g class="a-pulse"><path class="ac" d="M12 3.5A8.5 8.5 0 0 1 20.5 12H12z"/></g></svg></div><h3>Equity-based</h3><p class="sub2">Selective partnerships</p><span class="who">Startups</span></div>
+      <span class="slot" data-anchor data-engage data-sy="0.89" data-rot="0" data-opacity="1" data-stroke="#D3D0DC"></span>
+    </div>
+    <div class="after"><a class="btn btn-primary" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer">Find your model <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- WHY US (carried over from the previous homepage, redrawn in the new system) -->
+<section class="hsec why" id="why">
+  <div class="wrap">
+    <div class="head center">
+      <h2>We advise what we <span class="serif">build.</span></h2>
+      <p class="sub">Our own portfolio is the proof. The same senior team that ships our products ships yours: no handoffs, no junior bench.</p>
+    </div>
+    <div class="why-grid">
+      <a class="why-card reveal" href="#products"><div class="k"><div class="tile"><svg class="ico duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><g class="a-turn"><rect class="ac" x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></g></svg></div><h3>Our own products</h3></div><p>Nine products in our portfolio, six live. We build with the same tools, standards and urgency we bring to client work.</p><span class="go">See our products <svg class="ico"><use href="#i-arrow"/></svg></span></a>
+      <a class="why-card reveal" href="#work"><div class="k"><div class="tile"><svg class="ico duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h7M13.5 12.5h7"/><g class="a-pulse"><rect class="ac" x="10.5" y="11" width="3" height="3" rx=".8"/></g></svg></div><h3>Your products</h3></div><p>Six client engagements across advisory, product development and AI enablement, from first idea through production.</p><span class="go">See client work <svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </div>
   </div>
 </section>
 
-<section class="sec" id="work" data-screen-label="Client work" style="background:#f1efec; padding:104px 32px">
-  <div style="max-width:1240px; margin:0 auto">
-    <div class="sec-head" style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:1px solid #dee2e9; margin-bottom:56px">
-      <h2 style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#bd450a">Client work</h2>
-      <p style="margin:0; font-size:14px; color:#7a8aa5">Scope shown, not slogans. Case studies ship with client sign-off.</p>
+<!-- OUR OWN PRODUCTS (order and copy: _data/products.yml) -->
+{% assign products = site.data.products %}
+<section class="hsec proof" id="products">
+  <div class="wrap">
+    <div class="bar">
+      <h2>Our own products</h2>
+      <div class="ctrl"><span id="count" aria-live="polite">01 / {{ products.size | prepend: '0' | slice: -2, 2 }}</span><button type="button" id="prev" aria-label="Previous product"><svg class="ico"><use href="#i-left"/></svg></button><button type="button" id="next" aria-label="Next product"><svg class="ico"><use href="#i-arrow"/></svg></button></div>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:20px">
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #cfdcee; border-radius:16px; background:linear-gradient(160deg, #f2f6fb, #ffffff)">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/smith-douglas.svg' | relative_url }}" alt="Smith Douglas Homes" style="height:30px; width:auto; object-fit:contain; flex-shrink:0">
-          </div>
-
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#bd450a; background:#fff2e9; border:1px solid #ffc79e; padding:4px 9px; border-radius:999px; white-space:nowrap">NEW ENGAGEMENT</span>
-                  </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">One of the largest US homebuilders. Working directly with the CIO to drive an agentic transformation — people, process, product, and technology.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Advisory</span>
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Enablement</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #cfdcee; border-radius:16px; background:linear-gradient(160deg, #f2f6fb, #ffffff)">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/rib-software.png' | relative_url }}" alt="RIB Software" referrerpolicy="no-referrer" style="width:26px; height:26px; border-radius:6px; object-fit:contain; flex-shrink:0">
-            <span style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#0c1b33">RIB Software</span>
-          </div>
-
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#bd450a; background:#fff2e9; border:1px solid #ffc79e; padding:4px 9px; border-radius:999px; white-space:nowrap">NEW ENGAGEMENT</span>
-                  </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">Global leader in construction software. Architecting a new product to deepen their customer base and break into new markets — high data complexity, embedded engineering.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Build</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #dee2e9; border-radius:16px; background:#ffffff">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/mindwave.png' | relative_url }}" alt="Mindwave Solutions" style="height:24px; width:auto; max-width:80%; object-fit:contain; object-position:left">
-          </div>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#18527d; background:#e3f4ff; border:1px solid #a8d8f5; padding:4px 9px; border-radius:999px; white-space:nowrap">IN PROGRESS</span>
-        </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">Replacing legacy ERP systems for enterprise transportation customers. Providing advisory services for their IT transformation project.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Advisory</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #dee2e9; border-radius:16px; background:#ffffff">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/exitous.png' | relative_url }}" alt="Exitous" style="height:40px; width:auto; max-width:80%; object-fit:contain; object-position:left">
-          </div>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#18527d; background:#e3f4ff; border:1px solid #a8d8f5; padding:4px 9px; border-radius:999px; white-space:nowrap">IN PROGRESS</span>
-        </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">Techstars-backed company building structured guidance for career transitions. Expert systems from the ground up.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Build</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #dee2e9; border-radius:16px; background:#ffffff">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/tacilent.png' | relative_url }}" alt="Tacilent" style="height:42px; width:auto; max-width:80%; object-fit:contain; object-position:left">
-          </div>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#0e3a6e; background:#e8eff8; border:1px solid #cfdcee; padding:4px 9px; border-radius:999px; white-space:nowrap">COMPLETE</span>
-        </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">AI-powered risk, assessment, and compliance intelligence. Product definition through execution.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Build</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px; padding:28px; border:1px solid #dee2e9; border-radius:16px; background:#ffffff">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:36px">
-          <div style="display:flex; align-items:center; gap:10px; min-width:0">
-            <img src="{{ '/assets/img/clients/ez-innovation.png' | relative_url }}" alt="EZ Innovation" style="height:26px; width:auto; max-width:70%; object-fit:contain; object-position:left">
-          </div>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.1em; color:#0e3a6e; background:#e8eff8; border:1px solid #cfdcee; padding:4px 9px; border-radius:999px; white-space:nowrap">COMPLETE</span>
-        </div>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464">Software development services firm. Providing advisory services on their go-to-market strategy.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto">
-          <span style="font-size:11px; font-weight:600; color:#0e3a6e; background:#e8eff8; padding:3px 9px; border-radius:6px">Advisory</span>
-        </div>
-      </div>
+    <div class="track" id="track">
+{% for p in products %}
+      <article class="card">
+        {% if p.thumb %}<div class="thumb shot"><img src="{{ '/assets/img/products/thumbs/' | append: p.thumb | relative_url }}" alt="{{ p.name }} website" loading="lazy" width="800" height="500"></div>
+        {% elsif p.art == 'bp' %}<div class="thumb bp" aria-hidden="true"><b>Ticket in. <em>Reviewed PR</em> out.</b><div class="flow"><i>PM</i><i>Developer</i><i>Code review</i><i>QA</i><i class="pr">Human-reviewed PR</i></div></div>
+        {% elsif p.art == 'fc' %}<div class="thumb fc" aria-hidden="true"><b>Invest on <em>principles.</em></b><svg viewBox="0 0 160 90" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 88H160" stroke="#fff" stroke-opacity=".18"/><path d="M0 60H160M0 32H160" stroke="#fff" stroke-opacity=".08"/><path d="M2 74 26 62 46 68 70 44 92 52 118 24 140 30 158 8" stroke="#FF9314" stroke-width="3"/><circle cx="158" cy="8" r="4.5" fill="#FF9314"/></svg></div>{% endif %}
+        <div class="meta">{% if p.icon %}<img class="app{% if p.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="42" height="42">{% else %}<span class="app" aria-hidden="true">{% if p.glyph == 'wrench' %}<svg class="ico" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/></svg>{% else %}<svg class="ico" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="M22 7l-8.5 8.5-5-5L2 17"/></svg>{% endif %}</span>{% endif %}<div><h3>{{ p.name }}</h3><span class="cat">{{ p.cat }}</span></div>{% case p.status %}{% when 'live' %}<span class="live-pill">Live</span>{% when 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endcase %}</div>
+        <p>{{ p.desc }}</p>
+        {% if p.url %}<a class="btn btn-ghost btn-sm" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">Visit {{ p.name }} <svg class="ico"><use href="#i-arrow"/></svg></a>{% endif %}
+      </article>
+{% endfor %}
     </div>
+    <div class="progress"><i id="bar"></i></div>
+  </div>
+</section>
 
-    <!-- How we engage -->
-    <div style="margin-top:64px; padding-top:22px; border-top:1px solid #dee2e9">
-      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px solid #dee2e9">
-        <p style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; color:#7a8aa5">HOW WE ENGAGE</p>
-      </div>
-      <div class="eng-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:0">
-        <!-- Enterprises column -->
-        <div style="padding:30px 36px 30px 0; border-right:1px solid #dee2e9">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px">
-            <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#0b2452; border-radius:8px">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
-            </span>
-            <div>
-              <p style="margin:0; font-size:18px; font-weight:700; letter-spacing:-0.015em; color:#0b2452">Enterprises</p>
-              <p style="margin:0; font-size:13px; color:#7a8aa5">Structured engagements with defined scope</p>
-            </div>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:16px">
-            <div style="display:flex; gap:12px; align-items:flex-start; padding:16px; border:1px solid #dee2e9; border-radius:10px; background:#ffffff">
-              <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; flex-shrink:0; background:#fff2e9; border-radius:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M15 2v5h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span>
-              <div>
-                <p style="margin:0; font-size:15px; font-weight:600; color:#0b2452">Fee-based</p>
-                <p style="margin:4px 0 0; font-size:13.5px; line-height:1.6; color:#4a5464">Retainers and scoped engagements with defined deliverables.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Startups column -->
-        <div style="padding:30px 0 30px 36px">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px">
-            <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#ff6b1a; border-radius:8px">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.373 8.373a1 1 0 1 1-3-3L12 9"></path><path d="M18 15l4-4"></path><path d="M21.5 11.5l-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg>
-            </span>
-            <div>
-              <p style="margin:0; font-size:18px; font-weight:700; letter-spacing:-0.015em; color:#0b2452">Startups</p>
-              <p style="margin:0; font-size:13px; color:#7a8aa5">Flexible models that grow with you</p>
-            </div>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:12px">
-            <div style="display:flex; gap:12px; align-items:flex-start; padding:16px; border:1px solid #dee2e9; border-radius:10px; background:#ffffff">
-              <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; flex-shrink:0; background:#fff2e9; border-radius:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M15 2v5h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span>
-              <div>
-                <p style="margin:0; font-size:15px; font-weight:600; color:#0b2452">Fee-based</p>
-                <p style="margin:4px 0 0; font-size:13.5px; line-height:1.6; color:#4a5464">Retainers and scoped engagements with defined deliverables.</p>
-              </div>
-            </div>
-            <div style="display:flex; gap:12px; align-items:flex-start; padding:16px; border:1px solid #dee2e9; border-radius:10px; background:#ffffff">
-              <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; flex-shrink:0; background:#fff2e9; border-radius:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>
-              <div>
-                <p style="margin:0; font-size:15px; font-weight:600; color:#0b2452">Growth-linked</p>
-                <p style="margin:4px 0 0; font-size:13.5px; line-height:1.6; color:#4a5464">Compensation tied to measurable business outcomes.</p>
-              </div>
-            </div>
-            <div style="display:flex; gap:12px; align-items:flex-start; padding:16px; border:1px solid #dee2e9; border-radius:10px; background:#ffffff">
-              <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; flex-shrink:0; background:#fff2e9; border-radius:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd450a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"></path><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path><path d="m21 3 1 11h-2"></path><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path><path d="M3 4h8"></path></svg></span>
-              <div>
-                <p style="margin:0; font-size:15px; font-weight:600; color:#0b2452">Equity-based</p>
-                <p style="margin:4px 0 0; font-size:13.5px; line-height:1.6; color:#4a5464">Selective partnerships where we contribute senior execution for equity.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- CLIENT WORK -->
+<section class="hsec work" id="work">
+  <div class="wrap">
+    <div class="work-bar">
+      <h2>Client work</h2>
+      <p>Scope shown, not slogans. Case studies ship with client sign-off.</p>
+    </div>
+    <div class="work-grid">
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"><span class="st new">New engagement</span></div><p>One of the largest US homebuilders. Working directly with the CIO to drive an agentic transformation: people, process, product and technology.</p><div class="tags"><span>Advisory</span><span>Enablement</span></div></article>
+      <article class="case reveal"><div class="case-top"><span class="case-logo rib"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt=""><b>RIB Software</b></span><span class="st new">New engagement</span></div><p>Global leader in construction software. Architecting a new product to deepen their customer base and break into new markets: high data complexity, embedded engineering.</p><div class="tags"><span>Build</span></div></article>
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt="Mindwave Solutions"><span class="st prog">In progress</span></div><p>Replacing legacy ERP systems for enterprise transportation customers. Providing advisory services for their IT transformation project.</p><div class="tags"><span>Advisory</span></div></article>
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt="Exitous"><span class="st prog">In progress</span></div><p>Techstars-backed company building structured guidance for career transitions. Expert systems from the ground up.</p><div class="tags"><span>Build</span></div></article>
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/tacilent.png' | relative_url }}" alt="Tacilent.ai"><span class="st done">Complete</span></div><p>AI-powered risk, assessment and compliance intelligence. Product definition through execution.</p><div class="tags"><span>Build</span></div></article>
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/ez-innovation.png' | relative_url }}" alt="EZ Innovation"><span class="st done">Complete</span></div><p>Software development services firm. Providing advisory services on their go-to-market strategy.</p><div class="tags"><span>Advisory</span></div></article>
     </div>
   </div>
 </section>
 
-<section class="sec dk" id="products" data-screen-label="Proof of shipping" style="background:#071a3a; padding:88px 32px 80px">
-  <div style="max-width:1240px; margin:0 auto">
-    <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 24px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,0.14); margin-bottom:48px">
-      <h2 style="margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#ffa24b">Proof we ship</h2>
-      <p style="margin:0; font-size:14px; color:#a9b8cc">Our own portfolio, built on the same framework.</p>
+<!-- FINAL -->
+<section class="final" id="final" data-tone="dark">
+  <div class="wrap">
+    <div>
+      <h2>What are you <span class="serif">building?</span></h2>
+      <a class="btn btn-light" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer">Start a project <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
-    <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px 56px; margin-bottom:56px">
-      <div style="flex:1 1 560px; min-width:0; display:flex; flex-direction:column; gap:16px">
-        <h3 style="margin:0; font-family:'Instrument Serif', serif; font-weight:400; font-size:clamp(44px, 5vw, 68px); line-height:1; letter-spacing:-0.02em; color:#ffffff; text-wrap:balance">Advice from people who <em style="font-style:italic; color:#ffa24b">ship</em>.</h3>
-        <p style="margin:0; max-width:54ch; font-size:17px; line-height:1.7; color:#a9b8cc; text-wrap:pretty">Three flagships from our own portfolio, built by the same senior team you’d work with.</p>
-      </div>
-      <div style="flex:0 0 auto; display:flex; align-items:flex-end; gap:16px">
-        <span style="font-family:'Instrument Serif', serif; font-size:clamp(88px, 10vw, 132px); line-height:0.84; letter-spacing:-0.03em; color:#ffffff">9</span>
-        <span style="display:flex; flex-direction:column; gap:6px; padding-bottom:4px">
-          <span style="font-size:17px; font-weight:600; color:#ffffff">products of our own</span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.12em; color:#a9b8cc">6 LIVE &middot; 3 IN DEVELOPMENT</span>
-        </span>
-      </div>
-    </div>
-    <div style="display:flex; flex-wrap:wrap; gap:20px">
-    <a href="https://getdualtake.app" target="_blank" rel="noopener noreferrer" class="flag-d" style="flex:1 1 320px; min-width:0; display:flex; flex-direction:column; padding:12px; border:1px solid rgba(255,255,255,0.12); border-radius:18px; background:#0d2550; text-decoration:none; color:inherit; box-sizing:border-box">
-      <div style="position:relative; height:220px; border-radius:12px; background:#15171c; display:flex; align-items:center; justify-content:center; overflow:hidden">
-        <span aria-hidden="true" style="position:absolute; top:14px; left:14px; display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border-radius:999px; background:rgba(255,255,255,0.1); font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.14em; color:#ffffff"><span style="width:7px; height:7px; border-radius:50%; background:#ff4b51"></span>REC</span>
-        <div aria-hidden="true" style="width:252px; max-width:calc(100% - 24px); height:156px; border-radius:18px; background:#262a33; border:1px solid rgba(255,255,255,0.16); padding:12px; box-sizing:border-box; display:flex; gap:10px; box-shadow:0 16px 40px rgba(0,0,0,0.45)">
-          <div style="flex:1 1 0; border:2px solid rgba(255,255,255,0.88); border-radius:9px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px">
-            <svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="9" r="4"/><path d="M3 36 L20 18 L31 28 L41 16 L61 36"/></svg>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:9px; font-weight:600; letter-spacing:0.16em; color:#ffffff">BACK</span>
-          </div>
-          <div style="flex:1 1 0; border:2px solid #ff4b51; border-radius:9px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px">
-            <svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="#ff6b70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="13" r="8"/><path d="M16 38 C18 27 46 27 48 38"/></svg>
-            <span style="font-family:'JetBrains Mono', monospace; font-size:9px; font-weight:600; letter-spacing:0.16em; color:#ffffff">FRONT</span>
-          </div>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:12px; padding:20px 10px 10px; flex:1 1 auto">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px">
-          <span style="display:flex; align-items:center; gap:10px"><img src="{{ '/assets/img/products/dualtake.png' | relative_url }}" alt="" width="28" height="28" loading="lazy" style="width:28px; height:28px; object-fit:contain; border-radius:7px"><span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#ffffff">DualTake</span></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#a9b8cc">MEDIA</span>
-        </div>
-        <p style="margin:0; font-family:'Instrument Serif', serif; font-size:30px; line-height:1.08; letter-spacing:-0.015em; color:#ffffff; text-wrap:balance">Both sides of the moment. <em style="font-style:italic; color:#ff8a8f">One take.</em></p>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#a9b8cc; text-wrap:pretty">Capture both sides of the moment at once — simultaneous dual-camera recording for authentic, react-and-record storytelling.</p>
-        <span class="flag-go" style="margin-top:auto; padding-top:6px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.02em; color:#ff8a8f">getdualtake.app ↗</span>
-      </div>
-    </a>
-    <a href="https://wonderful-tree-054d9550f.7.azurestaticapps.net" target="_blank" rel="noopener noreferrer" class="flag-d" style="flex:1 1 320px; min-width:0; display:flex; flex-direction:column; padding:12px; border:1px solid rgba(255,255,255,0.12); border-radius:18px; background:#0d2550; text-decoration:none; color:inherit; box-sizing:border-box">
-      <div style="position:relative; height:220px; border-radius:12px; background:#2d3afd; display:flex; align-items:center; justify-content:center; overflow:hidden">
-        <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 360 220" preserveAspectRatio="xMidYMid slice" style="position:absolute; top:0; left:0"><g fill="#ffffff" fill-opacity="0.3"><circle cx="24" cy="16" r="5"/><circle cx="78" cy="12" r="4"/><circle cx="128" cy="18" r="5"/><circle cx="186" cy="10" r="4"/><circle cx="292" cy="12" r="4"/><circle cx="338" cy="22" r="5"/><circle cx="20" cy="58" r="6"/><circle cx="16" cy="130" r="5"/><circle cx="38" cy="166" r="6"/><circle cx="22" cy="202" r="4"/><circle cx="322" cy="58" r="5"/><circle cx="344" cy="98" r="6"/><circle cx="316" cy="132" r="4"/><circle cx="328" cy="200" r="6"/><circle cx="70" cy="208" r="5"/><circle cx="150" cy="206" r="4"/><circle cx="196" cy="212" r="6"/><circle cx="244" cy="204" r="4"/><circle cx="286" cy="212" r="5"/></g><g fill="#ffffff"><circle cx="44" cy="96" r="7"/><circle cx="244" cy="16" r="7"/><circle cx="338" cy="166" r="7"/><circle cx="108" cy="208" r="7"/></g></svg>
-        <div aria-hidden="true" style="position:relative; width:228px; max-width:calc(100% - 24px); background:#ffffff; border-radius:12px; box-shadow:0 16px 40px rgba(7,26,58,0.35); padding:11px; box-sizing:border-box; display:flex; flex-direction:column; gap:4px">
-          <span style="padding:0 8px 4px; font-family:'JetBrains Mono', monospace; font-size:9px; font-weight:600; letter-spacing:0.14em; color:#5f6e85">WHO TO CONTACT NEXT</span>
-          <div style="display:flex; align-items:center; gap:8px; padding:7px 8px; border-radius:8px; background:#eff1ff"><span style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#2d3afd">01</span><span style="width:18px; height:18px; border-radius:50%; background:#2d3afd; flex:0 0 auto"></span><span style="width:52px; height:6px; border-radius:3px; background:#0c1b33; opacity:0.75; flex:0 0 auto"></span><span style="flex:1 1 auto; height:6px; border-radius:3px; background:#dfe2ff; display:flex"><span style="width:92%; border-radius:3px; background:#2d3afd"></span></span></div>
-          <div style="display:flex; align-items:center; gap:8px; padding:7px 8px"><span style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#5f6e85">02</span><span style="width:18px; height:18px; border-radius:50%; background:#c9cdd6; flex:0 0 auto"></span><span style="width:44px; height:6px; border-radius:3px; background:#a3a8b4; flex:0 0 auto"></span><span style="flex:1 1 auto; height:6px; border-radius:3px; background:#eceef8; display:flex"><span style="width:72%; border-radius:3px; background:#6f78fe"></span></span></div>
-          <div style="display:flex; align-items:center; gap:8px; padding:7px 8px"><span style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#5f6e85">03</span><span style="width:18px; height:18px; border-radius:50%; background:#c9cdd6; flex:0 0 auto"></span><span style="width:56px; height:6px; border-radius:3px; background:#a3a8b4; flex:0 0 auto"></span><span style="flex:1 1 auto; height:6px; border-radius:3px; background:#eceef8; display:flex"><span style="width:50%; border-radius:3px; background:#a6acfe"></span></span></div>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:12px; padding:20px 10px 10px; flex:1 1 auto">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px">
-          <span style="display:flex; align-items:center; gap:10px"><span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:7px; background:#ffffff; flex:0 0 auto"><img src="{{ '/assets/img/products/signal.svg' | relative_url }}" alt="" width="22" height="22" loading="lazy" style="width:22px; height:22px; object-fit:contain"></span><span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#ffffff">Signal</span></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#a9b8cc">SALES</span>
-        </div>
-        <p style="margin:0; font-family:'Instrument Serif', serif; font-size:30px; line-height:1.08; letter-spacing:-0.015em; color:#ffffff; text-wrap:balance">Find the <em style="font-style:italic; color:#b9beff">signal</em> in your network.</p>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#a9b8cc; text-wrap:pretty">Turns a list of connections into a ranked view of who to contact next. Enriches each person, classifies them, and scores a win probability against what you sell — then drafts the opening message.</p>
-        <span style="margin-top:auto; padding-top:6px; display:flex; flex-wrap:wrap; align-items:center; gap:10px"><span style="padding:4px 8px; border-radius:6px; background:rgba(255,162,75,0.14); font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#ffa24b">IN DEVELOPMENT</span><span class="flag-go" style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.02em; color:#b9beff">See it in progress ↗</span></span>
-      </div>
-    </a>
-    <a href="https://getitsigned.app" target="_blank" rel="noopener noreferrer" class="flag-d" style="flex:1 1 320px; min-width:0; display:flex; flex-direction:column; padding:12px; border:1px solid rgba(255,255,255,0.12); border-radius:18px; background:#0d2550; text-decoration:none; color:inherit; box-sizing:border-box">
-      <div style="position:relative; height:220px; border-radius:12px; background:#f6f2ea; display:flex; align-items:center; justify-content:center; overflow:hidden">
-        <div aria-hidden="true" style="position:relative; width:160px; height:188px; margin-top:24px">
-          <svg width="160" height="188" viewBox="0 0 176 206" fill="none" style="display:block; filter:drop-shadow(0 12px 20px rgba(30,51,88,0.16))"><path d="M1 1 H131 L175 45 V205 H1 Z" fill="#ffffff" stroke="#e3dccd"/><path d="M131 1 V45 H175 Z" fill="#c45c3a"/><g stroke="#1e3358" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"><line x1="20" y1="62" x2="146" y2="62"/><line x1="20" y1="78" x2="128" y2="78"/><line x1="20" y1="94" x2="104" y2="94"/></g><path d="M24 150 C30 126 44 124 41 144 C38 162 52 140 60 134 C67 129 64 150 73 146 C81 142 85 132 95 140 C101 145 111 144 124 136" stroke="#1e3358" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="164" x2="156" y2="164" stroke="#1e3358" stroke-opacity="0.28" stroke-width="1.5"/></svg>
-          <span style="position:absolute; right:-16px; bottom:46px; width:44px; height:44px; border-radius:50%; background:#a94a2c; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(169,74,44,0.32)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:12px; padding:20px 10px 10px; flex:1 1 auto">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px">
-          <span style="display:flex; align-items:center; gap:10px"><img src="{{ '/assets/img/products/getitsigned.svg' | relative_url }}" alt="" width="28" height="28" loading="lazy" style="width:28px; height:28px; object-fit:contain; border-radius:6px; box-shadow:0 0 0 1px rgba(255,255,255,0.22)"><span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#ffffff">GetItSigned</span></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#a9b8cc">PRODUCTIVITY</span>
-        </div>
-        <p style="margin:0; font-family:'Instrument Serif', serif; font-size:30px; line-height:1.08; letter-spacing:-0.015em; color:#ffffff; text-wrap:balance">Send it. Sign it. <em style="font-style:italic; color:#f0a283">Done.</em></p>
-        <p style="margin:0; font-size:14.5px; line-height:1.68; color:#a9b8cc; text-wrap:pretty">Effortless e-signatures and document workflows. Send, sign, and track agreements securely — no friction, no paperwork.</p>
-        <span class="flag-go" style="margin-top:auto; padding-top:6px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.02em; color:#f0a283">getitsigned.app ↗</span>
-      </div>
-    </a>
+    <div class="mark-wrap">
+      <svg viewBox="-8 -8 224 224" aria-hidden="true">
+        <use href="#petal" class="petal-fill hot"/>
+        <use href="#petal" class="petal-fill" transform="rotate(90 104 104)"/>
+        <use href="#petal" class="petal-fill" transform="rotate(270 104 104)"/>
+        <use href="#petal" class="petal-fill" transform="rotate(180 104 104)"/>
+      </svg>
+      <span class="slot" data-anchor data-logo data-rot="12" data-opacity="1" data-stroke="#FFFFFF" data-bg="#2B1766"></span>
     </div>
   </div>
 </section>
-
-<section class="sec" id="portfolio" aria-labelledby="fleet-title" data-screen-label="The fleet" style="background:#ffffff; padding:72px 32px 88px">
-  <div style="max-width:1240px; margin:0 auto">
-    <h2 id="fleet-title" style="margin:0 0 16px; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#bd450a">The fleet</h2>
-    <div class="fleet">
-      <button type="button" class="drawer" aria-expanded="true" aria-controls="fleet-panel">
-        <span class="stk-row" aria-hidden="true">
-          <span class="stk"><img src="{{ '/assets/img/products/w3forms.png' | relative_url }}" alt="" width="26" height="26" loading="lazy" style="width:26px; height:26px; object-fit:contain"></span>
-          <span class="stk" style="margin-left:-10px"><img src="{{ '/assets/img/products/socialvoice.svg' | relative_url }}" alt="" width="26" height="26" loading="lazy" style="width:26px; height:26px; object-fit:contain"></span>
-          <span class="stk" style="margin-left:-10px"><img src="{{ '/assets/img/products/linklibrary.png' | relative_url }}" alt="" width="26" height="26" loading="lazy" style="width:26px; height:26px; object-fit:contain"></span>
-          <span class="stk" style="margin-left:-10px"><img src="{{ '/assets/img/products/fono.png' | relative_url }}" alt="" width="26" height="26" loading="lazy" style="width:26px; height:26px; object-fit:contain"></span>
-          <span class="stk" style="margin-left:-10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="M18 15l4-4"/><path d="M21.5 11.5l-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></span>
-          <span class="stk" style="margin-left:-10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="M22 7l-8.5 8.5-5-5L2 17"/></svg></span>
-        </span>
-        <span style="flex:1 1 280px; min-width:0; font-family:'Instrument Serif', serif; font-size:clamp(26px, 2.6vw, 34px); line-height:1.1; letter-spacing:-0.015em; color:#0b2452">Explore more of our products</span>
-        <span aria-hidden="true" style="display:inline-flex; align-items:center; gap:12px; flex:0 0 auto; margin-left:auto; font-size:14px; font-weight:600; color:#0b2452"><span class="drawer-label">Hide</span><span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0b2452" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span>
-      </button>
-      <div id="fleet-panel" class="fleet-panel">
-        <div class="fleet-grid">
-
-        <a href="https://w3forms.com" target="_blank" rel="noopener noreferrer" class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:pointer">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><img src="{{ '/assets/img/products/w3forms.png' | relative_url }}" alt="" width="30" height="30" loading="lazy" style="width:30px; height:30px; object-fit:contain"></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">TECH</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">W3Forms</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Form backend and hosted forms with a share link — build, embed, and collect responses with spam protection, webhooks, and a developer-friendly API.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#0e3a6e">w3forms.com</span>
-        </div>
-        </a>
-
-        <a href="https://socialvoice.app" target="_blank" rel="noopener noreferrer" class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:pointer">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><img src="{{ '/assets/img/products/socialvoice.svg' | relative_url }}" alt="" width="30" height="30" loading="lazy" style="width:30px; height:30px; object-fit:contain"></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">SOCIAL</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">SocialVoice</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Turns a half-formed idea into a post worth publishing. You talk it through, it asks the follow-ups a good editor would ask, and what comes out still sounds like you.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#a8480b">in development</span>
-        </div>
-        </a>
-
-        <a href="https://linklibrary.ai" target="_blank" rel="noopener noreferrer" class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:pointer">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><img src="{{ '/assets/img/products/linklibrary.png' | relative_url }}" alt="" width="30" height="30" loading="lazy" style="width:30px; height:30px; object-fit:contain"></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">PRODUCTIVITY</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">LinkLibrary</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Save, organize, and share links across platforms and devices. AI-powered search and tagging so you actually find what you saved.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#0e3a6e">linklibrary.ai</span>
-        </div>
-        </a>
-
-        <a href="https://getfono.app" target="_blank" rel="noopener noreferrer" class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:pointer">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><img src="{{ '/assets/img/products/fono.png' | relative_url }}" alt="" width="30" height="30" loading="lazy" style="width:30px; height:30px; object-fit:contain"></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">TECH</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">Fono</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">A round-the-clock AI receptionist for local businesses. Answers calls, SMS, and web chat in seconds, books straight into your calendar, and hands the urgent ones to your team.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#0e3a6e">getfono.app</span>
-        </div>
-        </a>
-
-        <span class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:default">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12l-8.373 8.373a1 1 0 1 1-3-3L12 9"></path><path d="M18 15l4-4"></path><path d="M21.5 11.5l-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">TECH</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">BuildPilot</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">An SDLC system for serious builders. A glass-box team of AI specialists — PM, developer, code reviewer, QA — carrying a ticket to a human-reviewed PR. It automates the process around the coder, not the coder.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#a8480b">in development</span>
-        </div>
-        </span>
-
-        <a href="https://finciples.ai" target="_blank" rel="noopener noreferrer" class="prod-cell" style="display:flex; flex-direction:column; min-height:230px; padding:22px; background:#ffffff; border-right:1px dashed #c9d3e0; border-bottom:1px dashed #c9d3e0; transition:background 0.25s; cursor:pointer">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px">
-          <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; overflow:hidden"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"></path><path d="M22 7l-8.5 8.5-5-5L2 17"></path></svg></span>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.12em; color:#5f6e85; white-space:nowrap">FINANCE</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:7px; margin-top:auto">
-          <span style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0c1b33">Finciples</span>
-          <p style="margin:0; font-size:14.5px; line-height:1.68; color:#4a5464; text-wrap:pretty">Investment analysis powered by AI and grounded in proven philosophies from Buffett, Dalio, and Lynch. Principles-based reasoning for smarter financial decisions.</p>
-          <span style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.02em; color:#0e3a6e">finciples.ai</span>
-        </div>
-        </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>

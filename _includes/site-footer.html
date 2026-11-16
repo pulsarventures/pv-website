@@ -1,47 +1,24 @@
 {% comment %}
-  Site footer, ported from the design canvas. Identical markup on every
-  artboard; the homepage-section links in the Navigate column are qualified
-  with `home` for the same reason the nav is, so they still reach the homepage
-  sections from About Us (in the canvas export they were bare fragments and
-  went nowhere off-home). Services is a page of its own, so it links to its
-  permalink and needs no qualifying.
+  Site footer, from the Pulsar Homepage redesign (Nov 2026). Homepage-section
+  links are qualified with `home` (as in the nav) so they still land on the
+  homepage sections from other pages. Styles live in assets/css/chrome.css.
 {% endcomment %}
 {% if page.url == '/' %}{% assign home = '' %}{% else %}{% assign home = '/' | relative_url %}{% endif %}
 
-<footer class="sec" data-screen-label="Footer" style="background:#061530; padding:72px 32px 40px">
-  <div style="max-width:1240px; margin:0 auto">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.12)">
-      <div style="display:flex; flex-direction:column; gap:16px">
-        <span style="display:inline-flex; align-items:center; gap:10px; line-height:1">
-          <img src="{{ '/assets/img/brand/pulsar-icon.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="" aria-hidden="true" width="36" height="36" style="display:block; width:36px; height:36px; border-radius:9px">
-          <span style="display:grid; gap:2px; font-size:15px; font-weight:600; letter-spacing:-0.015em"><span style="color:#ffffff">Pulsar</span><span style="color:#ffffff">Ventures</span></span>
-        </span>
-        <p style="margin:0; font-size:14px; line-height:1.7; color:rgba(255,255,255,0.5); max-width:36ch">A venture studio that helps you decide what to build, then builds it with you. Advisory and product development, AI-native from day one.</p>
-      </div>
-      <div>
-        <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Navigate</p>
-        <div style="display:flex; flex-direction:column; gap:12px">
-          <a href="{{ '/services/' | relative_url }}" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Services</a>
-          <a href="{{ home }}#work" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Clients</a>
-          <a href="{{ home }}#products" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Products</a>
+<footer class="pvf">
+  <div class="pvf-wrap">
+    <div class="pvf-top">
+      <div class="pvf-brand">
+        <a class="pvn-logo" href="{% if page.url == '/' %}#top{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Pulsar Ventures home"><svg aria-hidden="true" style="color:#4A3A9C;--mk-dot:#fff;--mk-bg:#2B1766"><use href="#mark"/></svg><span class="pvn-lw">Pulsar<br>Ventures</span></a>
+        <div class="pvf-soc">
+          <a href="mailto:{{ site.contact.email }}" aria-label="Email"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path class="ac a-flap" d="m4.5 7 7.5 6 7.5-6"/></svg></a>
+          <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8 10.5V16M11.5 16v-5.5M11.5 13c0-1.6 1-2.5 2.3-2.5S16 11.2 16 13v3"/><circle class="acf a-pulse" cx="8" cy="7.8" r=".9"/></svg></a>
+          <a href="https://aibuildersmeetup.com/" target="_blank" rel="noopener noreferrer" aria-label="Events: AI Builders Meetup"><svg class="pv-ico pv-duo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle class="acf a-pulse" cx="15.5" cy="15" r="1.4"/></svg></a>
         </div>
       </div>
-      <div>
-        <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Company</p>
-        <div style="display:flex; flex-direction:column; gap:12px">
-          <a href="{{ '/about-us/' | relative_url }}" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">About Us</a>
-          <a href="{{ '/about-us/' | relative_url }}#team" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Team</a>
-          <a href="{{ home }}#products" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Brands</a>
-          <a href="{{ '/about-us/' | relative_url }}#community" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Community</a>
-        </div>
-      </div>
-      <div>
-        <p style="margin:0 0 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5)">Connect</p>
-        <div style="display:flex; flex-direction:column; gap:12px">
-          <a href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:rgba(255,255,255,0.75)" class="hv-9">Schedule a call ↗</a>
-        </div>
-      </div>
+      <nav class="pvf-col" aria-label="Navigate"><h4>Navigate</h4><a href="{{ '/services/' | relative_url }}">Services</a><a href="{{ home }}#work">Clients</a><a href="{{ home }}#products">Products</a></nav>
+      <nav class="pvf-col" aria-label="Company"><h4>Company</h4><a href="{{ '/about-us/' | relative_url }}">About Us</a><a href="{{ '/about-us/' | relative_url }}#team">Team</a><a href="{{ home }}#products">Brands</a><a href="{{ '/about-us/' | relative_url }}#community">Community</a></nav>
     </div>
-    <p style="margin:28px 0 0; text-align:center; font-size:13px; color:rgba(255,255,255,0.4)">© {{ 'now' | date: "%Y" }} Pulsar Ventures. All rights reserved.</p>
+    <div class="pvf-bot"><span>© Pulsar Ventures {{ 'now' | date: "%Y" }}</span></div>
   </div>
 </footer>

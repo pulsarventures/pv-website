@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Site chrome: nav + footer from the Pulsar Homepage redesign (Nov 2026).
+   Loaded on every page. Classes are pv-/pvn-/pvf- prefixed and tokens are
+   --pv-* so this layer cannot collide with site.css on the inner pages.
+   ========================================================================== */
+:root{
+  --pv-ink:#2B1766;
+  --pv-galaxy:#2B1766;
+  --pv-orange:#FF9314;
+  --pv-orange-ink:#C55F00;
+  --pv-lav:#F3F0FC;
+  --pv-line:#E6E2F3;
+  --pv-bg:#FDFCFF;
+  --pv-nav-h:88px;
+  --pv-f-display:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+}
+
+/* ---- nav ---- */
+.pvn{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(253,252,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--pv-line);font-family:var(--pv-f-display)}
+.pvn *,.pvf *{box-sizing:border-box}
+.pvn-wrap{max-width:1200px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));height:var(--pv-nav-h);display:flex;align-items:center;gap:1.5rem}
+.pvn-logo{display:flex;align-items:center;gap:.75rem;font-family:var(--pv-f-display);font-weight:600;color:var(--pv-ink);text-decoration:none}
+.pvn-logo:hover{color:var(--pv-ink)}
+.pvn-logo svg{width:44px;height:44px;flex:none}
+.pvn-lw{font-size:1.12rem;line-height:1.1;letter-spacing:-.01em}
+.pvn-links{display:flex;align-items:center;gap:.5rem;margin-left:auto}
+.pvn-link{position:relative;font-family:var(--pv-f-display);font-weight:600;font-size:1.05rem;line-height:1.6;color:var(--pv-ink);padding:.6rem .9rem;border-radius:12px;transition:color .2s;background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;text-decoration:none}
+.pvn-link:hover,.pvn-link:focus-visible,.pvn-dd-btn[aria-expanded="true"]{color:var(--pv-galaxy)}
+.pvn-link[aria-current="page"]{color:var(--pv-orange-ink)}
+.pvn :focus-visible,.pvf :focus-visible{outline:2px solid var(--pv-ink);outline-offset:3px;border-radius:8px}
+
+/* dotted pulsar orbit drawn around a hovered link (svg injected by site-nav.js) */
+.pv-orbit{position:absolute;left:50%;top:50%;overflow:visible;pointer-events:none;transform:translate(-50%,-50%) scale(.82) rotate(-6deg);opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.pv-orbit ellipse{fill:none;stroke:var(--pv-galaxy);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:0 6.5;animation:pvOrbitFlow 2.4s linear infinite}
+.pv-orbit ellipse.o2{opacity:.45;stroke-width:1.8;animation-direction:reverse;animation-duration:3.2s}
+.pv-orbit circle{fill:var(--pv-orange)}
+.pvn-link:hover .pv-orbit,.pvn-link:focus-visible .pv-orbit,.pvn-dd-btn[aria-expanded="true"] .pv-orbit{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-6deg)}
+@keyframes pvOrbitFlow{to{stroke-dashoffset:-13}}
+
+.pvn-dd{position:relative}
+.pvn-dd-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.pvn-dd-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.pvn-dd-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:220px;background:#fff;border:1px solid var(--pv-line);border-radius:16px;padding:8px;box-shadow:0 18px 40px -18px rgba(43,23,102,.35);display:grid;gap:2px}
+.pvn-dd-menu[hidden]{display:none}
+.pvn-dd-menu a{font-family:var(--pv-f-display);font-weight:600;color:var(--pv-ink);padding:.65rem .8rem;border-radius:10px;font-size:.98rem;text-decoration:none}
+.pvn-dd-menu a:hover{background:var(--pv-lav);color:var(--pv-galaxy)}
+
+.pvn-cta-row{display:flex;gap:.6rem;align-items:center;margin-left:1.5rem}
+.pvn-cta{display:inline-flex;align-items:center;font-family:var(--pv-f-display);font-weight:700;font-size:1rem;line-height:1.2;padding:.9rem 1.6rem;border-radius:999px;background:var(--pv-orange);border:1.5px solid var(--pv-orange);color:var(--pv-ink);white-space:nowrap;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.pvn-cta:hover{background:#F28200;border-color:#F28200;color:var(--pv-ink);box-shadow:0 10px 24px -10px rgba(242,130,0,.65);transform:translateY(-1px)}
+.pvn-menu-btn{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--pv-line);background:#fff;color:var(--pv-ink);cursor:pointer;place-items:center;padding:0}
+.pvn-menu-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+@media (max-width:960px){
+  .pvn-menu-btn{display:grid}
+  .pvn-cta-row{margin-left:auto}
+  .pvn-links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--pv-bg);border-bottom:1px solid var(--pv-line);flex-direction:column;align-items:stretch;padding:12px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));margin:0}
+  .pvn-links.open{display:flex}
+  .pvn-dd-menu{position:static;box-shadow:none;border:0;padding:0 0 0 12px}
+}
+@media (max-width:480px){.pvn-cta{padding:.7rem 1rem;font-size:.9rem}.pvn-lw{font-size:1rem}}
+
+/* ---- duotone icons (footer socials; the homepage reuses the same idea) ---- */
+.pv-ico{width:24px;height:24px;flex:none}
+.pv-duo{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.pv-duo .ac{stroke:var(--pv-orange)}
+.pv-duo .acf{fill:var(--pv-orange);stroke:none}
+.pv-duo path,.pv-duo circle{transform-box:fill-box;transform-origin:center}
+.pv-duo .a-flap{transform-origin:top center;animation:pvFlap 3s ease-in-out infinite}
+@keyframes pvFlap{0%,70%,100%{transform:scaleY(1)}85%{transform:scaleY(-.6)}}
+.pv-duo .a-pulse{animation:pvPulse 2.2s ease-in-out infinite}
+@keyframes pvPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.75}}
+
+/* ---- footer ---- */
+.pvf{background:var(--pv-galaxy);border-top:1px solid rgba(255,255,255,.1);color:#B7AEE6;font-size:.9rem;font-family:"Inter",ui-sans-serif,system-ui,sans-serif;line-height:1.6}
+.pvf-wrap{max-width:1200px;margin:0 auto;padding:clamp(3rem,6vw,4.5rem) max(20px,env(safe-area-inset-right,0px)) 1.6rem max(20px,env(safe-area-inset-left,0px))}
+.pvf-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;align-items:start}
+.pvf-brand{display:grid;gap:1.6rem;justify-items:start}
+.pvf .pvn-logo,.pvf .pvn-logo:hover{color:#fff}
+.pvf .pvn-logo svg{width:52px;height:52px}
+.pvf .pvn-lw{font-size:1.15rem}
+.pvf-col{display:grid;gap:1rem;align-content:start}
+.pvf-col h4{margin:0 0 .3rem;font-family:var(--pv-f-display);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8F86C4}
+.pvf-col a{font-size:1.1rem;color:#D9D3F7;transition:color .2s;text-decoration:none}
+.pvf-col a:hover{color:var(--pv-orange)}
+.pvf-soc{display:flex;gap:.6rem}
+.pvf-soc a{width:48px;height:48px;border-radius:12px;border:1px solid #3D2F86;display:grid;place-items:center;color:#E3DEFF;transition:background .2s}
+.pvf-soc a:hover{background:#2E1F78;color:#E3DEFF}
+.pvf-bot{text-align:center;margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1)}
+@media (max-width:700px){.pvf-top{grid-template-columns:1fr 1fr}.pvf-brand{grid-column:1/-1}}
+
+@media (prefers-reduced-motion:reduce){
+  .pv-orbit ellipse,.pv-duo *{animation:none!important}
+}

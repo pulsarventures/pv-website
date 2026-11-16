@@ -84,8 +84,8 @@ a:hover { color: var(--pulsar-deep); }
 * { box-sizing: border-box; }
 img { max-width: 100%; }
 
-/* Anchors land below the fixed 72px bar rather than under it. */
-.sec { scroll-margin-top: 72px; }
+/* Anchors land below the fixed 88px bar (chrome.css) rather than under it. */
+.sec { scroll-margin-top: 88px; }
 
 /* ==========================================================================
    Hover / focus — compiled from the source's style-hover and style-focus
@@ -180,54 +180,6 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
 @media (max-width: 720px) { .hero-stage { min-height:520px !important; padding:64px 20px 32px !important; border-radius:18px !important; } }
 
 /* ==========================================================================
-   Navigation — the source design shipped anchor links only, with no dropdown
-   and no mobile treatment. Both are added here.
-   ========================================================================== */
-.nav-menu { display: flex; align-items: center; gap: 28px; }
-.site-nav .nav-link.hv-1:hover, .site-nav .nav-dd-item.hv-1:hover { color: var(--blue-line) !important; }
-/* Orange focus ring in the bar, as in the redesign canvas; #bd450a keeps 5:1 on white */
-.site-nav a:focus-visible, .site-nav button:focus-visible { outline: 3px solid #bd450a; outline-offset: 3px; border-radius: 6px; }
-.site-nav .nav-cta:focus-visible { border-radius: 999px; }
-.nav-link { font-size: 15px; font-weight: 600; letter-spacing: -0.005em; color: var(--ink-display); background: none; border: none; padding: 0; font-family: inherit; cursor: pointer; }
-.nav-burger { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; margin-right: -8px; padding: 0; background: none; border: none; border-radius: 9px; color: var(--ink-nav); cursor: pointer; }
-.nav-burger:hover { background: var(--paper); }
-
-/* Company dropdown */
-.nav-dd { position: relative; }
-.nav-dd-btn { display: inline-flex; align-items: center; gap: 5px; }
-.nav-chev { transition: transform 0.2s; }
-.nav-dd-btn[aria-expanded="true"] .nav-chev { transform: rotate(180deg); }
-.nav-dd-menu {
-    display: none; position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%);
-    min-width: 160px; padding: 8px 0; background: var(--surface);
-    border: 1px solid var(--rule-menu); border-radius: 12px;
-    box-shadow: var(--shadow-lg);
-    z-index: 60;
-}
-.nav-dd-menu.is-open { display: flex; flex-direction: column; }
-.nav-dd-item { display: block; padding: 10px 20px; font-size: 15px; font-weight: 600; color: var(--ink-display); white-space: nowrap; }
-.nav-dd-item:hover { background: var(--paper); color: var(--ink-display); }
-
-@media (max-width: 1024px) {
-    .nav-burger { display: inline-flex; }
-    .nav-menu {
-        display: none; position: absolute; top: 72px; left: 0; right: 0;
-        flex-direction: column; align-items: stretch; gap: 0;
-        padding: 6px 20px 20px; background: var(--surface);
-        border-bottom: 1px solid var(--rule-menu);
-        box-shadow: 0 18px 32px rgba(11,36,82,0.12);
-        max-height: calc(100vh - 72px); overflow-y: auto;
-    }
-    .site-nav.is-open .nav-menu { display: flex; }
-    .nav-link { padding: 13px 0; border-bottom: 1px solid var(--rule-soft); }
-    .nav-dd { width: 100%; }
-    .nav-dd-btn { width: 100%; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule-soft); }
-    .nav-dd-menu { position: static; transform: none; border: none; border-radius: 0; box-shadow: none; padding: 0; }
-    .nav-dd-item { padding: 11px 0 11px 18px; border-bottom: 1px solid var(--rule-soft); }
-    .nav-cta { justify-content: center; margin-top: 16px; }
-}
-
-/* ==========================================================================
    Responsive — the source is a fixed desktop composition: four hard two-column
    grids, ruled columns that assume they sit side by side, and flat 32px
    gutters. Everything below is the mobile behaviour it never had.
@@ -260,7 +212,6 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
     .sec { padding-left: 20px !important; padding-right: 20px !important; }
     section.sec { padding-top: 76px !important; padding-bottom: 76px !important; }
     #top.sec { padding-top: 116px !important; padding-bottom: 0 !important; }
-    .nav-bar { padding: 0 20px !important; }
     .grid-two { grid-template-columns: 1fr !important; }
 }
 
@@ -302,7 +253,7 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
    '.eng-grid' and '.grid-split', all of which already exist above and are
    shared with the homepage and About.
    ========================================================================== */
-.svc-sec { padding:104px 32px; scroll-margin-top:72px; }
+.svc-sec { padding:104px 32px; scroll-margin-top:88px; }
 .svc-head { display:flex; align-items:baseline; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:1px solid #dee2e9; margin-bottom:48px; }
 .svc-kick { margin:0; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#bd450a; }
 .svc-kick--mute { color:#7a8aa5; }
@@ -457,7 +408,7 @@ a.prod-cell:hover span:last-child { color:var(--pulsar-deep) !important; }
 }
 .partner-text-link:hover { color:#bd450a; }
 .partner-text-link span { font-family:'JetBrains Mono', monospace; }
-.partner-sec { padding:104px 32px; scroll-margin-top:72px; }
+.partner-sec { padding:104px 32px; scroll-margin-top:88px; }
 .partner-wrap { width:100%; max-width:1240px; margin:0 auto; }
 .partner-section-head {
   display:grid;
