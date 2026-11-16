@@ -19,7 +19,7 @@
   desc: Teleprompter camera for creators. Your script scrolls under the lens, then export to TikTok, Reels or Shorts.
 
 - name: Signal
-  cat: AI agent
+  cat: GTM AI agent
   status: early
   url: https://wonderful-tree-054d9550f.7.azurestaticapps.net/
   thumb: signal.jpg
