@@ -69,3 +69,30 @@
     addEventListener('resize', orbits);
     if (document.fonts) document.fonts.ready.then(orbits);
 }());
+
+/* Footer email: open a menu of compose options instead of relying on mailto:,
+   which silently does nothing when no default mail app is set up. */
+(function () {
+    'use strict';
+    var btn = document.getElementById('pvfMailBtn');
+    var menu = document.getElementById('pvfMailMenu');
+    if (!btn || !menu) return;
+    function close() { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+    btn.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var open = menu.hidden;
+        menu.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        if (open) { var first = menu.querySelector('a,button'); if (first) first.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (!menu.contains(e.target)) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { close(); btn.focus(); } });
+    Array.prototype.forEach.call(menu.querySelectorAll('a'), function (a) { a.addEventListener('click', close); });
+    var copy = menu.querySelector('[data-copy]');
+    copy.addEventListener('click', function () {
+        var addr = copy.getAttribute('data-copy'), label = copy.textContent;
+        function done(ok) { copy.textContent = ok ? 'Copied!' : addr; setTimeout(function () { copy.textContent = label; }, 1600); }
+        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); });
+        else { var t = document.createElement('textarea'); t.value = addr; document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand('copy'); } catch (err) {} t.remove(); done(ok); }
+    });
+}());
