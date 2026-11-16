@@ -15,12 +15,19 @@
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}?v={{ icon_v }}">
 
 {% comment %}
-  Fonts and the site stylesheet. This layout carries no Tailwind and no icon
-  library: the design canvas composes every element with inline styles, and
-  site.css is the whole global layer it relies on (reset, hover/focus states,
-  the nav, and the responsive rules).
+  Fonts and stylesheets. Inner pages compose every element with inline styles
+  and rely on site.css as their global layer. The homepage (site_css: false)
+  skips site.css entirely and brings its own sheet via page_css. chrome.css
+  (nav + footer) loads everywhere.
 {% endcomment %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% if page.site_css == false %}
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+{% else %}
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% endif %}
+{% comment %} Nav + footer, on every page. Pages can add their own sheet via page_css. {% endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/chrome.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% if page.page_css %}<link rel="stylesheet" href="{{ page.page_css | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}

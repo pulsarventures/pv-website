@@ -1,0 +1,90 @@
+# Our own products, in homepage order.
+#
+#   tier    omit = featured in the carousel; `earlier` = listed under the
+#           "Earlier builds" toggle below it (built and shipped, not our focus now)
+#   status  live | early | dev   -> pill text "Live" / "Early access" / "In development"
+#   url     omit for products with no public site; the card then has no button
+#   thumb   screenshot under /assets/img/products/thumbs/ (800x500)
+#   art     drawn thumbnail instead of a screenshot (bp, fc), styled in home.css
+#   icon    app icon; `icon_fit: contain` for transparent logos that need padding
+#   glyph   line icon drawn in place of an app icon (wrench, trend)
+
+
+- name: DualTake
+  cat: Media
+  status: live
+  url: https://getdualtake.app/
+  thumb: dualtake.jpg
+  icon: icons/dualtake.png
+  desc: Teleprompter camera for creators. Your script scrolls under the lens, then export to TikTok, Reels or Shorts.
+
+- name: Signal
+  cat: AI agent
+  status: early
+  url: https://wonderful-tree-054d9550f.7.azurestaticapps.net/
+  thumb: signal.jpg
+  icon: icons/signal.png
+  desc: Reads every contact in your network and decides which offer each person should hear about, and who to call first.
+
+- name: GetItSigned
+  cat: Productivity
+  status: live
+  url: https://getitsigned.app/en
+  thumb: getitsigned.jpg
+  icon: icons/getitsigned.png
+  desc: Simple e-signatures with no subscription. Upload a PDF, add signature fields and send a link.
+
+- name: W3Forms
+  cat: Developer tools
+  status: live
+  url: https://w3forms.com
+  thumb: w3forms.jpg
+  icon: w3forms.png
+  icon_fit: contain
+  desc: Form backend and hosted forms with a share link. Build, embed and collect responses with spam protection, webhooks and a developer-friendly API.
+
+- name: LinkLibrary
+  cat: Productivity
+  status: live
+  url: https://linklibrary.ai
+  thumb: linklibrary.jpg
+  icon: linklibrary.png
+  icon_fit: contain
+  desc: Save, organize and share links across platforms and devices. AI-powered search and tagging so you actually find what you saved.
+
+- name: SocialVoice
+  tier: earlier
+  cat: Social
+  status: dev
+  url: https://socialvoice.app
+  thumb: socialvoice.jpg
+  icon: socialvoice.svg
+  icon_fit: contain
+  desc: Turns a half-formed idea into a post worth publishing. You talk it through, it asks the follow-ups a good editor would ask, and what comes out still sounds like you.
+
+- name: Fono
+  tier: earlier
+  cat: AI receptionist
+  status: live
+  url: https://getfono.app
+  thumb: fono.jpg
+  icon: fono.png
+  icon_fit: contain
+  desc: A round-the-clock AI receptionist for local businesses. Answers calls, SMS and web chat in seconds, books straight into your calendar, and hands the urgent ones to your team.
+
+- name: BuildPilot
+  tier: earlier
+  cat: Developer tools
+  status: dev
+  art: bp
+  glyph: wrench
+  desc: An SDLC system for serious builders. A glass-box team of AI specialists (PM, developer, code reviewer, QA) carrying a ticket to a human-reviewed PR.
+
+- name: Finciples
+  tier: earlier
+  cat: Finance
+  status: live
+  url: https://finciples.ai
+  art: fc
+  glyph: trend
+  desc: Investment analysis powered by AI and grounded in proven philosophies from Buffett, Dalio and Lynch. Principles-based reasoning for smarter financial decisions.
