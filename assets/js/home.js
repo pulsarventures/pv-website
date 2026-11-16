@@ -157,6 +157,9 @@
     count.textContent = (per>1 ? pad(i+1)+'–'+pad(Math.min(i+per,n)) : pad(i+1))+' / '+pad(n);
   }
   tr.addEventListener('scroll', sync, {passive:true}); addEventListener('resize', sync); sync();
+  // products: "Earlier builds" toggle
+  const eb = document.getElementById('earlierBtn'), el = document.getElementById('earlierList');
+  if(eb && el) eb.addEventListener('click', ()=>{ const o = eb.getAttribute('aria-expanded')==='true'; eb.setAttribute('aria-expanded', String(!o)); el.hidden = o; });
   // landscape C: draw each card as the logo's P-shaped petal, rotated like the mark so every bowl faces the core
   function pforms(){
     document.querySelectorAll('.pform .pcard').forEach(c=>{
