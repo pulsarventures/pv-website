@@ -13,7 +13,7 @@
 - name: DualTake
   cat: Media
   status: live
-  url: https://getdualtake.app/
+  url: https://dualtake.live/
   thumb: dualtake.jpg
   icon: icons/dualtake.png
   desc: Teleprompter camera for creators. Your script scrolls under the lens, then export to TikTok, Reels or Shorts.

@@ -9,6 +9,8 @@ contact:
   email: "spradhip@pulsarventures.co"
   cal_com: "https://cal.com/sree.pradhip"
   linkedin: "https://www.linkedin.com/company/pulsar-ventures-llc"
+  founder_linkedin: "https://www.linkedin.com/in/sree-pradhip"
+  linktree: "https://sreepradhip.com/linktree"
   w3forms_access_key: "w3f_51c91002cc1f66a0249225d4ff80027680c379cd1662d317"
 
 
@@ -79,6 +81,8 @@ social:
   name: "Pulsar Ventures"
   links:
     - "https://www.linkedin.com/company/pulsar-ventures-llc"
+    - "https://www.linkedin.com/in/sree-pradhip"
+    - "https://sreepradhip.com/linktree"
     - "https://cal.com/sree.pradhip"
 
 # Analytics (add your tracking codes here)

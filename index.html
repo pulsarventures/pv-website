@@ -8,7 +8,8 @@ page_css: /assets/css/home.css
 page_js: /assets/js/home.js
 ---
 {% comment %}
-  Homepage, from the "Pulsar Homepage" redesign artifact (Nov 2026).
+  Homepage. The three areas (Products, Services, Community) follow the
+  Pulsar one-pager. The 4A Framework and Business Landscape live on /approach.
   Styles: assets/css/home.css. Behaviour: assets/js/home.js.
   The SVG sprite (#mark, #petal, arrows) comes from _includes/pv-sprite.html.
 {% endcomment %}
@@ -39,106 +40,183 @@ page_js: /assets/js/home.js
     <div class="hero-copy">
       <h1><span class="serif">Build</span> with AI.</h1>
       <p class="serif">We ship what we advise.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="#engage">Start a project <svg class="ico"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#products">See our products</a>
+    </div>
+    <div class="areas-intro">
+      <div class="areas-head">
+        <p class="areas-kicker">We leverage AI across three areas:</p>
+        <p class="eyebrow">How we work</p>
       </div>
+      <div class="areas">
+        <a class="area" href="#products"><span class="who">I</span><h2>Products</h2><p>Real products, built and shipped. Proof of what AI can do.</p></a>
+        <a class="area" href="#services"><span class="who">WE</span><h2>Services</h2><p>We build alongside your team and share how it's done.</p></a>
+        <a class="area you" href="#community"><span class="who">YOU</span><h2>Community</h2><p>A monthly meetup for people to present what they are building.</p></a>
+      </div>
+      <p class="build-path"><span>I <span class="serif">build</span></span><span class="arr" aria-hidden="true">→</span><span>We <span class="serif">build</span></span><span class="arr" aria-hidden="true">→</span><span>You <span class="serif">build</span></span></p>
     </div>
-    <div class="stats reveal">
-      <div class="stat"><div class="tile"><svg class="ico duo i-grid" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><g class="a-turn"><rect class="ac" x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></g></svg></div><div><b>5</b><span>own products</span></div></div>
-      <div class="stat"><div class="tile"><svg class="ico duo i-signal" viewBox="0 0 24 24" aria-hidden="true"><circle class="ac acf" cx="12" cy="12" r="2"/><path class="a-wave1" d="M8.2 15.8a5.4 5.4 0 0 1 0-7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6"/><path class="a-wave2" d="M5.3 18.7a9.5 9.5 0 0 1 0-13.4M18.7 5.3a9.5 9.5 0 0 1 0 13.4"/></svg></div><div><b>4</b><span>live in market</span></div></div>
-      <div class="stat"><div class="tile"><svg class="ico duo i-brief" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h7M13.5 12.5h7"/><g class="a-pulse"><rect class="ac" x="10.5" y="11" width="3" height="3" rx=".8"/></g></svg></div><div><b>6</b><span>client engagements</span></div></div>
-      <div class="stat"><div class="tile"><svg class="ico duo i-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><g class="a-rotate"><ellipse class="ac" cx="12" cy="12" rx="3.6" ry="8.5"/></g></svg></div><div><b>3</b><span>cities, one team</span></div></div>
+    <div class="btns hero-actions">
+      <a class="btn btn-primary" href="#engage">Start a project <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="#products">See our products</a>
     </div>
-    <div class="marquee hero-clients reveal" id="scope" aria-label="Clients"><div class="clients">
-      <div class="client"><img src="{{ '/assets/img/clients/light/tacilent.png' | relative_url }}" alt="Tacilent"></div>
-      <div class="client"><img src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt="Exitous"></div>
-      <div class="client"><img src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"></div>
-      <div class="client"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt="" style="max-height:36px"><span>RIB Software</span></div>
-      <div class="client"><img src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt="Mindwave Solutions"></div>
-      <div class="client"><img src="{{ '/assets/img/clients/light/ez-innovation.png' | relative_url }}" alt="EZ Innovation"></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/tacilent.png' | relative_url }}" alt=""></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt=""></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt=""></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt="" style="max-height:36px"><span>RIB Software</span></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt=""></div>
-      <div class="client" aria-hidden="true"><img src="{{ '/assets/img/clients/light/ez-innovation.png' | relative_url }}" alt=""></div>
-    </div></div>
   </div>
   <span class="hero-slot" data-anchor data-scale="1.45" data-rot="20" data-opacity="1" data-stroke="#D3D0DC"></span>
 </section>
 
-<!-- ECOSYSTEM -->
-<section class="hsec" id="ecosystem">
+{% assign catalog = site.data.products %}
+{% assign dualtake = catalog | where: "name", "DualTake" | first %}
+{% assign signal = catalog | where: "name", "Signal" | first %}
+{% assign linklibrary = catalog | where: "name", "LinkLibrary" | first %}
+{% assign getitsigned = catalog | where: "name", "GetItSigned" | first %}
+{% assign w3forms = catalog | where: "name", "W3Forms" | first %}
+{% assign earlier = catalog | where: "tier", "earlier" %}
+
+<!-- 01 PRODUCTS -->
+<section class="hsec proof" id="products">
   <div class="wrap">
-    <div class="head center">
-      <h2>Our Ecosystem</h2>
+    <div class="head">
+      <div class="numrow">
+        <h2>Products <span class="serif phrase">built for real needs.</span></h2>
+        <span class="num">01</span>
+      </div>
     </div>
-    <div class="eco">
-      <div class="eco-col left">
-        <article class="pillar hot linked reveal"><div class="k"><div class="tile"><svg class="ico duo i-connect" viewBox="0 0 24 24" aria-hidden="true"><g class="a-ping"><circle class="ac" cx="12" cy="5" r="2.3"/></g><path d="M12 7.3V12M12 12l-5 4.6M12 12l5 4.6"/><circle cx="5.6" cy="18.5" r="2.3"/><circle cx="18.4" cy="18.5" r="2.3"/></svg></div><h3><a class="stretch" href="https://aibuildersmeetup.com/" target="_blank" rel="noopener noreferrer">Connect<svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3></div><p>Active participants in the Atlanta tech ecosystem. We run the <a class="inl" href="https://aibuildersmeetup.com/" target="_blank" rel="noopener">AI Builders Meetup</a> and contribute across the groups that make this community work.</p><div class="logos" aria-label="Community partners"><div class="logo-track"><span class="lg-text">AI Builders Meetup</span><i class="lg-sep"></i><img src="{{ '/assets/img/partnerships-tn.png' | relative_url }}" alt="Tech North Atlanta"><img src="{{ '/assets/img/partnerships-atv.png' | relative_url }}" alt="Atlanta Tech Village"><i class="lg-sep"></i><img src="{{ '/assets/img/partnerships-aic.png' | relative_url }}" alt="The AI Collective"><img src="{{ '/assets/img/partnerships-aitinkerers.png' | relative_url }}" alt="AI Tinkerers"><img src="{{ '/assets/img/partnerships-tie.png' | relative_url }}" alt="TiE Atlanta"><i class="lg-sep"></i></div></div><div class="chips"><div class="chip-track"><span class="chip">AI Builders Meetup — founded &amp; run by us</span><span class="chip">Community events &amp; talks</span><span class="chip">Builder networking</span></div></div></article>
-        <article class="pillar linked reveal"><div class="k"><div class="tile"><svg class="ico duo i-enable" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11.2v4.3c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.3"/><g class="a-swing"><path class="ac" d="M19.5 10v5.2"/><circle class="ac acf" cx="19.5" cy="16.6" r="1.1"/></g></svg></div><h3><a class="stretch" href="https://aimusings.site/" target="_blank" rel="noopener noreferrer">Enable<svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3></div><p>Workshops and playbooks that get your team shipping with AI, not just talking about it.</p><div class="chips"><div class="chip-track"><span class="chip">Consultants &amp; entrepreneurs</span><span class="chip">Product managers &amp; marketers</span><span class="chip">Executives &amp; leadership teams</span><span class="chip">Individual</span><span class="chip">Corporate</span><span class="chip">Universities</span></div></div></article>
+    <div class="stats insec">
+      <div class="stat"><div class="tile"><svg class="ico duo i-grid" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><g class="a-turn"><rect class="ac" x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></g></svg></div><div><b>5</b><span>own products</span></div></div>
+      <div class="stat"><div class="tile"><svg class="ico duo i-signal" viewBox="0 0 24 24" aria-hidden="true"><circle class="ac acf" cx="12" cy="12" r="2"/><path class="a-wave1" d="M8.2 15.8a5.4 5.4 0 0 1 0-7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6"/><path class="a-wave2" d="M5.3 18.7a9.5 9.5 0 0 1 0-13.4M18.7 5.3a9.5 9.5 0 0 1 0 13.4"/></svg></div><div><b>4</b><span>live in market</span></div></div>
+    </div>
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <div class="feat-top">
+          <span class="aud">CONSUMER</span>
+          {% if dualtake.icon %}<img class="app{% if dualtake.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: dualtake.icon | relative_url }}" alt="" width="42" height="42">{% endif %}
+        </div>
+        <div class="feat-name"><h3>DualTake</h3>{% if dualtake.status == 'live' %}<span class="live-pill">Live</span>{% elsif dualtake.status == 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endif %}</div>
+        <p class="lead">Narrate over what you're filming, with both cameras rolling and a teleprompter built in.</p>
+        {% if dualtake.desc %}<p class="more">{{ dualtake.desc }}</p>{% endif %}
+        <a class="btn btn-ghost btn-sm" href="https://dualtake.live/" target="_blank" rel="noopener noreferrer">dualtake.live <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="feat reveal">
+        <div class="feat-top">
+          <span class="aud fill">SMB</span>
+          {% if signal.icon %}<img class="app{% if signal.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: signal.icon | relative_url }}" alt="" width="42" height="42">{% endif %}
+        </div>
+        <div class="feat-name"><h3>Signal</h3>{% if signal.status == 'live' %}<span class="live-pill">Live</span>{% elsif signal.status == 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endif %}</div>
+        <p class="lead">Walk out of every event knowing who to call first. Signal identifies your most promising sales leads.</p>
+        {% if signal.desc %}<p class="more">{{ signal.desc }}</p>{% endif %}
+        <a class="btn btn-primary" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer">Join the pilot for your business <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <div class="mini-row">
+      <a class="mini reveal" href="{{ linklibrary.url }}" target="_blank" rel="noopener noreferrer">{% if linklibrary.icon %}<img class="app{% if linklibrary.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: linklibrary.icon | relative_url }}" alt="" width="42" height="42">{% endif %}<div><h3>LinkLibrary {% if linklibrary.status == 'live' %}<span class="live-pill">Live</span>{% elsif linklibrary.status == 'early' %}<span class="live-pill">Early access</span>{% endif %}</h3><span class="cat">{{ linklibrary.cat }}</span><p>{{ linklibrary.desc }}</p></div></a>
+      <a class="mini reveal" href="{{ getitsigned.url }}" target="_blank" rel="noopener noreferrer">{% if getitsigned.icon %}<img class="app{% if getitsigned.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: getitsigned.icon | relative_url }}" alt="" width="42" height="42">{% endif %}<div><h3>GetItSigned {% if getitsigned.status == 'live' %}<span class="live-pill">Live</span>{% elsif getitsigned.status == 'early' %}<span class="live-pill">Early access</span>{% endif %}</h3><span class="cat">{{ getitsigned.cat }}</span><p>{{ getitsigned.desc }}</p></div></a>
+      <a class="mini reveal" href="{{ w3forms.url }}" target="_blank" rel="noopener noreferrer">{% if w3forms.icon %}<img class="app{% if w3forms.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: w3forms.icon | relative_url }}" alt="" width="42" height="42">{% endif %}<div><h3>W3Forms {% if w3forms.status == 'live' %}<span class="live-pill">Live</span>{% elsif w3forms.status == 'early' %}<span class="live-pill">Early access</span>{% endif %}</h3><span class="cat">{{ w3forms.cat }}</span><p>{{ w3forms.desc }}</p></div></a>
+    </div>
+{% if earlier.size > 0 %}
+    <div class="earlier">
+      <button type="button" class="earlier-btn" id="earlierBtn" aria-expanded="false" aria-controls="earlierList">
+        <span class="stack" aria-hidden="true">{% for p in earlier %}{% if p.icon %}<img src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="28" height="28">{% else %}<span>{{ p.name | slice: 0 }}</span>{% endif %}{% endfor %}</span>
+        <span class="lbl"><b>Earlier builds</b><small>Earlier projects we designed, shipped and learned from</small></span>
+        <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></span>
+      </button>
+      <div class="earlier-list" id="earlierList" hidden>
+{% for p in earlier %}
+        <{% if p.url %}a href="{{ p.url }}" target="_blank" rel="noopener noreferrer"{% else %}div{% endif %} class="eb">
+          {% if p.icon %}<img class="app{% if p.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="42" height="42">{% else %}<span class="app" aria-hidden="true">{% if p.glyph == 'wrench' %}<svg class="ico" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/></svg>{% else %}<svg class="ico" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="M22 7l-8.5 8.5-5-5L2 17"/></svg>{% endif %}</span>{% endif %}
+          <div><h3>{{ p.name }}{% if p.url %} <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>{% endif %}</h3><span class="cat">{{ p.cat }}</span><p>{{ p.desc }}</p></div>
+        </{% if p.url %}a{% else %}div{% endif %}>
+{% endfor %}
       </div>
-      <div class="mark-wrap" aria-label="The Pulsar mark: Connect, Build, Enable and Advice around one core">
-        <svg viewBox="-8 -8 224 224">
-          <a href="https://aibuildersmeetup.com/" target="_blank" rel="noopener noreferrer" aria-label="Connect: AI Builders Meetup" class="petal-link"><g class="p"><use href="#petal" class="petal-out hot"/><svg class="duo pi i-connect" x="30" y="26" width="36" height="36" viewBox="0 0 24 24"><g class="a-ping"><circle class="ac" cx="12" cy="5" r="2.3"/></g><path d="M12 7.3V12M12 12l-5 4.6M12 12l5 4.6"/><circle cx="5.6" cy="18.5" r="2.3"/><circle cx="18.4" cy="18.5" r="2.3"/></svg></g></a>
-          <a href="{{ '/services/' | relative_url }}" aria-label="Build: our services" class="petal-link"><g class="p"><use href="#petal" class="petal-out" transform="rotate(90 104 104)"/><svg class="duo pi i-build" x="146" y="30" width="36" height="36" viewBox="0 0 24 24"><g class="a-drop"><rect class="ac" x="8.5" y="3.5" width="7" height="7" rx="1.8"/></g><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.8"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.8"/></svg></g></a>
-          <a href="https://aimusings.site/" target="_blank" rel="noopener noreferrer" aria-label="Enable: AI Musings" class="petal-link"><g class="p"><use href="#petal" class="petal-out" transform="rotate(270 104 104)"/><svg class="duo pi i-enable" x="26" y="142" width="36" height="36" viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11.2v4.3c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.3"/><g class="a-swing"><path class="ac" d="M19.5 10v5.2"/><circle class="ac acf" cx="19.5" cy="16.6" r="1.1"/></g></svg></g></a>
-          <a href="{{ '/services/' | relative_url }}" aria-label="Advice: our services" class="petal-link"><g class="p"><use href="#petal" class="petal-out" transform="rotate(180 104 104)"/><svg class="duo pi i-advice" x="142" y="146" width="36" height="36" viewBox="0 0 24 24"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h-1a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2z"/><path class="ac a-type1" d="M8 9h8"/><path class="ac a-type2" d="M8 12.5h5"/></svg></g></a>
-        </svg>
-        <span class="slot" data-k=".68" data-anchor data-logo data-rot="12" data-opacity="1" data-stroke="#2B1766" data-bg="#FFFFFF"></span>
+    </div>
+{% endif %}
+  </div>
+</section>
+
+<!-- 02 SERVICES -->
+<section class="hsec" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="numrow">
+        <h2>Services <span class="serif phrase">for every stage.</span></h2>
+        <span class="num">02</span>
       </div>
-      <div class="eco-col">
-        <article class="pillar linked reveal"><div class="k"><div class="tile"><svg class="ico duo i-build" viewBox="0 0 24 24" aria-hidden="true"><g class="a-drop"><rect class="ac" x="8.5" y="3.5" width="7" height="7" rx="1.8"/></g><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.8"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.8"/></svg></div><h3><a class="stretch" href="{{ '/services/' | relative_url }}">Build<svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3></div><p>We design and ship products end to end, our own and yours, from first prototype to live release.</p><div class="chips"><div class="chip-track"><span class="chip">CIO/CTO advisory &amp; fractional CTO</span><span class="chip">Architecture &amp; system design</span><span class="chip">Full-stack engineering: frontend, backend, data, APIs, cloud</span><span class="chip">AI-enabled tooling &amp; agentic engineering</span><span class="chip">New products &amp; codebase modernization</span></div></div></article>
-        <article class="pillar linked reveal"><div class="k"><div class="tile"><svg class="ico duo i-advice" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h-1a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2z"/><path class="ac a-type1" d="M8 9h8"/><path class="ac a-type2" d="M8 12.5h5"/></svg></div><h3><a class="stretch" href="{{ '/services/' | relative_url }}">Advice<svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3></div><p>Architecture and AI strategy reviews from people who build every week, so the advice holds up in production.</p></article>
-      </div>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-col reveal">
+        <h3>Enterprise</h3>
+        <div class="svc-item"><h4>Advisory</h4><p>Strategic guidance on where and how to adopt AI across your teams and systems.</p></div>
+        <div class="svc-item"><h4>Build</h4><p>Product and technical leadership with your engineers, plus architecture and build.</p></div>
+        <div class="svc-item"><h4>Training</h4><p>Enable your team through workshops, 1-on-1 coaching, and hands-on builds.</p></div>
+      </article>
+      <article class="svc-col reveal">
+        <h3>Small &amp; Medium Business</h3>
+        <div class="svc-item"><h4>Advisory</h4><p>Identify what is holding your business back and guide you on how to fix it.</p></div>
+        <div class="svc-item"><h4>Automation</h4><p>Implement AI workflows that solve the problems we found together.</p></div>
+        <div class="svc-item"><h4>Training</h4><p>Enable your team through hands-on builds on your own daily work.</p></div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- 4A FRAMEWORK -->
-<section class="hsec fa" id="framework">
+<!-- 03 COMMUNITY -->
+<section class="hsec" id="community">
+  <div class="wrap">
+    <div class="head">
+      <div class="numrow">
+        <h2>Community <span class="serif phrase">where builders meet.</span></h2>
+        <span class="num">03</span>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <div class="feat-top"><span class="aud">LIVE</span></div>
+        <h3>AI Builders Meetup</h3>
+        <p class="lead">A monthly meetup for people to present what they are building, now growing across Atlanta.</p>
+        <a class="go-link" href="https://aibuildersmeetup.com/" target="_blank" rel="noopener noreferrer"><b>Attend or speak</b><span>aibuildersmeetup.com</span></a>
+      </article>
+      <article class="feat reveal">
+        <div class="feat-top"><span class="aud fill">INCUBATING</span></div>
+        <h3>AI Circle</h3>
+        <p class="lead">Smaller, curated conversations for entrepreneurs / executives shaping their AI plans.</p>
+        <a class="go-link" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer"><span>Interested?</span><b>Ask to learn more</b></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="band" aria-label="Track record">
+  <div class="wrap">
+    <dl class="bigstats">
+      <div><dt>25+</dt><dd>Years building</dd></div>
+      <div><dt>20+</dt><dd>Workshops delivered</dd></div>
+      <div><dt>200+</dt><dd>Professionals trained</dd></div>
+      <div><dt>500+</dt><dd>Builders connected</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- FEATURED CLIENTS -->
+<section class="hsec partners" aria-labelledby="partners-title">
+  <div class="wrap">
+    <h2 id="partners-title" class="partners-title">Featured clients &amp; partnerships</h2>
+    <div class="logo-row">
+      <div class="logo-cell"><img src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"></div>
+      <div class="logo-cell rib"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt=""><b>RIB Software</b></div>
+      <div class="logo-cell"><img src="{{ '/assets/img/partnerships-tn.png' | relative_url }}" alt="Tech North Atlanta"></div>
+      <div class="logo-cell on-dark"><img src="{{ '/assets/img/clients/inspiredu.png' | relative_url }}" alt="Inspiredu"></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH TEASER -->
+<section class="hsec tease" id="framework">
   <div class="wrap">
     <div class="head center">
       <h2>THE 4A FRAMEWORK</h2>
       <p class="serif">How AI shows up in what we build.</p>
-      <a class="btn btn-primary btn-sm" href="#engage" style="margin-top:.5rem;position:relative;z-index:3">Map your use case <svg class="ico"><use href="#i-arrow"/></svg></a>
-    </div>
-    <div class="fa-track" id="faTrack">
-      <span class="slot" style="top:45%;left:50%" data-anchor data-scale="1.7" data-rot="72" data-opacity=".9" data-stroke="#D3D0DC"></span>
-      <svg class="rail" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="railInk" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="950" y2="0">
-            <stop offset="0" stop-color="#2B1766"/><stop offset=".86" stop-color="#2B1766"/><stop offset=".9" stop-color="#B7B0D2"/><stop offset="1" stop-color="#DCD8EA"/>
-          </linearGradient>
-          <clipPath id="railClip"><rect id="railReveal" x="0" y="0" width="1000" height="460"/></clipPath>
-        </defs>
-        <path d="M150.2 331.7 L160.2 328.2 L170.2 324.6 L180.2 321.1 L190.2 317.6 L200.2 314.0 L210.2 310.5 L220.2 306.9 L230.2 303.4 L240.2 299.9 L250.2 296.3 L260.2 292.8 L270.2 289.3 L280.2 285.7 L290.2 282.2 L300.2 278.6 L310.2 275.1 L320.2 271.6 L330.2 268.0 L340.3 264.5 L350.3 260.9 L360.3 257.4 L370.3 253.9 L380.3 250.3 L390.3 246.8 L400.3 243.4 L410.3 239.9 L420.4 236.4 L430.4 232.9 L440.4 229.5 L450.4 226.0 L460.5 222.5 L470.5 219.0 L480.5 215.6 L490.5 212.1 L500.6 208.6 L510.6 205.0 L520.6 201.5 L530.6 197.9 L540.6 194.4 L550.5 190.8 L560.5 187.2 L570.5 183.7 L580.5 180.1 L590.5 176.6 L600.5 173.0 L610.5 169.4 L620.5 165.9 L630.5 162.3 L640.5 158.8 L650.5 155.2 L660.5 151.6 L670.5 148.1 L680.5 144.5 L690.5 140.9 L700.5 137.4 L710.5 133.8 L720.5 130.3 L730.5 126.7 L740.5 123.1 L750.5 119.6 L760.5 116.0 L770.5 112.5 L780.4 108.9 L790.4 105.3 L800.4 101.8 L810.4 98.2 L820.4 94.7 L830.4 91.1 L840.4 87.5 L850.4 84.0 L860.4 80.3 L870.4 76.7 L880.3 73.0 L890.3 69.4 L900.3 65.8 L910.2 62.1 L920.2 58.5 L930.2 54.8 L940.1 51.2 L950.1 47.5 L949.9 47.1 L939.9 50.5 L929.8 54.0 L919.8 57.4 L909.8 60.9 L899.7 64.4 L889.7 67.8 L879.7 71.3 L869.6 74.7 L859.6 78.2 L849.6 81.6 L839.6 85.2 L829.6 88.7 L819.6 92.2 L809.6 95.8 L799.6 99.3 L789.6 102.8 L779.6 106.4 L769.5 109.9 L759.5 113.4 L749.5 117.0 L739.5 120.5 L729.5 124.1 L719.5 127.6 L709.5 131.1 L699.5 134.7 L689.5 138.2 L679.5 141.7 L669.5 145.3 L659.5 148.8 L649.5 152.4 L639.5 155.9 L629.5 159.4 L619.5 163.0 L609.5 166.5 L599.5 170.0 L589.5 173.6 L579.5 177.1 L569.5 180.6 L559.5 184.2 L549.5 187.7 L539.4 191.3 L529.4 194.8 L519.4 198.3 L509.4 201.9 L499.4 205.4 L489.5 209.0 L479.5 212.6 L469.5 216.3 L459.5 219.9 L449.6 223.5 L439.6 227.1 L429.6 230.7 L419.6 234.4 L409.7 238.0 L399.7 241.6 L389.7 245.2 L379.7 248.8 L369.7 252.4 L359.7 255.9 L349.7 259.5 L339.7 263.1 L329.8 266.6 L319.8 270.2 L309.8 273.7 L299.8 277.3 L289.8 280.9 L279.8 284.4 L269.8 288.0 L259.8 291.5 L249.8 295.1 L239.8 298.7 L229.8 302.2 L219.8 305.8 L209.8 309.3 L199.8 312.9 L189.8 316.4 L179.8 320.0 L169.8 323.6 L159.8 327.1 L149.8 330.7Z" fill="url(#railInk)" clip-path="url(#railClip)"/>
-      </svg>
-      <div class="step" style="left:15%;top:72%"><div class="node"><svg class="ico duo i-assist" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4c.7 4.2 2.3 5.8 6.5 6.5-4.2.7-5.8 2.3-6.5 6.5-.7-4.2-2.3-5.8-6.5-6.5 4.2-.7 5.8-2.3 6.5-6.5z"/><g class="a-twinkle"><path class="ac" d="M18.5 14.5c.3 1.8.9 2.4 2.5 2.7-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.6-2.6 1.7-.3 2.3-.9 2.6-2.7z"/></g></svg></div><h3>Assist</h3><p>AI surfaces context and recommendations to support decisions.</p></div>
-      <div class="step" style="left:38.333%;top:54%"><div class="node"><svg class="ico duo i-automate" viewBox="0 0 24 24" aria-hidden="true"><g class="a-spin"><path d="M4.5 10a7.5 7.5 0 0 1 13.4-3.6M19.5 14a7.5 7.5 0 0 1-13.4 3.6"/><path class="ac" d="M20 4.5V9h-4.5M4 19.5V15h4.5"/></g></svg></div><h3>Automate</h3><p>Repeatable tasks and workflows run without manual effort.</p></div>
-      <div class="step" style="left:61.667%;top:36%"><div class="node"><svg class="ico duo i-augment" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.6-3.3 2.8-5.3 5.5-5.3s4.9 2 5.5 5.3"/><g class="a-pulse"><path class="ac" d="M18 8v6M15 11h6"/></g></svg></div><h3>Augment</h3><p>AI works alongside people, improving judgment, not replacing it.</p></div>
-      <div class="step auto" style="left:85%;top:18%"><div class="node"><svg class="ico duo i-autonomy" viewBox="0 0 24 24" aria-hidden="true"><g class="a-nudge"><path d="M5 11.2 20 4l-7.2 15-2-5.8z"/></g><path class="ac a-trail" d="M3 21l3.5-3.5"/></svg></div><h3>Autonomy</h3><p>Systems operate independently within clear guardrails.</p></div>
-      
+      <p class="sub">The Business Landscape is Changing</p>
+      <a class="btn btn-primary" href="{{ '/approach/' | relative_url }}">See the framework <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
-</section>
-
-<!-- LANDSCAPE (P-form petals) -->
-<section class="hsec land2" id="landscape">
-  <div class="wrap">
-    <div class="head center">
-      <h2>The Business Landscape<br>is <span class="serif">Changing</span></h2>
-    </div>
-    <div class="petals pform">
-      <article class="pcard tl hot reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-info" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="11.5" rx="2"/><path d="M9 20h6M12 16v4"/><circle class="ac acf" cx="12" cy="12.6" r="1"/><path class="ac a-wave1" d="M10.4 10.6a2.3 2.3 0 0 1 3.2 0"/><path class="ac a-wave2" d="M8.7 8.7a4.7 4.7 0 0 1 6.6 0"/></svg></div></div><h3>Information Age</h3><p>Internet, automation and global connectivity.</p></article>
-      <article class="pcard tr reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-intel" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9.5 3v3M14.5 3v3M9.5 18v3M14.5 18v3M3 9.5h3M3 14.5h3M18 9.5h3M18 14.5h3"/><g class="a-twinkle"><path class="ac" d="M12 8.6c.3 1.9.9 2.5 2.7 2.8-1.8.3-2.4.9-2.7 2.8-.3-1.9-.9-2.5-2.7-2.8 1.8-.3 2.4-.9 2.7-2.8z"/></g></svg></div></div><h3>Intelligent Age</h3><p>AI and human co-intelligence redefining business.</p></article>
-      <article class="pcard bl reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-toolset" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/><g class="a-twinkle"><path class="ac" d="M5 3.5c.2 1.2.6 1.6 1.8 1.8-1.2.2-1.6.6-1.8 1.8-.2-1.2-.6-1.6-1.8-1.8 1.2-.2 1.6-.6 1.8-1.8z"/></g></svg></div></div><h3>AI-Native Toolset</h3><p>We build with AI-native tools and systems: agents, workflows and platforms designed to operate with intelligence built in, not bolted on.</p></article>
-      <article class="pcard br reveal"><svg class="pshape" aria-hidden="true"><path/></svg><div class="top"><div class="tile"><svg class="ico duo i-mindset" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5h5M10.5 20.5h3"/><path d="M12 3.5a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v1.1h5v-1.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3.5z"/><g class="a-pulse"><path class="ac" d="M12 7.5v4M10 9.5h4"/></g></svg></div></div><h3>AI-First Mindset</h3><p>Every workflow, decision and process is designed with intelligence, automation and augmentation from day one.</p></article>
-      <span class="shift" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-      <div class="mark-wrap core-slot" aria-hidden="true"><span class="slot" data-anchor data-logo data-rot="12" data-opacity="1" data-stroke="#2B1766" data-bg="#FFFFFF"></span></div>
-    </div>
-  </div>
+  <span class="sec-slot" data-anchor data-scale="1.35" data-rot="48" data-opacity=".85" data-stroke="#D3D0DC"></span>
 </section>
 
 <!-- ENGAGE -->
@@ -171,48 +249,6 @@ page_js: /assets/js/home.js
   </div>
 </section>
 
-<!-- OUR OWN PRODUCTS (order and copy: _data/products.yml) -->
-{% assign products = site.data.products | where_exp: 'p', 'p.tier != "earlier"' %}
-{% assign earlier = site.data.products | where: 'tier', 'earlier' %}
-<section class="hsec proof" id="products">
-  <div class="wrap">
-    <div class="bar">
-      <h2>Our own products</h2>
-      <div class="ctrl"><span id="count" aria-live="polite">01 / {{ products.size | prepend: '0' | slice: -2, 2 }}</span><button type="button" id="prev" aria-label="Previous product"><svg class="ico"><use href="#i-left"/></svg></button><button type="button" id="next" aria-label="Next product"><svg class="ico"><use href="#i-arrow"/></svg></button></div>
-    </div>
-    <div class="track" id="track">
-{% for p in products %}
-      <article class="card">
-        {% if p.thumb %}<div class="thumb shot"><img src="{{ '/assets/img/products/thumbs/' | append: p.thumb | relative_url }}" alt="{{ p.name }} website" loading="lazy" width="800" height="500"></div>
-        {% elsif p.art == 'bp' %}<div class="thumb bp" aria-hidden="true"><b>Ticket in. <em>Reviewed PR</em> out.</b><div class="flow"><i>PM</i><i>Developer</i><i>Code review</i><i>QA</i><i class="pr">Human-reviewed PR</i></div></div>
-        {% elsif p.art == 'fc' %}<div class="thumb fc" aria-hidden="true"><b>Invest on <em>principles.</em></b><svg viewBox="0 0 160 90" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 88H160" stroke="#fff" stroke-opacity=".18"/><path d="M0 60H160M0 32H160" stroke="#fff" stroke-opacity=".08"/><path d="M2 74 26 62 46 68 70 44 92 52 118 24 140 30 158 8" stroke="#FF9314" stroke-width="3"/><circle cx="158" cy="8" r="4.5" fill="#FF9314"/></svg></div>{% endif %}
-        <div class="meta">{% if p.icon %}<img class="app{% if p.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="42" height="42">{% else %}<span class="app" aria-hidden="true">{% if p.glyph == 'wrench' %}<svg class="ico" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/></svg>{% else %}<svg class="ico" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="M22 7l-8.5 8.5-5-5L2 17"/></svg>{% endif %}</span>{% endif %}<div><h3>{{ p.name }}</h3><span class="cat">{{ p.cat }}</span></div>{% case p.status %}{% when 'live' %}<span class="live-pill">Live</span>{% when 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endcase %}</div>
-        <p>{{ p.desc }}</p>
-        {% if p.url %}<a class="btn btn-ghost btn-sm" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">Visit {{ p.name }} <svg class="ico"><use href="#i-arrow"/></svg></a>{% endif %}
-      </article>
-{% endfor %}
-    </div>
-    <div class="progress"><i id="bar"></i></div>
-{% if earlier.size > 0 %}
-    <div class="earlier">
-      <button type="button" class="earlier-btn" id="earlierBtn" aria-expanded="false" aria-controls="earlierList">
-        <span class="stack" aria-hidden="true">{% for p in earlier %}{% if p.icon %}<img src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="28" height="28">{% else %}<span>{{ p.name | slice: 0 }}</span>{% endif %}{% endfor %}</span>
-        <span class="lbl"><b>Earlier builds</b><small>Earlier projects we designed, shipped and learned from</small></span>
-        <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></span>
-      </button>
-      <div class="earlier-list" id="earlierList" hidden>
-{% for p in earlier %}
-        <{% if p.url %}a href="{{ p.url }}" target="_blank" rel="noopener noreferrer"{% else %}div{% endif %} class="eb">
-          {% if p.icon %}<img class="app{% if p.icon_fit == 'contain' %} fit{% endif %}" src="{{ '/assets/img/products/' | append: p.icon | relative_url }}" alt="" width="42" height="42">{% else %}<span class="app" aria-hidden="true">{% if p.glyph == 'wrench' %}<svg class="ico" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.2 6.2a2.1 2.1 0 0 1-3-3l6.2-6.2a6 6 0 0 1 7.9-7.9z"/></svg>{% else %}<svg class="ico" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="M22 7l-8.5 8.5-5-5L2 17"/></svg>{% endif %}</span>{% endif %}
-          <div><h3>{{ p.name }}{% if p.url %} <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>{% endif %}</h3><span class="cat">{{ p.cat }}</span><p>{{ p.desc }}</p></div>
-        </{% if p.url %}a{% else %}div{% endif %}>
-{% endfor %}
-      </div>
-    </div>
-{% endif %}
-  </div>
-</section>
-
 <!-- CLIENT WORK -->
 <section class="hsec work" id="work">
   <div class="wrap">
@@ -220,8 +256,12 @@ page_js: /assets/js/home.js
       <h2>Client work</h2>
       <p>Scope shown, not slogans. Case studies ship with client sign-off.</p>
     </div>
+    <div class="stats insec">
+      <div class="stat"><div class="tile"><svg class="ico duo i-brief" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h7M13.5 12.5h7"/><g class="a-pulse"><rect class="ac" x="10.5" y="11" width="3" height="3" rx=".8"/></g></svg></div><div><b>6</b><span>client engagements</span></div></div>
+      <div class="stat"><div class="tile"><svg class="ico duo i-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><g class="a-rotate"><ellipse class="ac" cx="12" cy="12" rx="3.6" ry="8.5"/></g></svg></div><div><b>3</b><span>cities, one team</span></div></div>
+    </div>
     <div class="work-grid">
-      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"><span class="st new">New engagement</span></div><p>One of the largest US homebuilders. Working directly with the CIO to drive an agentic transformation: people, process, product and technology.</p><div class="tags"><span>Advisory</span><span>Enablement</span></div></article>
+      <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/smith-douglas.png' | relative_url }}" alt="Smith Douglas Homes"><span class="st new">New engagement</span></div><p>Smith Douglas Homes. One of the largest US homebuilders. Working directly with the CIO to drive an agentic transformation: people, process, product and technology.</p><div class="tags"><span>Advisory</span><span>Enablement</span></div></article>
       <article class="case reveal"><div class="case-top"><span class="case-logo rib"><img src="{{ '/assets/img/clients/light/rib.png' | relative_url }}" alt=""><b>RIB Software</b></span><span class="st new">New engagement</span></div><p>Global leader in construction software. Architecting a new product to deepen their customer base and break into new markets: high data complexity, embedded engineering.</p><div class="tags"><span>Build</span></div></article>
       <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/mindwave.png' | relative_url }}" alt="Mindwave Solutions"><span class="st prog">In progress</span></div><p>Replacing legacy ERP systems for enterprise transportation customers. Providing advisory services for their IT transformation project.</p><div class="tags"><span>Advisory</span></div></article>
       <article class="case reveal"><div class="case-top"><img class="case-logo" src="{{ '/assets/img/clients/light/exitous.png' | relative_url }}" alt="Exitous"><span class="st prog">In progress</span></div><p>Techstars-backed company building structured guidance for career transitions. Expert systems from the ground up.</p><div class="tags"><span>Build</span></div></article>

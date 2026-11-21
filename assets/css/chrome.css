@@ -83,6 +83,16 @@
 .pvf-col a{font-size:1.1rem;color:#D9D3F7;transition:color .2s;text-decoration:none}
 .pvf-col a:hover{color:var(--pv-orange)}
 .pvf-soc{display:flex;gap:.6rem}
+.pvf-contact{display:grid;gap:.55rem}
+.pvf-contact a{color:#D9D3F7;font-size:.95rem;text-decoration:none;line-height:1.35}
+.pvf-contact a:hover{color:var(--pv-orange)}
+.pvf-contact small{display:block;font-family:var(--pv-f-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8F86C4}
+@media (max-width:1180px) and (min-width:961px){
+  .pvn-wrap{gap:.75rem}
+  .pvn-link{padding:.5rem .55rem;font-size:.95rem}
+  .pvn-cta-row{margin-left:.5rem}
+  .pvn-cta{padding:.75rem 1.05rem;font-size:.95rem}
+}
 .pvf-soc a{width:48px;height:48px;border-radius:12px;border:1px solid #3D2F86;display:grid;place-items:center;color:#E3DEFF;transition:background .2s}
 .pvf-soc a:hover{background:#2E1F78;color:#E3DEFF}
 .pvf-bot{text-align:center;margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1)}

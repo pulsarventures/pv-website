@@ -19,6 +19,7 @@
     <a class="pvn-logo" href="{% if is_home %}#top{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Pulsar Ventures home"><svg aria-hidden="true" style="color:#2B1766;--mk-bg:#FDFCFF"><use href="#mark"/></svg><span class="pvn-lw">Pulsar<br>Ventures</span></a>
     <div class="pvn-links" id="pvnLinks">
       <a class="pvn-link" href="{% if page.url == '/services/' %}#top{% else %}{{ '/services/' | relative_url }}{% endif %}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a>
+      <a class="pvn-link" href="{% if page.url == '/approach/' %}#top{% else %}{{ '/approach/' | relative_url }}{% endif %}"{% if page.url == '/approach/' %} aria-current="page"{% endif %}>Approach</a>
       <a class="pvn-link" href="{{ home }}#work">Clients</a>
       <a class="pvn-link" href="{{ home }}#products">Products</a>
       <div class="pvn-dd">

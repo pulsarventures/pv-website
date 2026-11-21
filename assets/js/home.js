@@ -76,6 +76,7 @@
   const steps = [...document.querySelectorAll('.step')];
   
   function rail(){
+    if(!prog || !track) return;
     const r = track.getBoundingClientRect();
     const p = clamp((innerHeight*0.95 - r.top)/(innerHeight*0.5),0,1);
     prog.setAttribute('width', (150 + 820*p).toFixed(1));
@@ -143,20 +144,23 @@
     setTimeout(()=>{ [...t.children].forEach(x=>{ const y = x.cloneNode(true); y.setAttribute('aria-hidden','true'); t.appendChild(y); }); t.style.setProperty('--dur', Math.max(16, t.scrollWidth/2/30).toFixed(1)+'s'); }, 600);
   });
   chipRun(); addEventListener('resize', chipRun); if(document.fonts) document.fonts.ready.then(chipRun);
-  // carousel: arrows step one card; the bar shows which slice of the list is in view
+  // carousel: arrows step one card; the bar shows which slice of the list is in view.
+  // The homepage no longer uses the carousel; the Approach page never did.
   const tr = document.getElementById('track'), count = document.getElementById('count'), bar = document.getElementById('bar');
-  const cards = [...tr.children], pad = n=>String(n).padStart(2,'0');
-  const cw = ()=>cards[0].getBoundingClientRect().width + 20;
-  const step = dir=>tr.scrollBy({left:dir*cw(), behavior: reduce?'auto':'smooth'});
-  document.getElementById('prev').onclick = ()=>step(-1);
-  document.getElementById('next').onclick = ()=>step(1);
-  function sync(){
-    const w = cw(), per = Math.max(1, Math.round(tr.clientWidth/w)), n = cards.length;
-    const i = Math.min(Math.round(tr.scrollLeft/w), Math.max(0, n-per));
-    bar.style.width = (Math.min(per,n)/n*100)+'%'; bar.style.left = (i/n*100)+'%';
-    count.textContent = (per>1 ? pad(i+1)+'–'+pad(Math.min(i+per,n)) : pad(i+1))+' / '+pad(n);
+  if(tr && count && bar && tr.children.length){
+    const cards = [...tr.children], pad = n=>String(n).padStart(2,'0');
+    const cw = ()=>cards[0].getBoundingClientRect().width + 20;
+    const step = dir=>tr.scrollBy({left:dir*cw(), behavior: reduce?'auto':'smooth'});
+    document.getElementById('prev').onclick = ()=>step(-1);
+    document.getElementById('next').onclick = ()=>step(1);
+    function sync(){
+      const w = cw(), per = Math.max(1, Math.round(tr.clientWidth/w)), n = cards.length;
+      const i = Math.min(Math.round(tr.scrollLeft/w), Math.max(0, n-per));
+      bar.style.width = (Math.min(per,n)/n*100)+'%'; bar.style.left = (i/n*100)+'%';
+      count.textContent = (per>1 ? pad(i+1)+'–'+pad(Math.min(i+per,n)) : pad(i+1))+' / '+pad(n);
+    }
+    tr.addEventListener('scroll', sync, {passive:true}); addEventListener('resize', sync); sync();
   }
-  tr.addEventListener('scroll', sync, {passive:true}); addEventListener('resize', sync); sync();
   // products: "Earlier builds" toggle
   const eb = document.getElementById('earlierBtn'), el = document.getElementById('earlierList');
   if(eb && el) eb.addEventListener('click', ()=>{ const o = eb.getAttribute('aria-expanded')==='true'; eb.setAttribute('aria-expanded', String(!o)); el.hidden = o; });
