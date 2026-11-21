@@ -91,7 +91,7 @@ page_js: /assets/js/home.js
         <div class="feat-name"><h3>DualTake</h3>{% if dualtake.status == 'live' %}<span class="live-pill">Live</span>{% elsif dualtake.status == 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endif %}</div>
         <p class="lead">Narrate over what you're filming, with both cameras rolling and a teleprompter built in.</p>
         {% if dualtake.desc %}<p class="more">{{ dualtake.desc }}</p>{% endif %}
-        <a class="btn btn-ghost btn-sm" href="https://dualtake.live/" target="_blank" rel="noopener noreferrer">dualtake.live <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost btn-sm" href="{{ dualtake.url }}" target="_blank" rel="noopener noreferrer">dualtake.live <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
       <article class="feat reveal">
         <div class="feat-top">
@@ -101,7 +101,10 @@ page_js: /assets/js/home.js
         <div class="feat-name"><h3>Signal</h3>{% if signal.status == 'live' %}<span class="live-pill">Live</span>{% elsif signal.status == 'early' %}<span class="live-pill">Early access</span>{% else %}<span class="live-pill dev">In development</span>{% endif %}</div>
         <p class="lead">Walk out of every event knowing who to call first. Signal identifies your most promising sales leads.</p>
         {% if signal.desc %}<p class="more">{{ signal.desc }}</p>{% endif %}
-        <a class="btn btn-primary" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer">Join the pilot for your business <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <div class="feat-actions">
+          <a class="btn btn-primary" href="{{ site.contact.cal_com }}" target="_blank" rel="noopener noreferrer">Join the pilot for your business <svg class="ico"><use href="#i-arrow"/></svg></a>
+          {% if signal.url %}<a class="go-link" href="{{ signal.url }}" target="_blank" rel="noopener noreferrer"><b>Visit Signal</b></a>{% endif %}
+        </div>
       </article>
     </div>
     <div class="mini-row">

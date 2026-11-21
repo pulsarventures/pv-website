@@ -546,6 +546,8 @@ a.eb:hover{border-color:#D4CCF0;transform:translateY(-2px)}
 .feat .lead{font-size:1.02rem;line-height:1.55}
 .feat .more{font-size:.9rem;line-height:1.5;color:var(--ink-3)}
 .feat .btn{margin-top:auto;align-self:flex-start;white-space:normal}
+.feat-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1rem;margin-top:auto}
+.feat-actions .btn,.feat-actions .go-link{margin-top:0;padding-top:0}
 .feat .live-pill{margin-left:0}
 .aud{font-family:var(--f-display);font-size:.72rem;font-weight:800;letter-spacing:.12em;padding:.34rem .72rem;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);background:var(--white)}
 .aud.fill{background:var(--orange);border-color:var(--orange);color:#3A1E00}
