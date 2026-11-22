@@ -96,7 +96,7 @@ keeps the page's white/canvas alternation intact.
 
 The still-removed routes — `/contact/`, `/products/`, `/company/`, `/ai-musings/` —
 continue to 404. No live page links to them; the only remaining references are inside
-orphaned layouts (`page-v4.html`, `page-v6.html`, `footer-v6.html`) that no built page
+orphaned layouts (`page-v4.html`) that no built page
 renders. The canvas ships artboards for all four, but they are empty stubs (a heading
 and nothing else), so they were deliberately not ported.
 
@@ -132,10 +132,9 @@ over from earlier design iterations and is not reachable from any built page.
 - **Live**: `_layouts/site.html` → includes `head-site.html`, `site-nav.html`, `site-footer.html`
 - **Live stylesheet**: `assets/css/site.css` (the only stylesheet `head-site.html` links)
 - **Used only by `404.html`**: `_layouts/default.html` → `head.html` / `header.html` / `footer.html`, which still pull in Bootstrap 5.3 and `main.css` (compiled from `main.scss`)
-- **Legacy / orphaned**: `landing.html`, `landing-v3.html`, `landing-v4.html`, `landing-v6.html`, `page.html`, `page-v4.html`, `post.html`, and the `-v6` includes
+- **Legacy / orphaned**: `landing.html`, `landing-v3.html`, `landing-v4.html`, `page.html`, `page-v4.html`, `post.html`
 
-Note that `_config.yml` sets the default layout for the `pages` collection to
-`page-v6`, but both live pages override it with `layout: site` in their front matter.
+Note that both live pages set `layout: site` in their front matter.
 
 ## 🎨 Content Management
 
@@ -167,9 +166,8 @@ Edit `_includes/site-nav.html`. (`_includes/header.html` belongs to the legacy
 - **Design tokens**: the `:root` block at the top of `site.css`. The Cosmic
   Direction palette lives there as CSS custom properties (`--page`, `--paper`,
   `--ink-display`, `--pulsar`, …); change a colour there, not at the call site
-- `assets/css/design-system.css` is **orphaned** — only `_includes/head-v6.html`
-  links it, and no built page renders a `-v6` layout. It still carries a stale
-  `--brand: #064e35` from the retired green palette
+- `assets/css/design-system.css` is **orphaned** — no built page links it. It
+  still carries a stale `--brand: #064e35` from the retired green palette
 - `assets/css/main.scss` is legacy and only affects `404.html`. It must stay on
   the **old global Sass functions** (`darken()`, `lighten()`) — the production
   builder runs Ruby Sass 3.7.4, which has no module system and dies on
@@ -251,8 +249,8 @@ expected:
 - `logger was loaded from the standard library…` — from `jekyll` itself, not
   this repo.
 
-The legacy layouts (`landing*.html`, `page.html`, `page-v4.html`, `page-v6.html`,
-`post.html`) and their `-v6` includes are still checked in and still contain dead
+The legacy layouts (`landing*.html`, `page.html`, `page-v4.html`,
+`post.html`) are still checked in and still contain dead
 `/products/`, `/services/` and `/company/` links, but no built page renders them.
 They are dead weight rather than a live defect — delete them when someone is
 confident the design iterations are finished with.
