@@ -2,10 +2,9 @@
   Site navigation, from the Pulsar Homepage redesign (Nov 2026).
 
   Same bar on every page; only link resolution differs. On the homepage the
-  section links are bare fragments (#work); everywhere else they are qualified
-  (/#work). `home` below is empty on the homepage and "/" elsewhere. Services
-  and About Us are real pages, so they link to their permalinks and point at
-  #top when you are already on them.
+  section links are bare fragments (#products); everywhere else they are
+  qualified (/#products). `home` below is empty on the homepage and "/"
+  elsewhere. About Us and Approach are real pages.
 
   Styles live in assets/css/chrome.css, behaviour (dropdown, mobile sheet and
   the dotted orbit drawn around a hovered link) in assets/js/site-nav.js.
@@ -18,17 +17,16 @@
   <div class="pvn-wrap">
     <a class="pvn-logo" href="{% if is_home %}#top{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Pulsar Ventures home"><svg aria-hidden="true" style="color:#2B1766;--mk-bg:#FDFCFF"><use href="#mark"/></svg><span class="pvn-lw">Pulsar<br>Ventures</span></a>
     <div class="pvn-links" id="pvnLinks">
-      <a class="pvn-link" href="{% if page.url == '/services/' %}#top{% else %}{{ '/services/' | relative_url }}{% endif %}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a>
-      <a class="pvn-link" href="{% if page.url == '/approach/' %}#top{% else %}{{ '/approach/' | relative_url }}{% endif %}"{% if page.url == '/approach/' %} aria-current="page"{% endif %}>Approach</a>
-      <a class="pvn-link" href="{{ home }}#work">Clients</a>
       <a class="pvn-link" href="{{ home }}#products">Products</a>
+      <a class="pvn-link" href="{{ home }}#services">Services</a>
+      <a class="pvn-link" href="{{ home }}#community">Community</a>
       <div class="pvn-dd">
-        <button type="button" class="pvn-link pvn-dd-btn" id="pvnAboutBtn" aria-expanded="false" aria-controls="pvnAboutMenu"{% if page.url == '/about-us/' %} aria-current="page"{% endif %}>About Us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button>
+        <button type="button" class="pvn-link pvn-dd-btn" id="pvnAboutBtn" aria-expanded="false" aria-controls="pvnAboutMenu"{% if page.url == '/about-us/' or page.url == '/approach/' %} aria-current="page"{% endif %}>About Us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button>
         <div class="pvn-dd-menu" id="pvnAboutMenu" hidden>
           <a href="{% if page.url == '/about-us/' %}#top{% else %}{{ '/about-us/' | relative_url }}{% endif %}">Company</a>
+          <a href="{% if page.url == '/approach/' %}#top{% else %}{{ '/approach/' | relative_url }}{% endif %}"{% if page.url == '/approach/' %} aria-current="page"{% endif %}>Approach</a>
           <a href="{{ '/about-us/' | relative_url }}#team">Team</a>
           <a href="{{ home }}#products">Brands</a>
-          <a href="{{ '/about-us/' | relative_url }}#community">Community</a>
         </div>
       </div>
     </div>
